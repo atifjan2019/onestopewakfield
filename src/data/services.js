@@ -9,7 +9,7 @@ export const services = [
     name: "Tyre Fitting",
     shortName: "Tyre Fitting",
     tagline: "Fast, Reliable & Affordable",
-    intro: "Looking for professional tyre fitting in Wakefield? One Stop Tyres delivers expert fitting with rapid turnaround times and competitive pricing. Whether you need a single tyre or a complete set, our experienced fitters provide same-day service across Wakefield and the surrounding areas.",
+    intro: "Expert tyre fitting with rapid turnaround and same-day availability across Wakefield.",
     icon: "wrench",
     shortDesc: "Professional tyre fitting with same-day availability across Wakefield.",
     steps: [
@@ -31,7 +31,7 @@ export const services = [
     name: "Mobile Tyre Fitting",
     shortName: "Mobile Fitting",
     tagline: "We Come to You, Same Day",
-    intro: "Unable to reach a garage? Our mobile tyre fitting service comes directly to your location anywhere in Wakefield. Whether you are at home, at work, or stranded roadside, we bring the right tyres and fit them on the spot with fully equipped mobile units.",
+    intro: "We bring the right tyres and fit them on the spot with fully equipped mobile units.",
     icon: "van",
     shortDesc: "We come to your home, workplace, or roadside across Wakefield.",
     steps: [
@@ -53,7 +53,7 @@ export const services = [
     name: "Emergency Tyre Repair",
     shortName: "Emergency Repair",
     tagline: "Rapid Response When You Need It Most",
-    intro: "A blown tyre or sudden flat can disrupt your entire day. Our emergency tyre repair service in Wakefield gets you back on the road quickly. We respond rapidly across the Wakefield area with mobile repair and replacement options so you are never stranded for long.",
+    intro: "Rapid mobile repair and replacement options so you are never stranded for long.",
     icon: "siren",
     shortDesc: "Rapid emergency tyre repair across Wakefield when you need it most.",
     steps: [
@@ -75,7 +75,7 @@ export const services = [
     name: "Puncture Repair",
     shortName: "Puncture Repair",
     tagline: "Quick Fix, Lasting Results",
-    intro: "Got a puncture? There is no need to replace the whole tyre if the damage is repairable. Our puncture repair service in Wakefield follows British Standard BS AU 159 to safely restore your tyre and save you money. We will always give you an honest assessment of whether a repair is possible or if a replacement is needed.",
+    intro: "Safe, honest puncture repairs to BS AU 159 standards to get you safely back on the road.",
     icon: "bandage",
     shortDesc: "Safe, affordable puncture repairs that save you the cost of a new tyre.",
     steps: [
@@ -97,7 +97,7 @@ export const services = [
     name: "Wheel Balancing",
     shortName: "Wheel Balancing",
     tagline: "Smooth Ride, Every Time",
-    intro: "Experiencing vibrations through the steering wheel? Noticing uneven tyre wear? Your wheels likely need professional balancing. Our wheel balancing service in Wakefield uses precision digital equipment to ensure your wheels spin smoothly, extending tyre life and improving driving comfort.",
+    intro: "Precision digital wheel balancing to ensure a smooth, safe, and comfortable ride.",
     icon: "scale",
     shortDesc: "Precision wheel balancing for a smoother, safer drive.",
     steps: [
@@ -119,7 +119,7 @@ export const services = [
     name: "Tyre Replacement",
     shortName: "Tyre Replacement",
     tagline: "The Right Tyre at the Right Price",
-    intro: "When your tyres are worn, cracked, or past their best, it is time for a professional replacement. One Stop Tyres in Wakefield stocks a comprehensive range of budget, mid-range, and premium tyres for all vehicle types. We help you choose the ideal tyre and fit it while you wait.",
+    intro: "We stock a comprehensive range of budget to premium tyres, fitted while you wait.",
     icon: "refresh",
     shortDesc: "Full range of tyres from budget to premium, fitted while you wait.",
     steps: [
