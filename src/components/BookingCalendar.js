@@ -8,6 +8,8 @@ const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 export default function BookingCalendar({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [bookedSlots, setBookedSlots] = useState([]);
+  const [allSlots, setAllSlots] = useState([]);
+  const [slotsLoading, setSlotsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
