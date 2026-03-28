@@ -1,8 +1,5 @@
-interface SchemaMarkupProps {
-  schema: Record<string, unknown>;
-}
 
-export default function SchemaMarkup({ schema }: SchemaMarkupProps) {
+export default function SchemaMarkup({ schema }) {
   return (
     <script
       type="application/ld+json"

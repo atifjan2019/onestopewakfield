@@ -1,18 +1,100 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #000000;
+  --color-primary: #050505;
   --color-primary-light: #111111;
   --color-accent: #E31E24;
-  --color-accent-hover: #c91a1f;
-  --color-accent-light: #fde8e8;
-  --color-surface: #f8fafc;
-  --color-surface-dark: #e2e8f0;
-  --color-text: #111111;
-  --color-text-muted: #555555;
-  --color-text-light: #ffffff;
+  --color-accent-hover: #ff2b32;
+  --color-accent-light: #ff4d53;
+  --color-surface: #0a0a0a;
+  --color-surface-dark: #050505;
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1aa;
+  --color-text-light: #d4d4d8;
   --color-white: #ffffff;
   --color-success: #22c55e;
-  --color-border: #e2e8f0;
+  --color-border: rgba(255, 255, 255, 0.1);
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Custom Keyframes & Animations */
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-blob: blob 7s infinite;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .7; }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base Styles & Premium Dark Mode Adjustments */
+body {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 5px;
+  border: 2px solid var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Utilities for Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(227, 30, 36, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(227, 30, 36, 0.1);
+}
+
+/* Gradient Text Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #E31E24 0%, #ff4d53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::selection {
+  background-color: rgba(227, 30, 36, 0.3);
+  color: #fff;
 }
