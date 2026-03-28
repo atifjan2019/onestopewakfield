@@ -61,8 +61,9 @@ const localBusinessSchema = {
   telephone: "+4401924000000",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Cinema House, 160 Doncaster Road, Belle Vue",
     addressLocality: "Wakefield",
-    addressRegion: "West Yorkshire",
+    postalCode: "WF1 5HL",
     addressCountry: "GB",
   },
   areaServed: [
@@ -117,10 +118,10 @@ export default function Home() {
               Call Now
             </a>
             <Link
-              href="/contact"
+              href="/book"
               className="w-full sm:w-auto glass-panel glass-panel-hover text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base transition-all duration-300 text-center"
             >
-              Get a Free Quote
+              Book Online
             </Link>
           </div>
         </div>

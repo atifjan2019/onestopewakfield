@@ -85,10 +85,10 @@ export default async function AreaPage({ params }) {
                 Call Now — {PHONE_NUMBER}
               </a>
               <Link
-                href="/contact"
+                href="/book"
                 className="w-full sm:w-auto glass-panel glass-panel-hover text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base transition-all duration-300 text-center"
               >
-                Get a Free Quote
+                Book Online
               </Link>
             </div>
           </div>

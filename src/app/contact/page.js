@@ -74,7 +74,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-white text-lg mb-1">HQ Location</h3>
-                      <p className="text-text-muted text-lg">Wakefield, West Yorkshire</p>
+                      <p className="text-text-muted text-lg">Cinema House, 160 Doncaster Road<br/>Belle Vue, Wakefield WF1 5HL</p>
                       <p className="text-text-muted text-sm mt-1 border border-accent/30 bg-accent/10 inline-block px-2 py-0.5 rounded text-accent font-semibold mt-2">Mobile Fleet Covers All Areas</p>
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="glass-panel p-2 rounded-3xl overflow-hidden shadow-2xl">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47428.41893595!2d-1.5264!3d53.6833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795e06e2640001%3A0x39f6c02b0ab13e52!2sWakefield!5e0!3m2!1sen!2suk!4v1629901000000!5m2!1sen!2suk"
+                  src="https://maps.google.com/maps?q=Cinema%20House,%20160%20Doncaster%20Road,%20Wakefield&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="250"
                   className="rounded-2xl border-0 filter grayscale invert contrast-125 opacity-80"
