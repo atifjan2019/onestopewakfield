@@ -16,7 +16,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
       setLoading(true);
       try {
         const dateStr = selectedDate.toISOString().split('T')[0];
-        const res = await fetch(`http://localhost:8000/api/bookings?date=${dateStr}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings?date=${dateStr}`);
         const data = await res.json();
         if (data.bookedSlots) setBookedSlots(data.bookedSlots);
       } catch (err) {
