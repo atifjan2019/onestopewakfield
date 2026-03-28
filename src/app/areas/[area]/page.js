@@ -66,13 +66,7 @@ export default async function AreaPage({ params }) {
           </nav>
           
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-accent/30 text-accent font-bold text-sm mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              Active coverage in {area.name}
-            </div>
+
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
               Tyre Fitting in {area.name} <br className="hidden md:block"/>

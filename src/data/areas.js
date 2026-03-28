@@ -3,7 +3,7 @@ export const areas = [
   {
     slug: "leeds",
     name: "Leeds",
-    intro: "Serving customers across Leeds from our Wakefield base, our mobile tyre service covers the entire area with fast arrival times.",
+    intro: "Fast mobile tyre fitting across the entire Leeds area.",
     landmarks: "the M1 motorway, A61, White Rose Shopping Centre, and Leeds city centre",
     whyChooseUs: [
       "Typically with you in Leeds within 45 minutes of your call",
@@ -17,7 +17,7 @@ export const areas = [
   {
     slug: "dewsbury",
     name: "Dewsbury",
-    intro: "Dewsbury is one of our closest coverage areas, offering rapid mobile tyre fitting directly to your door.",
+    intro: "Rapid mobile tyre fitting directly to your door in Dewsbury.",
     landmarks: "Dewsbury town centre, the A638, Savile Town, and Dewsbury Ring Road",
     whyChooseUs: [
       "One of our fastest response areas with arrival often under 20 minutes",
@@ -31,7 +31,7 @@ export const areas = [
   {
     slug: "castleford",
     name: "Castleford",
-    intro: "From the high street to residential avenues, we provide fast, reliable tyre services to Castleford drivers every day.",
+    intro: "Fast, reliable tyre services for Castleford drivers.",
     landmarks: "Castleford high street, Junction 32 retail outlet, and the A656",
     whyChooseUs: [
       "Quick access via the A656 with typical arrival in under 25 minutes",
@@ -45,7 +45,7 @@ export const areas = [
   {
     slug: "pontefract",
     name: "Pontefract",
-    intro: "Historic Pontefract is easily accessible from our base, allowing us to offer comprehensive tyre services with minimal wait times.",
+    intro: "Comprehensive tyre services with minimal wait times in Pontefract.",
     landmarks: "Pontefract Castle, Baghill Lane, the A1(M), and Pontefract Racecourse",
     whyChooseUs: [
       "Excellent coverage of all Pontefract postcodes with fast arrival",
@@ -59,7 +59,7 @@ export const areas = [
   {
     slug: "normanton",
     name: "Normanton",
-    intro: "Practically on our doorstep, Normanton is one of our fastest response areas for urgent tyre fitting and repairs.",
+    intro: "Urgent tyre fitting and repairs in Normanton.",
     landmarks: "Normanton town centre, the A655, Wakefield Road, and Altofts",
     whyChooseUs: [
       "Our fastest response area with arrival often within 15 minutes",
@@ -73,7 +73,7 @@ export const areas = [
   {
     slug: "ossett",
     name: "Ossett",
-    intro: "Located just a quick hop along the A638, we provide convenient mobile tyre fitting anywhere in Ossett.",
+    intro: "Convenient mobile tyre fitting anywhere in Ossett.",
     landmarks: "Ossett town centre, the A638, Ossett Academy, and Healey Road",
     whyChooseUs: [
       "Minutes from our Wakefield base with rapid response guaranteed",
@@ -87,7 +87,7 @@ export const areas = [
   {
     slug: "batley",
     name: "Batley",
-    intro: "We cover the whole of Batley including the town centre and Birstall with our full range of rapid tyre services.",
+    intro: "Rapid tyre services covering all of Batley.",
     landmarks: "Batley town centre, the A652, Batley Frontier, and Birstall",
     whyChooseUs: [
       "Consistent coverage across Batley and neighbouring Birstall",
@@ -101,7 +101,7 @@ export const areas = [
   {
     slug: "horbury",
     name: "Horbury",
-    intro: "Horbury sits right on Wakefield's western edge, meaning our team can often reach you within just 10 minutes.",
+    intro: "Lightning-fast tyre fitting across Horbury.",
     landmarks: "Horbury High Street, Horbury Bridge, Quarry Hill, and the Calder & Hebble Navigation",
     whyChooseUs: [
       "One of our closest service areas with some of the fastest arrival times available",

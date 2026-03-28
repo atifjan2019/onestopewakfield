@@ -65,10 +65,6 @@ export default async function ServicePage({ params }) {
               <li className="text-accent">{service.name}</li>
             </ol>
           </nav>
-          
-          <div className="w-24 h-24 mx-auto rounded-3xl bg-accent/10 flex items-center justify-center border border-accent/20 mb-10 shadow-[0_0_40px_rgba(227,30,36,0.3)]">
-             <ServiceIcon name={service.icon} className="w-12 h-12 text-accent drop-shadow-lg" />
-          </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight">
             {service.name.split(' ').map((word, i, arr) => (
