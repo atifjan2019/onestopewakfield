@@ -9,6 +9,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
   const [bookedSlots, setBookedSlots] = useState([]);
   const [weeklyHours, setWeeklyHours] = useState(null);
   const [blockedDates, setBlockedDates] = useState([]);
+  const [slotInterval, setSlotInterval] = useState(15);
   const [slotsLoading, setSlotsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
 
@@ -22,6 +23,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
           const data = await res.json();
           if (data.weeklyHours && isMounted) setWeeklyHours(data.weeklyHours);
           if (data.blockedDates && isMounted) setBlockedDates(data.blockedDates);
+          if (data.slotInterval && isMounted) setSlotInterval(data.slotInterval);
         }
       } catch (err) {
         console.error('Failed to fetch settings:', err);
@@ -127,7 +129,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
         
         while (current < endTime) {
             slots.push(current.toTimeString().substring(0, 5));
-            current.setMinutes(current.getMinutes() + 15);
+            current.setMinutes(current.getMinutes() + slotInterval);
         }
         return slots;
     };
