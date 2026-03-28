@@ -1,8 +1,26 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { PHONE_NUMBER, PHONE_HREF } from "@/data/services";
 
 export default function StickyCallBar() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide if the user scrolls within 250px of the bottom (footer area)
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 250;
+      setIsVisible(!nearBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check on mount
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden p-4">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden p-4 transition-all duration-300 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}`}>
       <div className="glass-panel mx-auto max-w-md rounded-2xl shadow-[0_10px_40px_rgba(227,30,36,0.3)] border border-white/10 p-2 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shimmer_2s_infinite]"></div>
         <a
