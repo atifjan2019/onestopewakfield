@@ -7,8 +7,7 @@ const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 export default function BookingCalendar({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [bookedSlots, setBookedSlots] = useState([]);
-  const [allSlots, setAllSlots] = useState([]);
-  const [activeDays, setActiveDays] = useState(['0', '1', '2', '3', '4', '5', '6']);
+  const [weeklyHours, setWeeklyHours] = useState(null);
   const [blockedDates, setBlockedDates] = useState([]);
   const [slotsLoading, setSlotsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -21,8 +20,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/settings`);
         if (res.ok) {
           const data = await res.json();
-          if (data.slots && isMounted) setAllSlots(data.slots);
-          if (data.activeDays && isMounted) setActiveDays(data.activeDays);
+          if (data.weeklyHours && isMounted) setWeeklyHours(data.weeklyHours);
           if (data.blockedDates && isMounted) setBlockedDates(data.blockedDates);
         }
       } catch (err) {
@@ -82,7 +80,8 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
         const dateStr = localDate.toISOString().split('T')[0];
         
         const isPast = date < today;
-        const isDayInactive = !activeDays.includes(date.getDay().toString());
+        const dayConfig = weeklyHours ? weeklyHours[date.getDay().toString()] : null;
+        const isDayInactive = !dayConfig || dayConfig.active === false;
         const isBlocked = blockedDates.includes(dateStr);
         const isDisabled = isPast || isDayInactive || isBlocked;
         
@@ -111,6 +110,30 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
     return days;
   };
 
+    const generateSlots = (date) => {
+        if (!weeklyHours || !date) return [];
+        const dayConfig = weeklyHours[date.getDay().toString()];
+        if (!dayConfig || !dayConfig.active) return [];
+        
+        const slots = [];
+        const [startH, startM] = dayConfig.start.split(':').map(Number);
+        const [endH, endM] = dayConfig.end.split(':').map(Number);
+        
+        let current = new Date(date);
+        current.setHours(startH, startM, 0, 0);
+        
+        const endTime = new Date(date);
+        endTime.setHours(endH, endM, 0, 0);
+        
+        while (current < endTime) {
+            slots.push(current.toTimeString().substring(0, 5));
+            current.setMinutes(current.getMinutes() + 15);
+        }
+        return slots;
+    };
+
+    const currentDaySlots = generateSlots(selectedDate);
+  
   return (
     <div className="space-y-6">
       <div className="glass-panel p-6 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden">
@@ -160,13 +183,13 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
                         <div className="w-full h-full border-3 border-accent border-t-transparent rounded-full animate-spin"></div>
                     </div>
                 </div>
-            ) : allSlots.length === 0 ? (
+            ) : currentDaySlots.length === 0 ? (
                 <div className="py-8 text-center bg-dark-900/50 rounded-2xl border border-white/5 relative z-10">
-                    <p className="text-gray-400 font-medium text-sm">No specific times have been opened for bookings yet.</p>
+                    <p className="text-gray-400 font-medium text-sm">No bookings available for this date.</p>
                 </div>
             ) : (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 relative z-10">
-                    {allSlots.map(time => {
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 relative z-10 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+                    {currentDaySlots.map(time => {
                         const isBooked = bookedSlots.includes(time);
                         const isSelected = selectedTime === time;
                         return (
