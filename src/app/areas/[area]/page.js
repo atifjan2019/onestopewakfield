@@ -75,7 +75,7 @@ export default async function AreaPage({ params }) {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
-              Tyre Fitting in {area.name} — <br className="hidden md:block"/>
+              Tyre Fitting in {area.name} <br className="hidden md:block"/>
               <span className="text-gradient-accent">Fast & Reliable.</span>
             </h1>
             <p className="text-text-muted text-lg md:text-2xl font-medium max-w-3xl mb-8 md:mb-12 leading-relaxed">{area.intro}</p>
