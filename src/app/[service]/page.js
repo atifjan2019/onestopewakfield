@@ -55,7 +55,7 @@ export default async function ServicePage({ params }) {
       <SchemaMarkup schema={serviceSchema} />
 
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-6 overflow-hidden min-h-[500px] flex flex-col justify-center">
+      <section className="relative py-8 md:py-16 px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 blur-[150px] rounded-full pointer-events-none animate-pulse-slow"></div>
         <div className="mx-auto max-w-7xl relative z-10 text-center w-full">
           <nav className="mb-8 flex justify-center">

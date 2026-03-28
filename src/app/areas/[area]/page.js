@@ -52,7 +52,7 @@ export default async function AreaPage({ params }) {
       <SchemaMarkup schema={areaSchema} />
 
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col justify-center">
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
         <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none animate-pulse-slow"></div>
         <div className="mx-auto max-w-7xl relative z-10 w-full text-center">
           <nav className="mb-8 flex justify-center">
@@ -74,7 +74,7 @@ export default async function AreaPage({ params }) {
             </h1>
             <p className="text-text-muted text-lg md:text-2xl font-medium max-w-3xl mb-8 md:mb-12 leading-relaxed">{area.intro}</p>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <a
                 href={PHONE_HREF}
                 className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 font-black text-white text-base md:text-sm md:text-base transition-all duration-300 bg-gradient-to-r from-accent to-accent-hover rounded-2xl shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(227,30,36,0.6)] hover:-translate-y-1"
