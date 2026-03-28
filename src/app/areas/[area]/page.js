@@ -52,9 +52,9 @@ export default async function AreaPage({ params }) {
       <SchemaMarkup schema={areaSchema} />
 
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col justify-center">
         <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none animate-pulse-slow"></div>
-        <div className="mx-auto max-w-7xl relative z-10">
+        <div className="mx-auto max-w-7xl relative z-10 w-full">
           <nav className="mb-8">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>

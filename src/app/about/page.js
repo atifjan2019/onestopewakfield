@@ -11,9 +11,9 @@ export default function AboutPage() {
   return (
     <div className="bg-primary min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col justify-center">
         <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="mx-auto max-w-7xl relative z-10">
+        <div className="mx-auto max-w-7xl relative z-10 w-full">
           <nav className="mb-8">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
