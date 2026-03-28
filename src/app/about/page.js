@@ -13,15 +13,15 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col justify-center">
         <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="mx-auto max-w-7xl relative z-10 w-full">
-          <nav className="mb-8">
+        <div className="mx-auto max-w-7xl relative z-10 w-full text-center">
+          <nav className="mb-8 flex justify-center">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li className="text-white/30">/</li>
               <li className="text-accent">About Us</li>
             </ol>
           </nav>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.3em] mb-4 md:mb-6 tracking-tight">
               Driven by <span className="text-gradient-accent">Quality</span> & Speed.
             </h1>
