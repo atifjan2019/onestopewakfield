@@ -8,6 +8,8 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [bookedSlots, setBookedSlots] = useState([]);
   const [allSlots, setAllSlots] = useState([]);
+  const [activeDays, setActiveDays] = useState(['0', '1', '2', '3', '4', '5', '6']);
+  const [blockedDates, setBlockedDates] = useState([]);
   const [slotsLoading, setSlotsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
 
@@ -20,6 +22,8 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
         if (res.ok) {
           const data = await res.json();
           if (data.slots && isMounted) setAllSlots(data.slots);
+          if (data.activeDays && isMounted) setActiveDays(data.activeDays);
+          if (data.blockedDates && isMounted) setBlockedDates(data.blockedDates);
         }
       } catch (err) {
         console.error('Failed to fetch settings:', err);
@@ -72,21 +76,30 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
 
     for (let d = 1; d <= daysInMonth; d++) {
         const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), d);
+        
+        // Adjust date string carefully due to timezones
+        const localDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+        const dateStr = localDate.toISOString().split('T')[0];
+        
         const isPast = date < today;
+        const isDayInactive = !activeDays.includes(date.getDay().toString());
+        const isBlocked = blockedDates.includes(dateStr);
+        const isDisabled = isPast || isDayInactive || isBlocked;
+        
         const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
 
         days.push(
             <button
             key={d}
             type="button"
-            disabled={isPast}
+            disabled={isDisabled}
             onClick={() => {
                 setSelectedDate(date);
                 setSelectedTime(null);
             }}
             className={`h-12 w-12 rounded-2xl flex flex-col items-center justify-center transition-all ${
-                isPast ? 'text-text-muted/20 cursor-not-allowed opacity-50' :
-                isSelected ? 'bg-accent text-white shadow-[0_0_20px_rgba(227,30,36,0.3)] scale-110 font-bold' :
+                isDisabled ? 'text-text-muted/20 cursor-not-allowed opacity-50 bg-dark-900/40' :
+                isSelected ? 'bg-accent text-white shadow-[0_0_20px_rgba(227,30,36,0.3)] scale-110 font-bold border border-accent/50' :
                 'bg-white/5 border border-white/5 text-white hover:bg-white/10 hover:border-white/20 hover:scale-105'
             }`}
             >
