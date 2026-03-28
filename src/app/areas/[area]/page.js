@@ -72,7 +72,7 @@ export default async function AreaPage({ params }) {
               Tyre Fitting in {area.name} <br className="hidden md:block"/>
               <span className="text-gradient-accent">Fast & Reliable.</span>
             </h1>
-            <p className="text-text-muted text-lg md:text-2xl font-medium max-w-3xl mb-8 md:mb-12 leading-relaxed">{area.intro}</p>
+            <p className="text-text-muted text-lg md:text-2xl font-medium max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed">{area.intro}</p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <a
