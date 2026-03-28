@@ -184,11 +184,11 @@ export default async function AreaPage({ params }) {
             <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
               {nearbyAreaData.map((nearby) => (
                 <Link
-                  key={nearby!.slug}
-                  href={`/areas/${nearby!.slug}`}
+                  key={nearby.slug}
+                  href={`/areas/${nearby.slug}`}
                   className="glass-panel text-text-muted hover:text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 hover:border-accent/40"
                 >
-                  {nearby!.name}
+                  {nearby.name}
                 </Link>
               ))}
               <Link
