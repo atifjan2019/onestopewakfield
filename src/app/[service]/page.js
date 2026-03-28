@@ -10,7 +10,7 @@ export async function generateStaticParams() {
   return services.map((s) => ({ service: s.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ service: string }> }) {
+export async function generateMetadata({ params }) {
   const { service: slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   };
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
+export default async function ServicePage({ params }) {
   const { service: slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
