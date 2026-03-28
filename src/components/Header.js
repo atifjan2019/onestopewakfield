@@ -24,19 +24,6 @@ export default function Header() {
         scrolled ? "bg-primary/80 backdrop-blur-md border-b border-border shadow-2xl" : "bg-transparent"
       }`}
     >
-      {/* Top bar */}
-      <div className={`hidden md:block transition-all duration-300 ${scrolled ? "h-0 overflow-hidden opacity-0" : "bg-primary-light/50 border-b border-border"}`}>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs font-medium text-text-muted">
-          <span>Serving Wakefield & surrounding areas — 24/7 Emergency available</span>
-          <a href={PHONE_HREF} className="text-accent hover:text-accent-hover transition-colors font-bold tracking-wide flex items-center gap-1">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-            {PHONE_NUMBER}
-          </a>
-        </div>
-      </div>
 
       {/* Main nav */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
@@ -110,24 +97,24 @@ export default function Header() {
             Contact
           </Link>
 
-          <a
-            href={PHONE_HREF}
+          <Link
+            href="/book"
             className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 font-bold text-white transition-all duration-300 bg-accent rounded-full hover:bg-accent-hover shadow-[0_0_20px_rgba(227,30,36,0.3)] hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] hover:-translate-y-0.5"
           >
             <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
             </svg>
-            Call Now
-          </a>
+            Book Now
+          </Link>
         </nav>
 
         {/* Mobile menu button */}
         <div className="flex items-center gap-4 lg:hidden">
-          <a href={PHONE_HREF} className="bg-accent text-white font-bold p-2.5 rounded-xl shadow-[0_0_15px_rgba(227,30,36,0.4)]">
+          <Link href="/book" className="bg-accent text-white font-bold p-2.5 rounded-xl shadow-[0_0_15px_rgba(227,30,36,0.4)]">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
             </svg>
-          </a>
+          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="text-white p-2 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
