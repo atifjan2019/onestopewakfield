@@ -92,6 +92,12 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-text-muted hover:text-white text-sm transition-colors">Contact Us</Link>
               </li>
+              <li>
+                <Link href="/book" className="text-text-muted hover:text-white text-sm transition-colors">Book Online</Link>
+              </li>
+              <li>
+                <Link href="/sitemap-page" className="text-text-muted hover:text-white text-sm transition-colors">Sitemap</Link>
+              </li>
             </ul>
 
             <div className="glass-panel rounded-xl p-5 border-l-2 border-l-accent">
