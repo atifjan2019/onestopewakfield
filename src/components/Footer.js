@@ -13,16 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-hover text-white font-extrabold text-xl shadow-[0_0_15px_rgba(227,30,36,0.5)]">
-                OS
-              </div>
-              <div className="text-white flex flex-col justify-center">
-                <div className="text-xl font-black tracking-tight leading-none">
-                  One Stop Tyres
-                </div>
-                <div className="text-xs text-accent font-bold tracking-widest uppercase mt-1">Wakefield</div>
-              </div>
+            <Link href="/" className="inline-flex items-center group">
+              <img
+                src="/logo.png"
+                alt="One Stop Tyres Wakefield"
+                className="h-12 w-auto drop-shadow-[0_0_8px_rgba(227,30,36,0.4)]"
+              />
             </Link>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
               Fast, reliable tyre services across Wakefield and surrounding areas. Premium quality fitting, no hidden fees.
@@ -116,6 +112,17 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-text-muted">
             © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.
+          </p>
+          <p className="text-xs text-text-muted">
+            Developed with <span className="text-red-500">❤️</span> by{" "}
+            <a
+              href="https://webspires.co.uk/?utm_source=onestopwakefield"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-white hover:text-accent transition-colors"
+            >
+              Webspires
+            </a>
           </p>
           <div className="flex items-center gap-4 text-xs text-text-muted">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>

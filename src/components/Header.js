@@ -27,16 +27,12 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-hover text-white font-extrabold text-xl shadow-[0_0_15px_rgba(227,30,36,0.5)] group-hover:scale-105 transition-transform duration-300">
-            OS
-          </div>
-          <div className="text-white flex flex-col justify-center">
-            <div className="text-xl font-black tracking-tight leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-text-muted transition-all duration-300">
-              One Stop Tyres
-            </div>
-            <div className="text-xs text-accent font-bold tracking-widest uppercase mt-1">Wakefield</div>
-          </div>
+        <Link href="/" className="flex items-center group">
+          <img
+            src="/logo.png"
+            alt="One Stop Tyres Wakefield"
+            className="h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(227,30,36,0.4)]"
+          />
         </Link>
 
         {/* Desktop nav */}
