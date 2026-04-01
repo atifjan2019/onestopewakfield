@@ -90,10 +90,10 @@ export default function ContactPage() {
                       <h3 className="font-bold text-white text-lg mb-3">Operating Hours</h3>
                       <ul className="text-text-muted space-y-2">
                         <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                          <span>Monday – Friday</span><span className="font-bold text-white">8:00am – 6:00pm</span>
+                          <span>Monday – Saturday</span><span className="font-bold text-white">9:00am – 6:00pm</span>
                         </li>
                         <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                          <span>Saturday</span><span className="font-bold text-white">8:00am – 4:00pm</span>
+                          <span>Sunday</span><span className="font-bold text-white">9:00am – 5:00pm</span>
                         </li>
                         <li className="flex justify-between items-center pt-1">
                           <span>Out of Hours</span><span className="font-black text-accent">Emergency Only</span>

@@ -103,8 +103,8 @@ export default function Footer() {
             <div className="glass-panel rounded-xl p-5 border-l-2 border-l-accent">
               <h3 className="text-white font-bold text-sm mb-3">Operating Hours</h3>
               <ul className="space-y-2 text-xs text-text-muted">
-                <li className="flex justify-between"><span>Mon – Fri</span> <span className="text-white">8:00am – 6:00pm</span></li>
-                <li className="flex justify-between"><span>Saturday</span> <span className="text-white">8:00am – 4:00pm</span></li>
+                <li className="flex justify-between"><span>Mon – Sat</span> <span className="text-white">9:00am – 6:00pm</span></li>
+                <li className="flex justify-between"><span>Sunday</span> <span className="text-white">9:00am – 5:00pm</span></li>
                 <li className="flex justify-between pt-2 mt-2 border-t border-white/10">
                   <span className="text-accent font-bold">24/7</span> 
                   <span className="text-white">Emergency Callouts</span>
