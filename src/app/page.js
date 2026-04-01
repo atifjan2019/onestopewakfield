@@ -2,7 +2,7 @@ import Link from "next/link";
 import { services, PHONE_NUMBER, PHONE_HREF } from "@/data/services";
 import { areas } from "@/data/areas";
 import ServiceCard from "@/components/ServiceCard";
-import TestimonialCard from "@/components/TestimonialCard";
+import TestimonialSlider from "@/components/TestimonialSlider";
 import CTABlock from "@/components/CTABlock";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
@@ -190,11 +190,7 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Driver Approved.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} text={t.text} name={t.name} rating={t.rating} />
-            ))}
-          </div>
+          <TestimonialSlider testimonials={testimonials} />
         </div>
       </section>
 
