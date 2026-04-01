@@ -134,7 +134,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
         const endTime = new Date(date);
         endTime.setHours(endH, endM, 0, 0);
         
-        while (current < endTime) {
+        while (current <= endTime) {
             slots.push(current.toTimeString().substring(0, 5));
             current.setMinutes(current.getMinutes() + slotInterval);
         }
