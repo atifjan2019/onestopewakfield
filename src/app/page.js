@@ -58,7 +58,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "One Stop Tyres Wakefield",
   description: "Professional tyre fitting, mobile tyre service, emergency repairs, and wheel balancing in Wakefield and surrounding areas.",
-  telephone: "+4401924000000",
+  telephone: "+447852252186",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Cinema House, 160 Doncaster Road, Belle Vue",
