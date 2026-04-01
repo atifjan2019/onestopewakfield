@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+const FULL_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const formatTime12 = (time24) => {
   const [h, m] = time24.split(':').map(Number);
@@ -20,7 +21,6 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
   const [slotsLoading, setSlotsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  // Fetch dynamic available slots from backend config
   useEffect(() => {
     let isMounted = true;
     const fetchSettings = async () => {
@@ -42,7 +42,6 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
     return () => { isMounted = false; };
   }, []);
 
-  // Fetch booked slots for the selected date
   useEffect(() => {
     if (!selectedDate) return;
     let isMounted = true;
@@ -69,6 +68,11 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
   const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   const getFirstDayOfMonth = (date) => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
 
+  const isToday = (date) => {
+    const today = new Date();
+    return date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
+  };
+
   const renderCalendar = () => {
     const daysInMonth = getDaysInMonth(currentMonth);
     const firstDay = getFirstDayOfMonth(currentMonth);
@@ -77,153 +81,236 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
     today.setHours(0, 0, 0, 0);
 
     for (let i = 0; i < firstDay; i++) {
-        // empty slots
-        days.push(<div key={`empty-${i}`} className="h-12 w-12"></div>);
+      days.push(<div key={`empty-${i}`} className="aspect-square" />);
     }
 
     for (let d = 1; d <= daysInMonth; d++) {
-        const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), d);
-        
-        // Adjust date string carefully due to timezones
-        const localDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
-        const dateStr = localDate.toISOString().split('T')[0];
-        
-        const isPast = date < today;
-        const dayConfig = weeklyHours ? weeklyHours[date.getDay().toString()] : null;
-        const isDayInactive = !dayConfig || dayConfig.active === false;
-        const isBlocked = blockedDates.includes(dateStr);
-        const isDisabled = isPast || isDayInactive || isBlocked;
-        
-        const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+      const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), d);
+      const localDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+      const dateStr = localDate.toISOString().split('T')[0];
 
-        days.push(
-            <button
-            key={d}
-            type="button"
-            disabled={isDisabled}
-            onClick={() => {
-                setSelectedDate(date);
-                setSelectedTime(null);
-            }}
-            className={`h-12 w-12 rounded-2xl flex flex-col items-center justify-center transition-all ${
-                isDisabled ? 'text-text-muted/20 cursor-not-allowed opacity-50 bg-dark-900/40' :
-                isSelected ? 'bg-accent text-white shadow-[0_0_20px_rgba(227,30,36,0.3)] scale-110 font-bold border border-accent/50' :
-                'bg-white/5 border border-white/5 text-white hover:bg-white/10 hover:border-white/20 hover:scale-105'
+      const isPast = date < today;
+      const dayConfig = weeklyHours ? weeklyHours[date.getDay().toString()] : null;
+      const isDayInactive = !dayConfig || dayConfig.active === false;
+      const isBlocked = blockedDates.includes(dateStr);
+      const isDisabled = isPast || isDayInactive || isBlocked;
+      const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+      const isTodayDate = isToday(date);
+
+      days.push(
+        <button
+          key={d}
+          type="button"
+          disabled={isDisabled}
+          onClick={() => {
+            setSelectedDate(date);
+            setSelectedTime(null);
+          }}
+          className={`aspect-square rounded-xl flex items-center justify-center text-sm font-semibold transition-all duration-200 relative
+            ${isDisabled
+              ? 'text-white/10 cursor-not-allowed'
+              : isSelected
+                ? 'bg-accent text-white font-black shadow-[0_0_25px_rgba(227,30,36,0.4)] ring-2 ring-accent/50 scale-[1.08]'
+                : isTodayDate
+                  ? 'bg-white/10 text-white font-bold ring-1 ring-white/20 hover:bg-accent/20 hover:ring-accent/40'
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
             }`}
-            >
-                <span className="text-sm">{d}</span>
-                {isSelected && <span className="w-1 h-1 bg-white rounded-full mt-1"></span>}
-            </button>
-        );
+        >
+          {d}
+          {isTodayDate && !isSelected && (
+            <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-accent rounded-full" />
+          )}
+        </button>
+      );
     }
     return days;
   };
 
-    const generateSlots = (date) => {
-        if (!weeklyHours || !date) return [];
-        const dayConfig = weeklyHours[date.getDay().toString()];
-        if (!dayConfig || !dayConfig.active) return [];
-        
-        const slots = [];
-        const [startH, startM] = dayConfig.start.split(':').map(Number);
-        const [endH, endM] = dayConfig.end.split(':').map(Number);
-        
-        let current = new Date(date);
-        current.setHours(startH, startM, 0, 0);
-        
-        const endTime = new Date(date);
-        endTime.setHours(endH, endM, 0, 0);
-        
-        while (current <= endTime) {
-            slots.push(current.toTimeString().substring(0, 5));
-            current.setMinutes(current.getMinutes() + slotInterval);
-        }
-        return slots;
-    };
+  const generateSlots = (date) => {
+    if (!weeklyHours || !date) return [];
+    const dayConfig = weeklyHours[date.getDay().toString()];
+    if (!dayConfig || !dayConfig.active) return [];
 
-    const currentDaySlots = generateSlots(selectedDate);
-  
+    const slots = [];
+    const [startH, startM] = dayConfig.start.split(':').map(Number);
+    const [endH, endM] = dayConfig.end.split(':').map(Number);
+
+    let current = new Date(date);
+    current.setHours(startH, startM, 0, 0);
+
+    const endTime = new Date(date);
+    endTime.setHours(endH, endM, 0, 0);
+
+    while (current <= endTime) {
+      slots.push(current.toTimeString().substring(0, 5));
+      current.setMinutes(current.getMinutes() + slotInterval);
+    }
+    return slots;
+  };
+
+  const currentDaySlots = generateSlots(selectedDate);
+
+  // Group time slots by period (Morning, Afternoon, Evening)
+  const groupSlots = (slots) => {
+    const morning = [];
+    const afternoon = [];
+    const evening = [];
+    slots.forEach(time => {
+      const h = parseInt(time.split(':')[0]);
+      if (h < 12) morning.push(time);
+      else if (h < 17) afternoon.push(time);
+      else evening.push(time);
+    });
+    const groups = [];
+    if (morning.length) groups.push({ label: 'Morning', icon: '☀️', slots: morning });
+    if (afternoon.length) groups.push({ label: 'Afternoon', icon: '🌤️', slots: afternoon });
+    if (evening.length) groups.push({ label: 'Evening', icon: '🌙', slots: evening });
+    return groups;
+  };
+
+  const monthName = currentMonth.toLocaleString('default', { month: 'long' });
+  const year = currentMonth.getFullYear();
+
   return (
-    <div className="space-y-6">
-      <div className="glass-panel p-6 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full pointer-events-none"></div>
-        
-        <div className="flex items-center justify-between mb-8 relative z-10">
-          <div className="flex flex-col">
-            <h3 className="text-2xl font-black text-white leading-tight">
-              {currentMonth.toLocaleString('default', { month: 'long' })}
-            </h3>
-            <span className="text-sm font-bold text-accent">{currentMonth.getFullYear()}</span>
-          </div>
-          <div className="flex gap-2">
-            <button type="button" onClick={prevMonth} className="w-10 h-10 rounded-full bg-dark-900 border border-white/5 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/20 transition-all shadow-lg">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-            <button type="button" onClick={nextMonth} className="w-10 h-10 rounded-full bg-dark-900 border border-white/5 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/20 transition-all shadow-lg">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </button>
+    <div className="space-y-5">
+      {/* Calendar Card */}
+      <div className="relative rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(165deg, rgba(30,30,35,0.95) 0%, rgba(18,18,22,0.98) 100%)' }}>
+        {/* Header */}
+        <div className="px-6 pt-6 pb-4">
+          <div className="flex items-center justify-between mb-1">
+            <div>
+              <h3 className="text-xl font-black text-white tracking-tight">{monthName}</h3>
+              <span className="text-xs font-semibold text-white/30 uppercase tracking-widest">{year}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={prevMonth}
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
+              </button>
+              <button
+                type="button"
+                onClick={nextMonth}
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-7 gap-2 mb-4 text-center text-xs font-black text-white/40 uppercase tracking-widest relative z-10">
-          {DAYS.map(d => <div key={d}>{d}</div>)}
+        {/* Divider */}
+        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        {/* Day Headers */}
+        <div className="px-6 pt-4 pb-2">
+          <div className="grid grid-cols-7 gap-1">
+            {DAYS.map((d, i) => (
+              <div key={`${d}-${i}`} className="text-center text-[10px] font-bold text-white/25 uppercase tracking-widest py-1">
+                {d}
+              </div>
+            ))}
+          </div>
         </div>
-        
-        <div className="grid grid-cols-7 gap-2 place-items-center relative z-10">
-          {renderCalendar()}
+
+        {/* Calendar Grid */}
+        <div className="px-6 pb-6">
+          <div className="grid grid-cols-7 gap-1">
+            {renderCalendar()}
+          </div>
         </div>
+
+        {/* Selected Date Indicator */}
+        {selectedDate && (
+          <div className="mx-6 mb-6 flex items-center gap-3 px-4 py-3 rounded-xl bg-accent/10 border border-accent/20">
+            <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+              <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-white font-bold text-sm leading-tight">
+                {selectedDate.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}
+              </p>
+              <p className="text-accent/70 text-xs font-medium mt-0.5">
+                {currentDaySlots.length} time slot{currentDaySlots.length !== 1 ? 's' : ''} available
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
+      {/* Time Slots */}
       {selectedDate && (
-        <div className="glass-panel p-6 rounded-3xl border border-white/5 shadow-2xl animate-fade-in-up relative overflow-hidden">
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full pointer-events-none"></div>
-            
-            <div className="flex items-end justify-between mb-6 relative z-10">
-                <div>
-                    <h3 className="text-2xl font-black text-white">Available Times</h3>
-                    <p className="text-sm font-medium text-text-muted mt-1">{selectedDate.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
-                </div>
+        <div className="relative rounded-2xl overflow-hidden animate-fade-in-up" style={{ background: 'linear-gradient(165deg, rgba(30,30,35,0.95) 0%, rgba(18,18,22,0.98) 100%)' }}>
+          <div className="px-6 pt-6 pb-2">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-black text-white tracking-tight">Select a Time</h3>
+              {selectedTime && (
+                <span className="text-xs font-bold text-accent bg-accent/10 px-3 py-1.5 rounded-full border border-accent/20">
+                  {formatTime12(selectedTime)}
+                </span>
+              )}
             </div>
-            
+          </div>
+
+          <div className="mx-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-2" />
+
+          <div className="px-6 pb-6 pt-2">
             {slotsLoading || loading ? (
-                <div className="flex justify-center py-10 relative z-10">
-                    <div className="w-8 h-8 flex items-center justify-center">
-                        <div className="w-full h-full border-3 border-accent border-t-transparent rounded-full animate-spin"></div>
-                    </div>
-                </div>
+              <div className="flex flex-col items-center justify-center py-12 gap-3">
+                <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+                <span className="text-white/30 text-xs font-medium">Loading available times...</span>
+              </div>
             ) : currentDaySlots.length === 0 ? (
-                <div className="py-8 text-center bg-dark-900/50 rounded-2xl border border-white/5 relative z-10">
-                    <p className="text-gray-400 font-medium text-sm">No bookings available for this date.</p>
+              <div className="py-10 text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-white/5 flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white/20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <p className="text-white/30 font-semibold text-sm">No slots available</p>
+                <p className="text-white/15 text-xs mt-1">Try selecting a different date</p>
+              </div>
             ) : (
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 relative z-10 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
-                    {currentDaySlots.map(time => {
+              <div className="space-y-5 max-h-[400px] overflow-y-auto pr-1 custom-scrollbar">
+                {groupSlots(currentDaySlots).map(group => (
+                  <div key={group.label}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-sm">{group.icon}</span>
+                      <span className="text-[11px] font-bold text-white/30 uppercase tracking-widest">{group.label}</span>
+                      <div className="flex-1 h-px bg-white/5" />
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {group.slots.map(time => {
                         const isBooked = bookedSlots.includes(time);
                         const isSelected = selectedTime === time;
                         return (
-                        <button
+                          <button
                             key={time}
                             type="button"
                             disabled={isBooked}
                             onClick={() => setSelectedTime(time)}
-                            className={`py-3.5 px-4 rounded-2xl text-sm font-bold transition-all relative overflow-hidden group ${
-                            isBooked ? 'bg-white/5 border border-white/5 text-white/20 cursor-not-allowed' :
-                            isSelected ? 'bg-accent border border-accent text-white shadow-[0_0_15px_rgba(227,30,36,0.3)]' :
-                            'bg-dark-900/80 border border-white/10 text-white hover:border-accent/50 hover:bg-accent/10'
-                            }`}
-                        >
-                            <span className="relative z-10">{formatTime12(time)}</span>
-                            {isBooked && (
-                                <div className="absolute inset-0 flex items-center justify-center opacity-40">
-                                    <div className="w-full h-[1px] bg-white transform -rotate-12 absolute scale-110"></div>
-                                </div>
-                            )}
-                        </button>
+                            className={`py-3 px-2 rounded-xl text-sm font-bold transition-all duration-200 relative
+                              ${isBooked
+                                ? 'bg-white/[0.02] text-white/10 cursor-not-allowed line-through'
+                                : isSelected
+                                  ? 'bg-accent text-white shadow-[0_4px_20px_rgba(227,30,36,0.35)] ring-1 ring-accent/50 scale-[1.03]'
+                                  : 'bg-white/[0.04] text-white/60 hover:bg-white/[0.08] hover:text-white border border-transparent hover:border-white/10'
+                              }`}
+                          >
+                            {formatTime12(time)}
+                          </button>
                         );
-                    })}
-                </div>
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
             )}
+          </div>
         </div>
       )}
     </div>
