@@ -173,79 +173,91 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
 
   return (
     <div className="space-y-5">
-      {/* Calendar Card */}
-      <div className="relative rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(165deg, rgba(30,30,35,0.95) 0%, rgba(18,18,22,0.98) 100%)' }}>
-        {/* Header */}
-        <div className="px-6 pt-6 pb-4">
-          <div className="flex items-center justify-between mb-1">
-            <div>
-              <h3 className="text-xl font-black text-white tracking-tight">{monthName}</h3>
-              <span className="text-xs font-semibold text-white/30 uppercase tracking-widest">{year}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <button
-                type="button"
-                onClick={prevMonth}
-                className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
-              </button>
-              <button
-                type="button"
-                onClick={nextMonth}
-                className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-        {/* Day Headers */}
-        <div className="px-6 pt-4 pb-2">
-          <div className="grid grid-cols-7 gap-1">
-            {DAYS.map((d, i) => (
-              <div key={`${d}-${i}`} className="text-center text-[10px] font-bold text-white/25 uppercase tracking-widest py-1">
-                {d}
+      {/* Calendar Card - hidden when date is selected */}
+      {!selectedDate && (
+        <div className="relative rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(165deg, rgba(30,30,35,0.95) 0%, rgba(18,18,22,0.98) 100%)' }}>
+          {/* Header */}
+          <div className="px-6 pt-6 pb-4">
+            <div className="flex items-center justify-between mb-1">
+              <div>
+                <h3 className="text-xl font-black text-white tracking-tight">{monthName}</h3>
+                <span className="text-xs font-semibold text-white/30 uppercase tracking-widest">{year}</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Calendar Grid */}
-        <div className="px-6 pb-6">
-          <div className="grid grid-cols-7 gap-1">
-            {renderCalendar()}
-          </div>
-        </div>
-
-        {/* Selected Date Indicator */}
-        {selectedDate && (
-          <div className="mx-6 mb-6 flex items-center gap-3 px-4 py-3 rounded-xl bg-accent/10 border border-accent/20">
-            <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-              <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-white font-bold text-sm leading-tight">
-                {selectedDate.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}
-              </p>
-              <p className="text-accent/70 text-xs font-medium mt-0.5">
-                {currentDaySlots.length} time slot{currentDaySlots.length !== 1 ? 's' : ''} available
-              </p>
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={prevMonth}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={nextMonth}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
+                </button>
+              </div>
             </div>
           </div>
-        )}
-      </div>
 
-      {/* Time Slots */}
+          {/* Divider */}
+          <div className="mx-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+          {/* Day Headers */}
+          <div className="px-6 pt-4 pb-2">
+            <div className="grid grid-cols-7 gap-1">
+              {DAYS.map((d, i) => (
+                <div key={`${d}-${i}`} className="text-center text-[10px] font-bold text-white/25 uppercase tracking-widest py-1">
+                  {d}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Calendar Grid */}
+          <div className="px-6 pb-6">
+            <div className="grid grid-cols-7 gap-1">
+              {renderCalendar()}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Time Slots - shown when date is selected */}
       {selectedDate && (
         <div className="relative rounded-2xl overflow-hidden animate-fade-in-up" style={{ background: 'linear-gradient(165deg, rgba(30,30,35,0.95) 0%, rgba(18,18,22,0.98) 100%)' }}>
           <div className="px-6 pt-6 pb-2">
+            {/* Back button + selected date */}
+            <button
+              type="button"
+              onClick={() => { setSelectedDate(null); setSelectedTime(null); }}
+              className="flex items-center gap-2 text-white/40 hover:text-white text-xs font-bold mb-4 transition-colors group"
+            >
+              <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Change Date
+            </button>
+
+            {/* Selected date info */}
+            <div className="flex items-center gap-3 mb-4 px-4 py-3 rounded-xl bg-accent/10 border border-accent/20">
+              <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+                <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm leading-tight">
+                  {selectedDate.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}
+                </p>
+                <p className="text-accent/70 text-xs font-medium mt-0.5">
+                  {currentDaySlots.length} time slot{currentDaySlots.length !== 1 ? 's' : ''} available
+                </p>
+              </div>
+            </div>
+
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-black text-white tracking-tight">Select a Time</h3>
               {selectedTime && (
