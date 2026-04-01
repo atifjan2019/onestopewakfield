@@ -4,6 +4,13 @@ import { useState, useEffect } from 'react';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+const formatTime12 = (time24) => {
+  const [h, m] = time24.split(':').map(Number);
+  const period = h >= 12 ? 'PM' : 'AM';
+  const hour12 = h % 12 || 12;
+  return `${hour12}:${m.toString().padStart(2, '0')} ${period}`;
+};
+
 export default function BookingCalendar({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [bookedSlots, setBookedSlots] = useState([]);
@@ -206,7 +213,7 @@ export default function BookingCalendar({ selectedDate, setSelectedDate, selecte
                             'bg-dark-900/80 border border-white/10 text-white hover:border-accent/50 hover:bg-accent/10'
                             }`}
                         >
-                            <span className="relative z-10">{time}</span>
+                            <span className="relative z-10">{formatTime12(time)}</span>
                             {isBooked && (
                                 <div className="absolute inset-0 flex items-center justify-center opacity-40">
                                     <div className="w-full h-[1px] bg-white transform -rotate-12 absolute scale-110"></div>
