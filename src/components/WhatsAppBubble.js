@@ -1,11 +1,7 @@
 'use client';
 
-import { PHONE_NUMBER } from '@/data/services';
-
 export default function WhatsAppBubble() {
-  // Strip spaces from phone number and remove leading 0, add UK country code
-  const waNumber = '44' + PHONE_NUMBER.replace(/\s/g, '').replace(/^0/, '');
-  const waUrl = `https://wa.me/${waNumber}?text=Hi%2C%20I%20need%20a%20tyre%20service`;
+  const waUrl = 'https://wa.me/447774096060?text=Hi%2C%20I%20need%20a%20tyre%20service';
 
   return (
     <a
