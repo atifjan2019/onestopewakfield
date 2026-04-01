@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StickyCallBar from "@/components/StickyCallBar";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 
 const inter = Inter({
@@ -42,11 +41,9 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <StickyCallBar />
         <WhatsAppBubble />
-        {/* Padding for sticky call bar on mobile */}
-        <div className="h-14 lg:hidden" />
       </body>
     </html>
   );
 }
+
