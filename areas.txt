@@ -1,0 +1,146 @@
+* Leeds
+* Aberford
+* Adel
+* Adwalton
+* Ainsty
+* Aireborough
+* Allerton Bywater
+* Alwoodley
+* Armley
+* Arthington
+* Austhorpe
+* Bardsey
+* Bardsey cum Rigton
+* Barwick-in-Elmet
+* Beck Hill
+* Beckett Park
+* Beeston
+* Beeston Hill
+* Belle Isle
+* Blenheim
+* Boston Spa
+* Bramham cum Oglethorpe
+* Bramley
+* Bramstan
+* Burley
+* Burmantofts
+* Buslingthorpe
+* Calverley
+* Carlton
+* Chapel Allerton
+* Chapeltown
+* Churwell
+* Clifford
+* Cockersdale
+* Collingham
+* Colton
+* Cottingley
+* Cranmer Bank
+* Cross Gates
+* Cross Green
+* Drighlington
+* East Ardsley
+* East End Park
+* East Keswick
+* Far Headingley
+* Farnley
+* Farsley
+* Fearnville
+* Fulneck Moravian Settlement
+* Garforth
+* Gildersome
+* Gipton
+* Gledhow
+* Great Preston
+* Guiseley
+* Halton
+* Halton Moor
+* Harehills
+* Harewood
+* Hawksworth
+* Headingley
+* Holbeck
+* Holbeck Urban Village
+* Holt Park
+* Horsforth
+* Hunslet
+* Hyde Park
+* Ireland Wood
+* Killingbeck
+* Kippax
+* Kirkstall
+* Knowsthorpe
+* Lawnswood
+* Ledsham
+* Ledston
+* Leeds City Centre
+* Lincoln Green
+* Linton
+* Little London
+* Lofthouse
+* Lovell Park
+* Mabgate
+* Manston
+* Meanwood
+* Methley
+* Micklefield
+* Micklethwaite
+* Mickletown
+* Middleton
+* Miles Hill
+* Moor Allerton
+* Moor Grange
+* Moorside
+* Moortown
+* Morley
+* Newall
+* Oakwood
+* Osmondthorpe
+* Otley
+* Oulton
+* Pendas Fields
+* Pool-in-Wharfedale
+* Potternewton
+* Potterton
+* Pudsey
+* Quarry Hill
+* Rawdon
+* Richmond Hill
+* Robin Hood
+* Rodley
+* Rothwell
+* Roundhay
+* Scarcroft
+* Scholes
+* Scott Hall
+* Seacroft
+* Shadwell
+* Sheepscar
+* Stanningley
+* Stourton
+* Sturton Grange
+* Swarcliffe
+* Swillington
+* Swinnow
+* Thorner
+* Thorp Arch
+* Thorpe on the Hill
+* Tingley
+* Tinshill
+* Tyersal
+* Walton
+* Weardley
+* Weetwood
+* West Ardsley
+* West Park
+* Wetherby
+* Whinmoor
+* Whitkirk
+* Wike
+* Woodhouse
+* Woodlesford
+* Wortley
+* Wothersome
+* Wykebeck
+* Yeadon
+
