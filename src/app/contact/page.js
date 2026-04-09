@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PHONE_NUMBER, PHONE_HREF } from "@/data/services";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact Us | One Stop Tyres Wakefield",
@@ -41,9 +42,17 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-8 md:py-16 lg:py-8 md:py-16 relative z-10 bg-surface-dark border-t border-border/50">
-        <div className="mx-auto max-w-3xl px-4 md:px-6">
-          <div className="space-y-6">
+      <section className="py-8 md:py-16 relative z-10 bg-surface-dark border-t border-border/50">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            
+            {/* Form Column */}
+            <div className="lg:col-span-3">
+               <ContactForm />
+            </div>
+
+            {/* Info Column */}
+            <div className="lg:col-span-2 space-y-6">
               <div className="glass-panel rounded-3xl p-8 sm:p-10">
                 <h2 className="text-2xl font-black text-white mb-8 border-b border-white/10 pb-4">Business Information</h2>
 
@@ -120,6 +129,7 @@ export default function ContactPage() {
 
             </div>
           </div>
+        </div>
       </section>
     </div>
   );

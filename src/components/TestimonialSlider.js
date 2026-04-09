@@ -34,47 +34,35 @@ export default function TestimonialSlider({ testimonials }) {
 
   return (
     <>
-      {/* Mobile Slider */}
-      <div className="md:hidden">
+      <div className="relative overflow-hidden w-full">
         <div
-          className="relative overflow-hidden"
+          className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-6 transition-transform duration-500 ease-out md:!transform-none"
+          style={{ transform: `translateX(-${current * 100}%)` }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {testimonials.map((t) => (
-              <div key={t.name} className="w-full flex-shrink-0 px-1">
-                <TestimonialCard text={t.text} name={t.name} rating={t.rating} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Dots */}
-        <div className="flex items-center justify-center gap-2 mt-6">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setCurrent(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === current
-                  ? 'w-6 h-2 bg-accent'
-                  : 'w-2 h-2 bg-white/20 hover:bg-white/40'
-              }`}
-              aria-label={`Go to review ${i + 1}`}
-            />
+          {testimonials.map((t) => (
+            <div key={t.name} className="w-full shrink-0 px-1 md:w-auto md:px-0">
+              <TestimonialCard text={t.text} name={t.name} rating={t.rating} />
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Desktop Grid */}
-      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {testimonials.map((t) => (
-          <TestimonialCard key={t.name} text={t.text} name={t.name} rating={t.rating} />
+      {/* Dots (Mobile only) */}
+      <div className="flex md:hidden items-center justify-center gap-2 mt-6">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setCurrent(i)}
+            className={`transition-all duration-300 rounded-full ${
+              i === current
+                ? 'w-6 h-2 bg-accent'
+                : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+            }`}
+            aria-label={`Go to review ${i + 1}`}
+          />
         ))}
       </div>
     </>
