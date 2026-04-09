@@ -17,9 +17,9 @@ const testimonials = [
 /* ─── TRUST STRIP ─── */
 const trustStrip = [
   { label: "Same-Day Service", icon: "clock" },
-  { label: "No Hidden Fees", icon: "shield" },
+  { label: "Upfront Pricing", icon: "shield" },
   { label: "Local Wakefield Team", icon: "pin" },
-  { label: "Top-Rated Reviews", icon: "star" },
+  { label: "Rated by Local Drivers", icon: "star" },
 ];
 
 /* ─── INTENT ROUTER CARDS ─── */
@@ -100,22 +100,23 @@ const processSteps = [
 
 /* ─── FAQ DATA ─── */
 const faqs = [
-  { q: "How much does tyre fitting cost in Wakefield?", a: "The cost depends on the tyre specification for your vehicle and the tier chosen — budget, mid-range, or premium. We provide upfront pricing with no hidden fees. Call us on 01924 929966 or book online for a fast quote." },
-  { q: "Can you fit tyres same day in Wakefield?", a: "Yes. We offer same-day tyre fitting at our Wakefield workshop and through our mobile fleet, subject to stock and availability. Call us early in the day for the best same-day availability." },
-  { q: "Do you offer mobile tyre fitting in Wakefield?", a: "Yes. Our mobile tyre fitting service covers Wakefield and surrounding West Yorkshire areas. We come to your home, workplace, or any safe accessible location with a fully equipped fitting van." },
-  { q: "Can a puncture be repaired, or does it need replacing?", a: "It depends on the location and severity. A puncture in the central tread band may be safely repairable to BS AU 159 standard. Sidewall damage, shoulder punctures, or run-flat tyre damage generally requires replacement. Our technicians assess every puncture before recommending the safest option." },
-  { q: "Do you cover WF1 to WF6 postcodes?", a: "Yes. We cover all Wakefield postcodes — WF1, WF2, WF3, WF4, WF5, and WF6 — for both workshop and mobile services." },
-  { q: "Can you fit tyres at my home or workplace?", a: "Yes. Our mobile tyre fitting service operates at homes, workplaces, and any safe accessible location across Wakefield and West Yorkshire." },
-  { q: "Do you cover the M1 near Wakefield?", a: "Yes. Our mobile fleet regularly attends locations near M1 junctions 39, 40, and 41, and M62 junctions 29, 30, and 31. Call us directly if you've broken down near a motorway junction in the Wakefield area." },
-  { q: "Can you remove a locking wheel nut without the key?", a: "Yes. If your locking wheel nut key is lost, damaged, or broken, we can remove the locking nut safely without damaging the wheel, allowing tyre replacement or other work to proceed." },
-  { q: "What tyre size does my car need?", a: "Give us your vehicle registration and we can look up the correct specifications — size, load index, and speed rating — instantly. Alternatively, the tyre size is printed on the sidewall of your current tyres (e.g. 205/55 R16 91V)." },
-  { q: "What is the legal tyre tread depth in the UK?", a: "The UK legal minimum is 1.6mm across the central three-quarters of the tread width, around the entire circumference. Driving below this is illegal and carries a fine of up to £2,500 and three penalty points per tyre." },
-  { q: "Do you fit van tyres in Wakefield?", a: "Yes. We fit tyres for vans and light commercial vehicles, ensuring the correct load index and speed rating for your vehicle's requirements." },
-  { q: "Do you fit EV tyres?", a: "Yes, we can fit tyres for electric vehicles. EV tyres are designed for the increased weight and instant torque of electric drivetrains, with lower rolling resistance and reduced road noise." },
-  { q: "Is wheel balancing included with tyre fitting?", a: "Wheel balancing is included with every tyre replacement. For standalone fitting where you supply the tyre, contact us to confirm what's included in your quote." },
-  { q: "Do I need wheel alignment after hitting a pothole?", a: "Not always, but it's worth checking. Pothole impacts can knock wheel alignment out of specification, causing the car to pull to one side and causing uneven tyre wear. Start with a wheel balance check — if the issue persists, alignment adjustment may be needed." },
-  { q: "Do you offer budget and premium tyres?", a: "Yes. We supply and fit tyres across budget, mid-range, and premium tiers. Budget tyres meet all legal requirements and suit lower-mileage drivers. Premium tyres offer advanced wet grip, shorter braking distances, and longer wear life." },
-  { q: "What is the difference between mobile tyre fitting and emergency tyre repair?", a: "Mobile tyre fitting is a scheduled or on-demand service where we come to your chosen location to fit pre-arranged tyres. Emergency tyre repair is an urgent call-out for drivers stranded due to a blowout, flat, or sudden tyre failure. Both operate at your location, but emergency repair prioritises urgent attendance." },
+  { q: "Can you fit tyres the same day in Wakefield, and does availability depend on tyre size or time of day?", a: "Yes, we offer same-day tyre fitting at our Wakefield workshop and via our mobile fleet. Availability depends on stock for your specific tyre size and the time you call — we recommend calling early in the day for the best chance of a same-day slot." },
+  { q: "Do you offer mobile tyre fitting in Wakefield at home or work, and does access or parking affect availability?", a: "Yes, our mobile tyre fitting service comes to you at home, work, or any accessible location. As long as our van can safely park near your vehicle with enough space to work securely, we can fit your tyres on-site." },
+  { q: "How does your emergency tyre repair service work in Wakefield, and does it cover the M1 and M62?", a: "If you have a blowout or sudden flat, call us immediately. We dispatch a fully equipped van to your location, including the hard shoulders of the M1 (J39-J41) and M62 (J29-J31), prioritising urgent attendance to get you to safety." },
+  { q: "Can a puncture be repaired or does it always need replacing, and how do you decide which is safe?", a: "A puncture can often be repaired to BS AU 159 standards if it's within the central tread band and meets safety criteria. However, sidewall damage, shoulder punctures, or damage to run-flat tyres cannot be repaired safely, meaning a replacement is required. We assess every tyre first." },
+  { q: "Is wheel balancing included when you fit new tyres, or is it a separate service?", a: "Digital wheel balancing is fully included with every new tyre we supply and fit. If you need balancing as a standalone service (for instance, to cure a vibration on existing tyres), we offer that too." },
+  { q: "What is the difference between wheel balancing and wheel alignment, and which do I need after a pothole?", a: "Wheel balancing ensures weight is evenly distributed around the wheel, preventing vibration at speed. Wheel alignment corrects the angle of the wheels, preventing pulling and uneven tyre wear. After hitting a pothole, check balancing first; if the car pulls to one side, you may need alignment." },
+  { q: "How do I find the right tyre size for my car — can you look it up by registration?", a: "Yes, simply give us your vehicle registration number and our system instantly finds the correct tyre size, load index, and speed rating for your exact model. You can also find your size stamped on the sidewall of your current tyres." },
+  { q: "What is the legal minimum tyre tread depth in the UK, and what happens if I'm caught below it?", a: "The legal minimum tread depth is 1.6mm across the central three-quarters of the tyre. Driving on unroadworthy tyres below this limit drastically increases braking distance and risks a £2,500 fine plus 3 penalty points per tyre." },
+  { q: "Do you fit van tyres in Wakefield, and does load index affect which tyre I need?", a: "Yes, we regularly supply and fit van and light commercial tyres. The load index is critical for vans, as fitting a tyre that cannot support the vehicle's laden weight is illegal and highly dangerous." },
+  { q: "Can you fit tyres for electric vehicles, and are EV tyres different from standard car tyres?", a: "Yes, we fit tyres for electric vehicles. EV-specific tyres are designed to handle the heavier weight of battery packs and the instant torque of electric motors, whilst offering lower rolling resistance to maximise battery range." },
+  { q: "What's the difference between budget, mid-range, and premium tyres for everyday driving?", a: "Budget tyres are a cost-effective, legal option for lower-mileage or city driving. Mid-range tyres offer a solid balance of wear life and wet grip. Premium tyres use advanced compounds for the shortest braking distances, lowest road noise, and highest durability." },
+  { q: "Do you cover all WF1 to WF6 postcodes in Wakefield for mobile and emergency services?", a: "Yes, our mobile tyre fitters cover the entire Wakefield immediate area, across all WF1, WF2, WF3, WF4, WF5, and WF6 postcodes, expanding outwards across West Yorkshire." },
+  { q: "Can you remove a locking wheel nut if the key is missing, lost, or broken?", a: "Yes. If your locking wheel nut key is missing, damaged, or broken, we carry specialist removal equipment to safely extract the locking nut without damaging your alloys, allowing the tyre replacement to go ahead." },
+  { q: "What's the difference between mobile tyre fitting and emergency tyre repair — when should I call which?", a: "Mobile tyre fitting is for scheduled convenience — we come replacing worn-out tyres at a time that suits you. Emergency tyre repair is a rapid-response service for when you are unexpectedly stranded by a blowout or flat tyre and need immediate help." },
+  { q: "Do you service TPMS valves when fitting new tyres, and can a faulty TPMS cause wrong pressure readings?", a: "We can inspect your Tyre Pressure Monitoring System (TPMS) during fitting. A faulty or damaged TPMS sensor can cause dashboard warning lights, give inaccurate readings, and even slowly leak air." },
+  { q: "How much does tyre fitting cost in Wakefield — do you provide upfront quotes before any work?", a: "The total cost depends on your tyre size and whether you choose budget, mid-range, or premium. We believe in upfront pricing — the quote we give you includes the tyre, fitting, new valve, balancing, and old tyre disposal. [VERIFY IF TRUE]" },
+  { q: "Do you offer wheel alignment (tracking) in Wakefield, or is it only available alongside other services?", a: "We provide wheel alignment check assessments alongside tyre replacements if uneven wear indicates a tracking issue. This is an additional supporting service to ensure your new tyres don't wear out prematurely." }
 ];
 
 /* ─── FEATURED AREAS ─── */
@@ -256,7 +257,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            24/7 Emergency Callouts Available
+            Emergency Callouts Available
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-2xl animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
@@ -265,8 +266,8 @@ export default function Home() {
             <span className="text-gradient-accent">& Emergency Repair in Wakefield</span>
           </h1>
 
-          <p className="text-text-light text-base md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Same-day tyre fitting at our Wakefield workshop or at your door. Mobile service and emergency call-outs across West Yorkshire. No hidden fees.
+          <p className="text-text-light text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            One Stop Tyres Wakefield is a Wakefield-based tyre fitting service covering the city and the wider West Yorkshire region. We provide same-day tyre fitting at our Doncaster Road workshop, mobile tyre fitting at your home, work, or roadside, and emergency tyre repair for breakdowns and urgent call-outs. Whether you need a puncture repaired, tyres replaced, or wheels balanced, our local team handles every job with honest pricing and professional care. Call us directly or book online — we'll confirm the right service for your situation immediately.
           </p>
 
           {/* CTAs */}
@@ -303,7 +304,7 @@ export default function Home() {
           <div className="mb-10 md:mb-16 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">What Do You Need?</h2>
             <p className="text-text-muted text-base md:text-xl font-medium max-w-2xl mx-auto">
-              Choose your situation below and we&apos;ll route you to the right service.
+              If you already know what you need, start here. Choose your situation and we'll point you to the right service.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -321,7 +322,7 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Whatever tyre issue you&apos;re facing, we have the right service path to get you back on the road safely.
+              Not sure which situation fits yours? These are the tyre problems Wakefield drivers face most — and the right path for each.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -350,40 +351,49 @@ export default function Home() {
       {/* ═══ SECTION 4 — CORE SERVICE SYSTEM ═══ */}
       <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 md:mb-16 md:flex md:items-end md:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Our Tyre Services</h2>
-              <p className="text-text-muted text-base md:text-xl font-medium">
-                From routine fitting to emergency roadside repairs, we deliver professional tyre care for every situation.
-              </p>
-            </div>
+          <div className="mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Our Tyre Services</h2>
+            <p className="text-text-muted text-base md:text-xl font-medium max-w-3xl">
+              Each of these situations maps to one of our core services. Here's the full list of what we provide across Wakefield and West Yorkshire. Each service has a dedicated page with full details, pricing guidance, and booking.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
             {services.map((s) => (
-              <ServiceCard key={s.slug} icon={s.icon} title={s.name} description={s.shortDesc} href={`/${s.slug}`} />
+              <Link key={s.slug} href={`/${s.slug}`} className="glass-panel glass-panel-hover rounded-xl p-5 flex items-center justify-between group">
+                <div>
+                  <h3 className="font-bold text-white text-lg group-hover:text-accent transition-colors">{s.name}</h3>
+                  <p className="text-text-muted text-sm mt-1">{s.shortDesc}</p>
+                </div>
+                <svg className="w-5 h-5 text-accent transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             ))}
           </div>
 
           {/* Supporting services mention */}
-          <div className="glass-panel rounded-2xl p-6 md:p-8">
-            <h3 className="font-bold text-white text-lg mb-4">Additional Support</h3>
+          <div className="glass-panel rounded-2xl p-6 md:p-8 border border-white/5 bg-white/[0.02]">
+            <h3 className="font-bold text-white text-lg mb-4">Additional Supporting Services</h3>
+            <p className="text-text-muted text-sm mb-6 max-w-3xl">
+              We also support wheel alignment checks, locking wheel nut removal, and TPMS valve servicing as part of broader tyre work. These are not standalone bookable services but are available alongside fitting, replacement, or repair.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-text-muted">
               <div>
-                <span className="text-white font-semibold">Wheel Alignment</span>
-                <p className="mt-1">Tracking adjustment for pulling, drift, or uneven wear after pothole impacts.</p>
+                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Wheel Alignment</span>
+                <p className="mt-1 pl-3.5">Tracking adjustment for pulling, drift, or uneven wear after pothole impacts.</p>
               </div>
               <div>
-                <span className="text-white font-semibold">Tyres by Registration</span>
-                <p className="mt-1">Tell us your reg and we find the correct tyre specification instantly.</p>
+                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Tyres by Registration</span>
+                <p className="mt-1 pl-3.5">Tell us your reg and we find the correct tyre specification instantly.</p>
               </div>
               <div>
-                <span className="text-white font-semibold">Locking Wheel Nut Removal</span>
-                <p className="mt-1">Lost your key? We remove locking nuts safely without wheel damage.</p>
+                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Locking Wheel Nut Removal</span>
+                <p className="mt-1 pl-3.5">Lost your key? We remove locking nuts safely without wheel damage.</p>
               </div>
               <div>
-                <span className="text-white font-semibold">TPMS Valve Service</span>
-                <p className="mt-1">Valve replacement and sensor checks to keep your pressure monitoring accurate.</p>
+                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> TPMS Valve Service</span>
+                <p className="mt-1 pl-3.5">Valve replacement and sensor checks to keep your pressure monitoring accurate.</p>
               </div>
             </div>
           </div>
@@ -396,7 +406,7 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">How It Works</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              From your first call to driving away — here&apos;s what to expect.
+              You've seen what we offer. Here's exactly how it works from the moment you contact us.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -424,35 +434,60 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Choosing the Right Tyres</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Choosing the Right Tyres for Your Vehicle</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Not sure what tyres you need? We help you choose the right fit for your vehicle, driving style, and budget.
+              Before we fit your tyres, we make sure you're getting the right ones. Here's how to choose the right tier and type for your vehicle, your driving, and your budget.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* Find Your Tyres */}
+            <div className="glass-panel rounded-2xl p-6 md:p-8">
+              <h3 className="font-bold text-white text-xl mb-4">Find Your Tyres by Registration or Size</h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-4">
+                Tell us your vehicle registration and we look up the correct tyre specifications — size, load index, and speed rating — instantly. Alternatively, if you know your tyre size (printed on the sidewall, e.g. 205/55 R16 91V), call or book with that and we'll match it directly.
+              </p>
+              <p className="text-text-muted text-sm leading-relaxed">
+                Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty. We make sure it's 100% correct before any tyre goes on your car.
+              </p>
+            </div>
+
+            {/* Understanding Specs */}
+            <div className="glass-panel rounded-2xl p-6 md:p-8">
+              <h3 className="font-bold text-white text-xl mb-4">Understanding Load Index, Speed Rating & Tyre Labels</h3>
+              <div className="space-y-4">
+                <p className="text-text-muted text-sm leading-relaxed">
+                  <span className="text-white font-semibold">Load Index & Speed Rating:</span> It's vital we match or exceed your vehicle manufacturer's original specifications. This is especially critical for vans and heavily loaded vehicles where an insufficient load index is dangerous and illegal.
+                </p>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  <span className="text-white font-semibold">EU Tyre Labels:</span> Every tyre we sell is rated on <span className="text-white font-semibold">wet grip</span> (A–E for braking safety), <span className="text-white font-semibold">rolling resistance</span> (A–E, affects fuel economy/range), and <span className="text-white font-semibold">external noise</span> (dB). We explain these so you know what you are buying.
+                </p>
+              </div>
+            </div>
+
             {/* Tyre Tiers */}
             <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-6">Budget, Mid-Range & Premium</h3>
+              <h3 className="font-bold text-white text-xl mb-6">Budget, Mid-Range & Premium — What's the Difference?</h3>
               <div className="space-y-5">
                 <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-green-500 shrink-0"></div>
+                  <div className="w-2 rounded-full bg-green-500 shrink-0 mt-1.5"></div>
                   <div>
                     <span className="text-white font-semibold block">Budget Tyres</span>
                     <p className="text-text-muted text-sm mt-1">Reliable, meets all legal requirements. Ideal for lower-mileage drivers and city driving. Best value per mile.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-amber-400 shrink-0"></div>
+                  <div className="w-2 rounded-full bg-amber-400 shrink-0 mt-1.5"></div>
                   <div>
                     <span className="text-white font-semibold block">Mid-Range Tyres</span>
                     <p className="text-text-muted text-sm mt-1">Balanced performance and value. Good wet grip, reasonable wear life. Suitable for most everyday drivers.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-accent shrink-0"></div>
+                  <div className="w-2 rounded-full bg-accent shrink-0 mt-1.5"></div>
                   <div>
                     <span className="text-white font-semibold block">Premium Tyres</span>
-                    <p className="text-text-muted text-sm mt-1">Top-tier wet grip, shorter braking distances, lower road noise, and longer wear. From leading manufacturers.</p>
+                    <p className="text-text-muted text-sm mt-1">Top-tier wet grip, shortest braking distances, lowest road noise, and longest wear. Perfect for high-mileage drivers.</p>
                   </div>
                 </div>
               </div>
@@ -461,34 +496,22 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Fitment & Labels */}
-            <div className="space-y-6">
-              <div className="glass-panel rounded-2xl p-6 md:p-8">
-                <h3 className="font-bold text-white text-xl mb-4">Tyres by Registration or Size</h3>
+            {/* Vehicle-Specific Fitment */}
+            <div className="glass-panel rounded-2xl p-6 md:p-8">
+              <h3 className="font-bold text-white text-xl mb-4">Tyres for Cars, Vans, 4x4s & Electric Vehicles</h3>
+              <div className="space-y-4">
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Tell us your vehicle registration and we look up the correct tyre specifications — size, load index, and speed rating — instantly. If you know your tyre size (printed on the sidewall, e.g. 205/55 R16 91V), call or book with that and we&apos;ll match it directly.
+                  We supply and fit standard <span className="text-white">car tyres</span>, reinforced <span className="text-white">van tyres</span> (with proper commercial load indexes), and rugged <span className="text-white">4x4 tyres</span>. 
                 </p>
-              </div>
-
-              <div className="glass-panel rounded-2xl p-6 md:p-8">
-                <h3 className="font-bold text-white text-xl mb-4">Vehicle-Specific Fitment</h3>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Car Tyres</div>
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Van Tyres</div>
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> 4x4 Tyres</div>
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> EV Tyres</div>
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Run-Flat Tyres</div>
-                  <div className="flex items-center gap-2 text-text-light"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> All-Season Tyres</div>
-                </div>
-              </div>
-
-              <div className="glass-panel rounded-2xl p-6 md:p-8">
-                <h3 className="font-bold text-white text-xl mb-4">Understanding Tyre Labels</h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  EU tyre labels rate every tyre on three criteria: <span className="text-white font-semibold">wet grip</span> (A–E), <span className="text-white font-semibold">rolling resistance</span> (A–E, affects fuel economy), and <span className="text-white font-semibold">external noise</span> (measured in dB). We help you understand what these mean for your safety and running costs.
+                  We can also fit specific <span className="text-white">EV tyres</span> designed for the increased weight and instant torque of electric vehicles, offering lower rolling resistance to maximise battery range. 
+                </p>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  If your vehicle requires <span className="text-white">run-flat tyres</span>, we supply and safely fit them. We also offer seasonal options including <span className="text-white">summer, winter, and all-season tyres</span>.
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -497,9 +520,9 @@ export default function Home() {
       <section className="py-10 md:py-20 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Same-Day, Mobile & Emergency — What&apos;s the Difference?</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Same-Day, Mobile or Emergency — Which Do You Need?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Three different services for three different situations. Here&apos;s how to choose the right one.
+              Once you know what tyres you need, the next decision is how you'd like them fitted. We offer three routes — each designed for a different level of urgency and location.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -507,15 +530,14 @@ export default function Home() {
             <div className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
               <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full blur-[30px] group-hover:bg-green-500/20 transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-green-500 mb-4"></div>
-              <h3 className="font-bold text-white text-xl mb-4">Same-Day Tyre Fitting</h3>
+              <h3 className="font-bold text-white text-xl mb-4">Same-Day Workshop Fitting</h3>
+              <p className="text-text-muted text-sm mb-4">Come to our Wakefield workshop today for a quick turnaround while you wait.</p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li><span className="text-white font-semibold">Who:</span> Drivers who need tyres today and can visit us</li>
-                <li><span className="text-white font-semibold">Where:</span> Our Wakefield workshop</li>
-                <li><span className="text-white font-semibold">Solves:</span> Time pressure, urgent replacement needs</li>
-                <li><span className="text-white font-semibold">Expect:</span> Call, visit, fitted while you wait</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Quick replacement without waiting for delivery</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Our Doncaster Road workshop</li>
               </ul>
               <Link href="/tyre-fitting-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
-                Learn More →
+                Workshop Fitting →
               </Link>
             </div>
             {/* Mobile */}
@@ -523,14 +545,13 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-[30px] group-hover:bg-blue-500/20 transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-blue-500 mb-4"></div>
               <h3 className="font-bold text-white text-xl mb-4">Mobile Tyre Fitting</h3>
+              <p className="text-text-muted text-sm mb-4">We come to your home, workplace, or chosen location. Scheduled or on-demand.</p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li><span className="text-white font-semibold">Who:</span> Drivers who can&apos;t get to us or prefer home/work fitting</li>
-                <li><span className="text-white font-semibold">Where:</span> Your home, workplace, or chosen location</li>
-                <li><span className="text-white font-semibold">Solves:</span> Convenience, non-driveable vehicles</li>
-                <li><span className="text-white font-semibold">Expect:</span> Scheduled or urgent van dispatch</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Convenience, or if your car isn't driveable</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Anywhere across West Yorkshire</li>
               </ul>
               <Link href="/mobile-tyre-fitting-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
-                Learn More →
+                Mobile Fitting →
               </Link>
             </div>
             {/* Emergency */}
@@ -538,11 +559,10 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full blur-[30px] group-hover:bg-accent/20 transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-accent mb-4 animate-pulse"></div>
               <h3 className="font-bold text-white text-xl mb-4">Emergency Tyre Repair</h3>
+              <p className="text-text-muted text-sm mb-4">Urgent dispatch for breakdowns, blowouts, and stranded vehicles requiring immediate priority attendance.</p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li><span className="text-white font-semibold">Who:</span> Stranded drivers with urgent tyre failure</li>
-                <li><span className="text-white font-semibold">Where:</span> Your location — roadside, car park, driveway</li>
-                <li><span className="text-white font-semibold">Solves:</span> Breakdowns, blowouts, sudden flats</li>
-                <li><span className="text-white font-semibold">Expect:</span> Urgent dispatch, on-site repair or replace</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Roadside emergencies, sudden flat tyres</li>
+                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Roadside, motorways, car parks</li>
               </ul>
               <Link href="/emergency-tyre-repair-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
                 Get Emergency Help →
@@ -556,58 +576,61 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Repair, Replace, Balance or Align?</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Repair, Replace, Balance or Align — Understanding the Difference</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Understanding the difference helps you choose the right service and avoid unnecessary costs.
+              Some tyre issues overlap. This section clarifies the most common diagnostic questions so you can understand what's happening with your tyres before you call.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="glass-panel rounded-2xl p-6 md:p-8">
               <h3 className="font-bold text-white text-xl mb-4">Puncture Repair vs Tyre Replacement</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band and the penetrating object is within the safe size range.
+                A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band and the penetrating object is small enough.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and run-flat tyres generally cannot be safely repaired — replacement is the only safe option.
+                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres generally cannot be safely repaired — a full replacement is required.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
-                We assess every puncture before recommending repair or replacement. We never repair a tyre that isn&apos;t safe to repair.
+                We assess every puncture. We never repair a tyre that isn't safe to repair.
               </p>
               <div className="mt-4 flex gap-4">
                 <Link href="/puncture-repair-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Puncture Repair →</Link>
                 <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Tyre Replacement →</Link>
               </div>
             </div>
+            
             <div className="glass-panel rounded-2xl p-6 md:p-8">
               <h3 className="font-bold text-white text-xl mb-4">Wheel Balancing vs Wheel Alignment</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-white font-semibold">Wheel balancing</span> corrects weight imbalances in the tyre-wheel assembly. Symptoms include steering vibration, especially at speed.
+                <span className="text-white font-semibold">Wheel balancing</span> corrects weight distribution in the tyre-wheel assembly. Symptoms include steering vibration, especially at speed.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
                 <span className="text-white font-semibold">Wheel alignment (tracking)</span> adjusts the angles at which wheels point. Symptoms include the car pulling to one side and uneven tyre wear.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
-                After hitting a pothole, check balancing first. If pulling or uneven wear persists, alignment may be needed.
+                After hitting a pothole, start with wheel balancing. If pulling persists, alignment may be needed (available alongside fitting).
               </p>
               <Link href="/wheel-balancing-wakefield" className="inline-flex items-center gap-2 text-accent text-sm font-bold mt-4 hover:underline underline-offset-4">Wheel Balancing →</Link>
             </div>
+            
             <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Legal Tread Depth</h3>
+              <h3 className="font-bold text-white text-xl mb-4">Legal Tread Depth & Safety</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
                 The UK legal minimum is <span className="text-white font-semibold">1.6mm</span> across the central three-quarters of the tread width, around the entire circumference.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                Driving below this limit is illegal: up to <span className="text-amber-400 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances on a wet road can be double that of a new tyre.
+                Driving below this limit is illegal: up to <span className="text-amber-400 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances on a wet road can be drastically worse holding less grip.
               </p>
               <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Book a Replacement →</Link>
             </div>
+            
             <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Locking Wheel Nuts & TPMS</h3>
+              <h3 className="font-bold text-white text-xl mb-4">TPMS & Locking Wheel Nuts</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                If your <span className="text-white font-semibold">locking wheel nut key</span> is missing, lost, or damaged, we can remove the locking nuts safely without wheel damage so tyre work can proceed.
+                <span className="text-white font-semibold">Locking wheel nuts:</span> If your key is missing or damaged, we provide a specialist removal service safely unlocking the wheel so tyre work can proceed.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
-                <span className="text-white font-semibold">TPMS sensors and valves</span> may need replacing when fitting new tyres. A faulty valve can trigger false dashboard warnings or fail to alert you to real pressure loss.
+                <span className="text-white font-semibold">TPMS:</span> Tyre Pressure Monitoring System sensors and valves can be serviced when fitting new tyres. A faulty valve can trigger false dashboard warnings or miss a real puncture.
               </p>
             </div>
           </div>
@@ -620,15 +643,18 @@ export default function Home() {
           {/* Layer 1 — Operational Proof */}
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Why Wakefield Drivers Choose Us</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
+              Understanding services is one thing. Trusting who does the work is another. Here's what we stand behind, and the evidence that backs it.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {[
-              { title: "Local Wakefield Workshop", desc: "Cinema House, 160 Doncaster Rd, Belle Vue, WF1 5HL. Multiple bays, large stock, state-of-the-art lifts." },
-              { title: "Same-Day Availability", desc: "Most services available same-day. Call early for today's availability or book a time that suits you." },
-              { title: "No Hidden Fees", desc: "The price we quote is the price you pay. Upfront quotes before any work begins. No surprise charges." },
-              { title: "Mobile Fleet Coverage", desc: "Fully equipped vans covering Wakefield and surrounding West Yorkshire. Home, work, or roadside." },
-              { title: "BS AU 159 Repairs", desc: "Every puncture repair assessed and completed to British Standard. If it's not safe to repair, we tell you." },
-              { title: "Transparent Pricing", desc: "Budget, mid-range, and premium tyre options. We explain the differences so you choose what's right." },
+              { title: "Local Workshop", desc: "Based at Cinema House, 160 Doncaster Rd, WF1 5HL. Real physical presence with multiple bays and high-end lifts." },
+              { title: "Same-Day Availability", desc: "By keeping high stock levels locally, we get most standard tyres securely fitted the exact same day you call." },
+              { title: "Upfront Pricing", desc: "The price we quote is the price you pay. Tyres, fitting, valves, and disposal are fully included in our quotes." },
+              { title: "Mobile Fleet Coverage", desc: "We don't just act local — we have fully equipped vans actively stationed and patrolling across West Yorkshire." },
+              { title: "BS AU 159 Repairs", desc: "Every puncture is assessed according to strict British Standards. We'd rather tell you it's unrepairable than compromise safety." },
+              { title: "Experienced Fitters", desc: "Years of local service and thousands of successful fittings. See what your neighbours say below." },
             ].map((p) => (
               <div key={p.title} className="glass-panel rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-[30px] group-hover:bg-accent/10 transition-colors"></div>
@@ -647,7 +673,7 @@ export default function Home() {
                 </svg>
                 What Our Customers Say
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">Driver Approved.</h2>
+              <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight">Driver Approved.</h3>
             </div>
             <TestimonialSlider testimonials={testimonials} />
           </div>
@@ -659,6 +685,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Our Workshop & Mobile Capability</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
+              Trust is built on what you can see. Here's our Wakefield workshop and the mobile fleet that covers the wider region.
+            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
             {/* Workshop */}
@@ -666,7 +695,7 @@ export default function Home() {
               <h3 className="font-bold text-white text-xl mb-4">Wakefield Workshop</h3>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Cinema House, 160 Doncaster Road, Belle Vue, Wakefield WF1 5HL</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Multiple fitting bays with state-of-the-art lifts</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Multiple fitting bays with professional lifts and balancing tech</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Large tyre stock — budget, mid-range, and premium</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Mon–Sat 9am–6pm, Sunday 9am–5pm</li>
               </ul>
@@ -678,10 +707,10 @@ export default function Home() {
             <div className="glass-panel rounded-2xl p-6 md:p-8">
               <h3 className="font-bold text-white text-xl mb-4">Mobile Fleet</h3>
               <ul className="space-y-3 text-sm text-text-muted">
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Fully equipped mobile fitting vans</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Fully equipped dedicated mobile fitting vans</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Covering Wakefield and the wider West Yorkshire region</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Home, workplace, and roadside attendance</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> 24/7 emergency call-out availability</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Emergency call-out availability for stranded vehicles</li>
               </ul>
               <Link href="/mobile-tyre-fitting-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
                 Mobile Fitting Service →
@@ -706,41 +735,80 @@ export default function Home() {
       {/* ═══ SECTION 11 — LOCAL COVERAGE SUMMARY ═══ */}
       <section className="py-10 md:py-20 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 md:mb-16">
+          <div className="mb-10 md:mb-16 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Covering Wakefield & West Yorkshire</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
-              Based in Wakefield, we serve drivers across the city and surrounding areas — from our workshop or direct to your location.
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl mx-auto">
+              Our workshop is in Wakefield. Our reach extends across West Yorkshire. Here's how our coverage breaks down by location and situation.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* Core */}
+            <div className="glass-panel rounded-2xl p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-1 border border-accent/20">
               <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Wakefield & Nearby
+                <span className="w-2 h-2 rounded-full bg-accent"></span> Wakefield Core
               </h3>
-              <p className="text-text-muted text-sm leading-relaxed">
-                Wakefield city centre, WF1–WF6 postcodes, Ossett, Horbury, Stanley, Sandal, Normanton, Outwood, and Lofthouse. Near Pinderfields Hospital, Trinity Walk, and Calder Park.
+              <p className="text-text-muted text-sm leading-relaxed mb-4">
+                Wakefield city centre and all WF1–WF6 postcodes. Landmarks including Pinderfields Hospital, Trinity Walk, The Ridings, Wakefield 41, Calder Park, and Snow Hill.
+              </p>
+              <p className="text-text-light text-sm italic">
+                "Our workshop on Doncaster Road is at the heart of the Wakefield tyre network."
               </p>
             </div>
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
+
+            {/* Nearby */}
+            <div className="glass-panel rounded-2xl p-6 lg:p-8">
               <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Surrounding Towns
+                <span className="w-2 h-2 rounded-full bg-accent"></span> Nearby Areas
               </h3>
-              <p className="text-text-muted text-sm leading-relaxed">
-                Leeds, Dewsbury, Castleford, Pontefract, Batley, Morley, Rothwell, Garforth, and many more. Our mobile fleet reaches across the region.
+              <p className="text-text-muted text-sm leading-relaxed mb-4">
+                Ossett, Horbury, Outwood, Stanley, Sandal, and Normanton.
+              </p>
+              <p className="text-text-light text-sm italic">
+                "These areas are within our fastest mobile response zone, often reaching you under 30 minutes."
               </p>
             </div>
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
+
+            {/* Towns */}
+            <div className="glass-panel rounded-2xl p-6 lg:p-8">
+              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-accent"></span> Wider Commercial Towns
+              </h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-4">
+                Leeds, Dewsbury, Castleford, Pontefract, and Batley.
+              </p>
+              <p className="text-text-light text-sm italic">
+                "Our mobile fleet serves these nearby major towns regularly without delay."
+              </p>
+            </div>
+
+            {/* Routes */}
+            <div className="glass-panel rounded-2xl p-6 lg:p-8">
               <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent"></span> Major Routes
               </h3>
-              <p className="text-text-muted text-sm leading-relaxed">
-                Accessible from M1 (J39, J40, J41), M62 (J29, J30, J31), A61, A638, A642, and A650. Broken down near a junction? Call us for emergency attendance.
+              <p className="text-text-muted text-sm leading-relaxed mb-4">
+                M1 (J39, J40, J41), M62 (J29, J30, J31), A61, A638, A642, and A650.
+              </p>
+              <p className="text-text-light text-sm italic">
+                "Broken down near a key junction? Call us straight away for emergency attendance."
               </p>
             </div>
+
+            {/* Situational */}
+            <div className="glass-panel rounded-2xl p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-1">
+              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-accent"></span> Any Situation
+              </h3>
+              <p className="text-text-muted text-sm leading-relaxed">
+                We fit your tyres at your home driveway, the office parking lot, a retail centre, business parks, or the difficult roadside. Wherever you are when a tyre problem strikes, we can safely reach you.
+              </p>
+            </div>
+
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-10 text-center">
             <Link href="/areas" className="inline-flex items-center gap-2 text-white font-bold hover:text-accent transition-colors group">
-              View All Service Areas
+              View Our Full Coverage List
               <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -755,26 +823,26 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Tyre Services Near You</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              We cover over 150 locations across West Yorkshire. Here are some of our most popular service areas.
+              These are some of our most popular service areas — each with a dedicated page detailing coverage.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {/* Wakefield HQ */}
-            <Link href="/contact" className="glass-panel group relative overflow-hidden rounded-2xl p-6 border-accent/30 bg-accent/10 hover:bg-accent/20 transition-colors">
-              <div className="relative z-10">
+            <Link href="/contact" className="glass-panel group relative overflow-hidden rounded-2xl p-6 border-accent/30 bg-accent/10 hover:bg-accent/20 transition-colors col-span-2 sm:col-span-3 lg:col-span-1">
+              <div className="relative z-10 flex flex-row lg:flex-col justify-between items-center lg:items-start h-full">
                 <span className="block font-black text-white text-xl group-hover:text-accent transition-colors">Wakefield</span>
-                <span className="text-accent text-xs font-bold uppercase tracking-widest mt-1 block">HQ</span>
+                <span className="text-accent text-xs font-bold uppercase tracking-widest mt-0 lg:mt-2 block">HQ</span>
               </div>
             </Link>
             {/* Featured areas */}
             {featuredAreas.map((a) => (
-              <Link key={a.slug} href={`/areas/${a.slug}`} className="glass-panel group relative overflow-hidden rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300">
+              <Link key={a.slug} href={`/areas/${a.slug}`} className="glass-panel group relative overflow-hidden rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <span className="relative z-10 block font-bold text-text-light group-hover:text-white transition-colors">{a.name}</span>
               </Link>
             ))}
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-10 text-center">
             <Link href="/areas" className="inline-flex items-center gap-2 glass-panel glass-panel-hover text-white font-bold px-6 py-3 rounded-xl text-sm transition-all duration-300">
               View All 150+ Service Areas
               <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -791,14 +859,14 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Quick answers to the questions Wakefield drivers ask us most.
+              Still have questions? Whether comparing services or trying to understand what your tyres need, these are the questions Wakefield drivers ask us most.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {faqs.map((f, i) => (
               <details key={i} className="glass-panel rounded-2xl overflow-hidden group">
                 <summary className="cursor-pointer p-5 md:p-6 font-bold text-white text-sm md:text-base flex items-start justify-between gap-4 hover:text-accent transition-colors list-none [&::-webkit-details-marker]:hidden">
-                  <span>{f.q}</span>
+                  <span className="pr-2">{f.q}</span>
                   <svg className="w-5 h-5 text-accent shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -815,7 +883,7 @@ export default function Home() {
       {/* ═══ SECTION 14 — FINAL CTA / CONTACT CLOSURE ═══ */}
       <CTABlock
         heading="Ready to Get Moving?"
-        subtext="Whether it's a routine fitting, a mobile appointment, or an emergency call-out — we're here. Based in Wakefield. Covering West Yorkshire. Same-day availability. No hidden fees."
+        subtext="Got your answer? Let's get you sorted. Whether it's a routine tyre fitting at our Wakefield workshop, a mobile appointment at your home, or an emergency call-out on the M1 — we're here. Same-day availability. Honest pricing. One call gets it sorted."
       />
     </div>
   );
