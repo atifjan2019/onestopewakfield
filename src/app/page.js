@@ -59,6 +59,15 @@ const localBusinessSchema = {
   name: "One Stop Tyres Wakefield",
   description: "Professional tyre fitting, mobile tyre service, emergency repairs, and wheel balancing in Wakefield and surrounding areas.",
   telephone: "+441924929966",
+  url: "https://www.onestoptyreswakefield.co.uk",
+  logo: "https://www.onestoptyreswakefield.co.uk/logo.png",
+  image: "https://www.onestoptyreswakefield.co.uk/og-image.jpg",
+  geo: {
+    "@type": "GeoCoordinates",
+    "latitude": "53.6830",
+    "longitude": "-1.4977"
+  },
+  sameAs: [],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Cinema House, 160 Doncaster Road, Belle Vue",
@@ -75,6 +84,25 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "09:00", closes: "17:00" },
   ],
   priceRange: "££",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "50",
+    bestRating: "5"
+  },
+  review: testimonials.map((t) => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": t.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": t.rating,
+      "bestRating": "5"
+    },
+    "reviewBody": t.text
+  }))
 };
 
 export default function Home() {
@@ -196,6 +224,27 @@ export default function Home() {
 
       {/* Areas Expansion */}
       <section className="py-8 md:py-16 relative overflow-hidden">
+        {/* Workshop Gallery */}
+        <div className="mx-auto max-w-7xl px-6 relative z-10 mb-20">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">Our Workshop.</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
+              Fully equipped with multiple bays, massive stock, and state-of-the-art lifts to get you back on the road safely and quickly.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+              <img src="/images/gallery/shop-1.jpg" alt="One Stop Tyres Wakefield Shop Front" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+              <img src="/images/gallery/shop-2.jpg" alt="Inside Our Fully Equipped Tyre Workshop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+              <img src="/images/gallery/shop-3.jpg" alt="Multiple Tyre Fitting Bays at One Stop Tyres" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-1/3">

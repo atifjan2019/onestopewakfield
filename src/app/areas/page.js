@@ -38,7 +38,7 @@ export default function AreasPage() {
               Service <span className="text-gradient-accent">Areas.</span>
             </h1>
             <p className="text-text-muted text-lg md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed">
-              Our mobile tyring fitting fleet covers Wakefield, Leeds, and the surrounding regions of West Yorkshire. We come directly to your home, workplace, or roadside.
+              Our mobile tyre fitting fleet covers Wakefield, Leeds, and the surrounding regions of West Yorkshire. We come directly to your home, workplace, or roadside.
             </p>
           </div>
         </div>

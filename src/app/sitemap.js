@@ -2,7 +2,7 @@
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
 
-const BASE_URL = "https://onestopewakfield.co.uk";
+const BASE_URL = "https://www.onestoptyreswakefield.co.uk";
 
 export default function sitemap() {
   const staticPages = [

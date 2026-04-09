@@ -124,16 +124,16 @@ export default function Footer() {
             <a
               href="https://webspires.co.uk/?utm_source=onestopwakefield"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="font-bold text-white hover:text-accent transition-colors"
             >
               Webspires
             </a>
           </p>
-          <div className="flex items-center gap-4 text-xs text-text-muted">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="w-1 h-1 rounded-full bg-border"></span>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+          <div className="flex items-center gap-4 text-sm font-medium">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="text-white/20">•</span>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

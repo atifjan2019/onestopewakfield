@@ -34,7 +34,15 @@ export default async function AreaPage({ params }) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "One Stop Tyres Wakefield",
-    telephone: "+4401924000000",
+    telephone: PHONE_NUMBER,
+    url: "https://www.onestoptyreswakefield.co.uk",
+    logo: "https://www.onestoptyreswakefield.co.uk/logo.png",
+    image: "https://www.onestoptyreswakefield.co.uk/og-image.jpg",
+    geo: {
+      "@type": "GeoCoordinates",
+      "latitude": "53.6830",
+      "longitude": "-1.4977"
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Wakefield",
@@ -45,6 +53,16 @@ export default async function AreaPage({ params }) {
       "@type": "City",
       name: area.name,
     },
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "18:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "09:00", closes: "17:00" },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "50",
+      bestRating: "5"
+    }
   };
 
   return (
@@ -118,7 +136,7 @@ export default async function AreaPage({ params }) {
                   <ServiceIcon name={s.icon} className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors mb-4">{s.name}</h3>
-                <p className="text-text-muted leading-relaxed">{s.shortDesc}</p>
+                <p className="text-text-muted leading-relaxed">{s.shortDesc.replace(/Wakefield/gi, area.name)}</p>
                 <div className="absolute top-8 right-8 text-white/5 group-hover:text-accent/10 transition-colors pointer-events-none">
                   <ServiceIcon name={s.icon} className="w-24 h-24" />
                 </div>

@@ -34,7 +34,7 @@ export default async function ServicePage({ params }) {
     provider: {
       "@type": "LocalBusiness",
       name: "One Stop Tyres Wakefield",
-      telephone: "+4401924000000",
+      telephone: PHONE_NUMBER,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Wakefield",
@@ -48,11 +48,43 @@ export default async function ServicePage({ params }) {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `How much does ${service.name.toLowerCase()} cost in Wakefield?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `The cost for ${service.name.toLowerCase()} varies depending on your vehicle and specific requirements. We guarantee highly competitive, upfront pricing with zero hidden fees. Call us for a fast quote.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Do you offer same-day ${service.name.toLowerCase()}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes, we specialize in rapid, same-day dispatch across Wakefield, Leeds, and surrounding areas. Our mobile units are actively patrolling.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Can you perform ${service.name.toLowerCase()} at my home or workplace address?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Absolutely. Our fully equipped vans essentially bring the garage directly to you. We can safely operate on your driveway, workplace car park, or even safely at the roadside.`
+        }
+      }
+    ]
+  };
+
   const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
     <div className="bg-primary min-h-screen pt-20">
       <SchemaMarkup schema={serviceSchema} />
+      <SchemaMarkup schema={faqSchema} />
 
       {/* Hero */}
       <section className="relative py-8 md:py-16 px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
@@ -200,6 +232,30 @@ export default async function ServicePage({ params }) {
                 </div>
                 <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">{s.name}</h3>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-8 md:py-16 bg-surface-dark border-t border-border/50">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-text-muted">Common questions regarding our {service.name.toLowerCase()} service.</p>
+          </div>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((faq, idx) => (
+              <div key={idx} className="glass-panel p-6 md:p-8 rounded-2xl border-accent/20 text-left">
+                <h3 className="font-bold text-white text-lg mb-3 flex items-start gap-3">
+                  <span className="text-accent text-xl mt-0.5">Q.</span> {faq.name}
+                </h3>
+                <p className="text-text-muted leading-relaxed pl-8">
+                  <span className="text-white/40 font-bold mr-2 absolute -ml-8">A.</span> {faq.acceptedAnswer.text}
+                </p>
+              </div>
             ))}
           </div>
         </div>

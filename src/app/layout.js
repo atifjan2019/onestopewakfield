@@ -10,9 +10,10 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.onestoptyreswakefield.co.uk"),
   title: {
     default: "One Stop Tyres Wakefield | Fast, Reliable Tyre Services",
-    template: "%s | One Stop Tyres Wakefield",
+    template: "%s",
   },
   description:
     "Professional tyre fitting, mobile tyre service, emergency repairs, and wheel balancing in Wakefield. Same-day service, no hidden fees. Call now!",
@@ -25,10 +26,25 @@ export const metadata = {
     "tyre replacement wakefield",
     "tyres wakefield",
   ],
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    type: "website",
-    locale: "en_GB",
+    title: "One Stop Tyres Wakefield",
+    description: "Professional tyre fitting, mobile tyre service, and emergency repairs across West Yorkshire.",
+    url: "https://www.onestoptyreswakefield.co.uk",
     siteName: "One Stop Tyres Wakefield",
+    locale: "en_GB",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "One Stop Tyres Wakefield",
+      },
+    ],
   },
 };
 

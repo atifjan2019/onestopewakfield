@@ -4,6 +4,15 @@ import { useState } from 'react';
 import BookingCalendar from '@/components/BookingCalendar';
 import Link from 'next/link';
 
+export const metadata = {
+  title: "Book Tyre Fitting Online",
+  description: "Book your tyre fitting appointment online. Same-day availability across Wakefield and West Yorkshire. Quick, easy booking.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function BookPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
@@ -93,7 +102,7 @@ export default function BookPage() {
             </ol>
           </nav>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.3em] mb-6 md:mb-8 tracking-tight">
-            Reserve Your <span className="text-gradient-accent">Spot.</span>
+            Book Your <span className="text-gradient-accent">Tyre Fitting.</span>
           </h1>
           <p className="text-text-muted mt-6 font-medium text-lg md:text-xl max-w-2xl mx-auto">
             Select a time that works for you, and we'll handle the rest. Mobile dispatch is available.

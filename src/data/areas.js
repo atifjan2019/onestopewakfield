@@ -12,7 +12,7 @@ export const areas = [
     ],
     nearbyAreas: ["dewsbury", "castleford", "batley"],
     metaTitle: "Tyre Fitting Leeds | Same-Day Mobile Service | One Stop Tyres",
-    metaDescription: "Fast tyre fitting in Leeds from One Stop Tyres Wakefield. Same-day mobile service with competitive prices across all Leeds postcodes. Call now for rapid response.",
+    metaDescription: "Fast tyre fitting in Leeds from One Stop Tyres. Same-day mobile service with competitive prices across all Leeds postcodes. Call now.",
   },
   {
     slug: "dewsbury",
@@ -26,7 +26,7 @@ export const areas = [
     ],
     nearbyAreas: ["batley", "ossett", "leeds"],
     metaTitle: "Tyre Fitting Dewsbury | Rapid Response Service | One Stop Tyres",
-    metaDescription: "Tyre fitting in Dewsbury with rapid response from One Stop Tyres Wakefield. Same-day mobile service and competitive prices. Call today for a free quote.",
+    metaDescription: "Tyre fitting in Dewsbury with rapid response. Same-day mobile service and competitive prices. Call today for a free quote.",
   },
   {
     slug: "castleford",
@@ -40,7 +40,7 @@ export const areas = [
     ],
     nearbyAreas: ["pontefract", "normanton", "leeds"],
     metaTitle: "Tyre Fitting Castleford | Same-Day Local Service | One Stop Tyres",
-    metaDescription: "Tyre fitting in Castleford with fast, local service from One Stop Tyres Wakefield. Same-day fitting at your home or workplace. Call now for a free quote.",
+    metaDescription: "Tyre fitting in Castleford with fast, local service. Same-day fitting at your home or workplace. Call now for a free quote.",
   },
   {
     slug: "pontefract",
@@ -54,7 +54,7 @@ export const areas = [
     ],
     nearbyAreas: ["castleford", "normanton", "dewsbury"],
     metaTitle: "Tyre Fitting Pontefract | Fast Local Service | One Stop Tyres",
-    metaDescription: "Tyre fitting in Pontefract from One Stop Tyres. Fast mobile service with same-day availability. Local, reliable, and competitively priced. Call now for a quote.",
+    metaDescription: "Tyre fitting in Pontefract. Fast mobile service with same-day availability. Local, reliable, and competitively priced. Call now.",
   },
   {
     slug: "normanton",
@@ -124,7 +124,7 @@ export const areas = [
     ],
     nearbyAreas: ["garforth", "barwick-in-elmet", "leeds"],
     metaTitle: "Tyre Fitting Aberford | Mobile Service | One Stop Tyres Wakefield",
-    metaDescription: "Mobile tyre fitting in Aberford, Leeds. Fast same-day service from One Stop Tyres Wakefield. We come to your home or roadside. Call now for a free quote.",
+    metaDescription: "Mobile tyre fitting in Aberford, Leeds. Fast same-day service from One Stop Tyres. We come to your home. Call now for a free quote.",
   },
   {
     slug: "adel",
@@ -600,7 +600,7 @@ export const areas = [
     ],
     nearbyAreas: ["austhorpe", "cross-gates", "leeds"],
     metaTitle: "Tyre Fitting Colton | Fast Mobile Response | One Stop Tyres",
-    metaDescription: "Mobile tyre fitting in Colton, Leeds. Fast response times for commuters and residents alike. Puncture repairs and new tyres fitted identically to the garage.",
+    metaDescription: "Mobile tyre fitting in Colton, Leeds. Fast response times for commuters and residents alike. Quality puncture repairs and new tyres.",
   },
   {
     slug: "cottingley",
@@ -1440,7 +1440,7 @@ export const areas = [
     ],
     nearbyAreas: ["otley", "pool-in-wharfedale", "leeds"],
     metaTitle: "Tyre Fitting Newall | Valley Mobile Fitting | One Stop Tyres",
-    metaDescription: "Tyre fitting in Newall, near Otley. Professional, clean mobile fitting for rural and residential clients. Get a brand new tyre delivered securely to your door.",
+    metaDescription: "Tyre fitting in Newall. Professional mobile fitting for rural/residential clients. Get a brand new tyre delivered to your door.",
   },
   {
     slug: "oakwood",
@@ -1818,7 +1818,7 @@ export const areas = [
     ],
     nearbyAreas: ["great-preston", "garforth", "leeds"],
     metaTitle: "Tyre Fitting Swillington | Village Mobile Fitting | One Stop Tyres",
-    metaDescription: "Tyre fitting in Swillington. Professional, clean mobile fitting for rural and residential clients. Get a brand new tyre delivered securely to your door.",
+    metaDescription: "Tyre fitting in Swillington. Professional mobile fitting for residential clients. Get a brand new tyre delivered securely to your door.",
   },
   {
     slug: "swinnow",

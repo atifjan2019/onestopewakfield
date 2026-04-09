@@ -5,6 +5,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://onestopewakfield.co.uk/sitemap.xml",
+    sitemap: "https://www.onestoptyreswakefield.co.uk/sitemap.xml",
   };
 }
