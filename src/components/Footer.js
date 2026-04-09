@@ -65,14 +65,26 @@ export default function Footer() {
                   Wakefield
                 </span>
               </li>
-              {areas.map((a) => (
-                <li key={a.slug}>
-                  <Link href={`/areas/${a.slug}`} className="text-text-muted hover:text-white text-sm transition-colors flex items-center gap-2 group">
-                    <span className="w-0 h-[1px] bg-accent group-hover:w-3 transition-all duration-300"></span>
-                    {a.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <span className="text-accent text-sm font-bold flex items-center gap-2">
+                  <span className="w-3 h-[1px] bg-accent"></span>
+                  Leeds
+                </span>
+              </li>
+              <li>
+                <span className="text-accent text-sm font-bold flex items-center gap-2">
+                  <span className="w-3 h-[1px] bg-accent"></span>
+                  Dewsbury
+                </span>
+              </li>
+              <li className="pt-2">
+                <Link href="/areas" className="inline-flex items-center gap-2 text-white hover:text-accent font-semibold text-sm transition-colors group">
+                  View All Service Areas
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </li>
             </ul>
           </div>
 

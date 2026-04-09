@@ -64,27 +64,9 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Areas dropdown */}
-          <div className="relative group">
-            <button className="text-text-light hover:text-white transition-colors font-medium text-sm flex items-center gap-1 py-2">
-              Areas
-              <svg className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-              <div className="bg-black border border-white/10 rounded-2xl p-2 w-[220px] shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none"></div>
-                <div className="relative z-10 grid grid-cols-1 gap-1">
-                  {areas.map((a) => (
-                    <Link key={a.slug} href={`/areas/${a.slug}`} className="block px-4 py-2.5 text-sm font-medium text-text-light hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200">
-                      {a.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <Link href="/areas" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
+            Areas
+          </Link>
 
           <Link href="/about" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
             About
@@ -155,23 +137,9 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="rounded-xl overflow-hidden">
-              <button onClick={() => setAreasOpen(!areasOpen)} className="w-full text-white py-3 px-4 hover:bg-white/5 font-bold text-left flex items-center justify-between transition-colors">
-                Areas We Cover
-                <svg className={`w-5 h-5 transition-transform duration-300 ${areasOpen ? "rotate-180 text-accent" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div className={`transition-all duration-300 ease-in-out ${areasOpen ? "max-h-[400px] opacity-100 pb-2" : "max-h-0 opacity-0 hidden"}`}>
-                <div className="pl-6 pr-4 flex flex-col gap-1 border-l-2 border-accent/30 ml-4 mt-1">
-                  {areas.map((a) => (
-                    <Link key={a.slug} href={`/areas/${a.slug}`} onClick={() => setMobileOpen(false)} className="text-text-muted py-2 font-medium hover:text-accent transition-colors">
-                      {a.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Link href="/areas" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
+              Areas
+            </Link>
 
             <Link href="/about" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
               About
