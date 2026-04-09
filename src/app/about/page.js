@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CTABlock from "@/components/CTABlock";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export const metadata = {
   title: "About Us | One Stop Tyres Wakefield",
@@ -10,6 +11,15 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-primary min-h-screen pt-20">
+      <SchemaMarkup schema={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "One Stop Tyres Wakefield",
+          "description": "Professional tyre service and emergency mobile repairs based in Wakefield, West Yorkshire."
+        }
+      }} />
       {/* Hero */}
       <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
         <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>

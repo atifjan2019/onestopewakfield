@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for One Stop Tyres Wakefield. Understand how we securely collect and process your digital data alongside service bookings.",
+  alternates: { canonical: "/privacy-policy" },
   robots: {
     index: false,
     follow: false,

@@ -67,7 +67,10 @@ const localBusinessSchema = {
     "latitude": "53.6830",
     "longitude": "-1.4977"
   },
-  sameAs: [],
+  sameAs: [
+    "https://facebook.com/onestoptyreswakefield", // Placeholder
+    "https://instagram.com/onestoptyreswakefield" // Placeholder
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Cinema House, 160 Doncaster Road, Belle Vue",
@@ -103,6 +106,12 @@ const localBusinessSchema = {
     },
     "reviewBody": t.text
   }))
+};
+
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function Home() {
@@ -235,13 +244,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
-              <img src="/images/gallery/shop-1.jpg" alt="One Stop Tyres Wakefield Shop Front" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="/images/gallery/shop-1.jpg" alt="One Stop Tyres Wakefield Shop Front" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
-              <img src="/images/gallery/shop-2.jpg" alt="Inside Our Fully Equipped Tyre Workshop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="/images/gallery/shop-2.jpg" alt="Inside Our Fully Equipped Tyre Workshop" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
-              <img src="/images/gallery/shop-3.jpg" alt="Multiple Tyre Fitting Bays at One Stop Tyres" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src="/images/gallery/shop-3.jpg" alt="Multiple Tyre Fitting Bays at One Stop Tyres" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </div>
@@ -261,7 +270,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="w-full md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-4">
-              <Link href="/areas/wakefield" className="glass-panel group relative overflow-hidden rounded-2xl p-6 border-accent/30 bg-accent/10 hover:bg-accent/20 transition-colors pointer-events-none">
+              <Link href="/contact" className="glass-panel group relative overflow-hidden rounded-2xl p-6 border-accent/30 bg-accent/10 hover:bg-accent/20 transition-colors pointer-events-none">
                 <div className="relative z-10">
                   <span className="block font-black text-white text-xl group-hover:text-accent transition-colors">Wakefield</span>
                   <span className="text-accent text-xs font-bold uppercase tracking-widest mt-1 block">HQ</span>

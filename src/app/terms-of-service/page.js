@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Terms of Service",
   description: "Terms and conditions for utilizing the mobile tyre fitting and garage services provided by One Stop Tyres Wakefield.",
+  alternates: { canonical: "/terms-of-service" },
   robots: {
     index: false,
     follow: false,

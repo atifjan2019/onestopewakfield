@@ -1,16 +1,42 @@
 import Link from "next/link";
 import { PHONE_NUMBER, PHONE_HREF } from "@/data/services";
 import ContactForm from "@/components/ContactForm";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export const metadata = {
   title: "Contact Us | One Stop Tyres Wakefield",
-  description: "Contact One Stop Tyres Wakefield for tyre fitting, mobile service, and emergency repairs. Call us now for same-day service across Wakefield and West Yorkshire.",
+  description: "Contact One Stop Tyres Wakefield for rapid tyre fitting and emergency repairs. Call now for same-day service across West Yorkshire.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <div className="bg-primary min-h-screen pt-20">
+      <SchemaMarkup schema={{
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "One Stop Tyres Wakefield",
+          "telephone": "+441924929966",
+          "image": "https://www.onestoptyreswakefield.co.uk/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Cinema House, 160 Doncaster Road",
+            "addressLocality": "Wakefield",
+            "postalCode": "WF1 5HL",
+            "addressCountry": "UK"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+441924929966",
+            "contactType": "customer service",
+            "areaServed": "GB",
+            "availableLanguage": "English"
+          }
+        }
+      }} />
+
       {/* Hero Section */}
       <section className="relative py-8 md:py-16 lg:py-24 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/20 blur-[150px] rounded-full pointer-events-none"></div>
