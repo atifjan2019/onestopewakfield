@@ -4,14 +4,7 @@ import { useState } from 'react';
 import BookingCalendar from '@/components/BookingCalendar';
 import Link from 'next/link';
 
-export const metadata = {
-  title: "Book Tyre Fitting Online",
-  description: "Book your tyre fitting appointment online. Same-day availability across Wakefield and West Yorkshire. Quick, easy booking.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+// Metadata handled via layout.js
 
 export default function BookPage() {
   const [selectedDate, setSelectedDate] = useState(null);
