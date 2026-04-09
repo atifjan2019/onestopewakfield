@@ -77,6 +77,18 @@ export default function Footer() {
                   Dewsbury
                 </Link>
               </li>
+              <li>
+                <Link href="/areas/castleford" className="text-accent text-sm font-bold flex items-center gap-2 hover:brightness-125 transition-all">
+                  <span className="w-3 h-[1px] bg-accent"></span>
+                  Castleford
+                </Link>
+              </li>
+              <li>
+                <Link href="/areas/pontefract" className="text-accent text-sm font-bold flex items-center gap-2 hover:brightness-125 transition-all">
+                  <span className="w-3 h-[1px] bg-accent"></span>
+                  Pontefract
+                </Link>
+              </li>
               <li className="pt-2">
                 <Link href="/areas" className="inline-flex items-center gap-2 text-white hover:text-accent font-semibold text-sm transition-colors group">
                   View All Service Areas
