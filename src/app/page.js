@@ -91,31 +91,31 @@ const problems = [
 /* ─── PROCESS STEPS ─── */
 const processSteps = [
   { step: "01", title: "Tell Us What You Need", desc: "Call 01924 929966 or book online. Tell us your situation, vehicle registration, or tyre size." },
-  { step: "02", title: "We Find the Right Path", desc: "We route you to the right service — workshop fitting, mobile attendance, emergency call-out, or puncture assessment." },
+  { step: "02", title: "We Find the Right Path", desc: "We route you to the right service: workshop fitting, mobile attendance, emergency call-out, or puncture assessment." },
   { step: "03", title: "Confirm Your Tyres", desc: "We identify the correct fitment by registration or size, confirm load index and speed rating, and present budget, mid-range, or premium options." },
   { step: "04", title: "Book or Dispatch", desc: "For planned fitting, choose a time that works. For mobile or emergency needs, we dispatch to your location." },
-  { step: "05", title: "Fit, Repair, or Replace", desc: "Our technicians complete the job — fitting, repairing, replacing, and balancing — with professional equipment." },
+  { step: "05", title: "Fit, Repair, or Replace", desc: "Our technicians complete the job - fitting, repairing, replacing, and balancing - with professional equipment." },
   { step: "06", title: "Safety Check & Go", desc: "Every job includes a final pressure check and visual inspection before you drive away." },
 ];
 
 /* ─── FAQ DATA ─── */
 const faqs = [
-  { q: "Can you fit tyres the same day in Wakefield, and does availability depend on tyre size or time of day?", a: "Yes, we offer same-day tyre fitting at our Wakefield workshop and via our mobile fleet. Availability depends on stock for your specific tyre size and the time you call — we recommend calling early in the day for the best chance of a same-day slot." },
+  { q: "Can you fit tyres the same day in Wakefield, and does availability depend on tyre size or time of day?", a: "Yes, we offer same-day tyre fitting at our Wakefield workshop and via our mobile fleet. Availability depends on stock for your specific tyre size and the time you call — we recommend calling early for the best chance of a same-day slot." },
   { q: "Do you offer mobile tyre fitting in Wakefield at home or work, and does access or parking affect availability?", a: "Yes, our mobile tyre fitting service comes to you at home, work, or any accessible location. As long as our van can safely park near your vehicle with enough space to work securely, we can fit your tyres on-site." },
   { q: "How does your emergency tyre repair service work in Wakefield, and does it cover the M1 and M62?", a: "If you have a blowout or sudden flat, call us immediately. We dispatch a fully equipped van to your location, including the hard shoulders of the M1 (J39-J41) and M62 (J29-J31), prioritising urgent attendance to get you to safety." },
   { q: "Can a puncture be repaired or does it always need replacing, and how do you decide which is safe?", a: "A puncture can often be repaired to BS AU 159 standards if it's within the central tread band and meets safety criteria. However, sidewall damage, shoulder punctures, or damage to run-flat tyres cannot be repaired safely, meaning a replacement is required. We assess every tyre first." },
   { q: "Is wheel balancing included when you fit new tyres, or is it a separate service?", a: "Digital wheel balancing is fully included with every new tyre we supply and fit. If you need balancing as a standalone service (for instance, to cure a vibration on existing tyres), we offer that too." },
   { q: "What is the difference between wheel balancing and wheel alignment, and which do I need after a pothole?", a: "Wheel balancing ensures weight is evenly distributed around the wheel, preventing vibration at speed. Wheel alignment corrects the angle of the wheels, preventing pulling and uneven tyre wear. After hitting a pothole, check balancing first; if the car pulls to one side, you may need alignment." },
-  { q: "How do I find the right tyre size for my car — can you look it up by registration?", a: "Yes, simply give us your vehicle registration number and our system instantly finds the correct tyre size, load index, and speed rating for your exact model. You can also find your size stamped on the sidewall of your current tyres." },
+  { q: "How do I find the right tyre size for my car - can you look it up by registration?", a: "Yes, simply give us your vehicle registration number and our system instantly finds the correct tyre size, load index, and speed rating for your exact model. You can also find your size stamped on the sidewall of your current tyres." },
   { q: "What is the legal minimum tyre tread depth in the UK, and what happens if I'm caught below it?", a: "The legal minimum tread depth is 1.6mm across the central three-quarters of the tyre. Driving on unroadworthy tyres below this limit drastically increases braking distance and risks a £2,500 fine plus 3 penalty points per tyre." },
   { q: "Do you fit van tyres in Wakefield, and does load index affect which tyre I need?", a: "Yes, we regularly supply and fit van and light commercial tyres. The load index is critical for vans, as fitting a tyre that cannot support the vehicle's laden weight is illegal and highly dangerous." },
   { q: "Can you fit tyres for electric vehicles, and are EV tyres different from standard car tyres?", a: "Yes, we fit tyres for electric vehicles. EV-specific tyres are designed to handle the heavier weight of battery packs and the instant torque of electric motors, whilst offering lower rolling resistance to maximise battery range." },
   { q: "What's the difference between budget, mid-range, and premium tyres for everyday driving?", a: "Budget tyres are a cost-effective, legal option for lower-mileage or city driving. Mid-range tyres offer a solid balance of wear life and wet grip. Premium tyres use advanced compounds for the shortest braking distances, lowest road noise, and highest durability." },
   { q: "Do you cover all WF1 to WF6 postcodes in Wakefield for mobile and emergency services?", a: "Yes, our mobile tyre fitters cover the entire Wakefield immediate area, across all WF1, WF2, WF3, WF4, WF5, and WF6 postcodes, expanding outwards across West Yorkshire." },
   { q: "Can you remove a locking wheel nut if the key is missing, lost, or broken?", a: "Yes. If your locking wheel nut key is missing, damaged, or broken, we carry specialist removal equipment to safely extract the locking nut without damaging your alloys, allowing the tyre replacement to go ahead." },
-  { q: "What's the difference between mobile tyre fitting and emergency tyre repair — when should I call which?", a: "Mobile tyre fitting is for scheduled convenience — we come replacing worn-out tyres at a time that suits you. Emergency tyre repair is a rapid-response service for when you are unexpectedly stranded by a blowout or flat tyre and need immediate help." },
+  { q: "What's the difference between mobile tyre fitting and emergency tyre repair - when should I call which?", a: "Mobile tyre fitting is for scheduled convenience. We come replacing worn-out tyres at a time that suits you. Emergency tyre repair is a rapid-response service for when you are unexpectedly stranded by a blowout or flat tyre and need immediate help." },
   { q: "Do you service TPMS valves when fitting new tyres, and can a faulty TPMS cause wrong pressure readings?", a: "We can inspect your Tyre Pressure Monitoring System (TPMS) during fitting. A faulty or damaged TPMS sensor can cause dashboard warning lights, give inaccurate readings, and even slowly leak air." },
-  { q: "How much does tyre fitting cost in Wakefield — do you provide upfront quotes before any work?", a: "The total cost depends on your tyre size and whether you choose budget, mid-range, or premium. We believe in upfront pricing — the quote we give you includes the tyre, fitting, new valve, balancing, and old tyre disposal. [VERIFY IF TRUE]" },
+  { q: "How much does tyre fitting cost in Wakefield, and do you provide upfront quotes before any work?", a: "The total cost depends on your tyre size and whether you choose budget, mid-range, or premium. We believe in upfront pricing. The quote we give you includes the tyre, fitting, new valve, balancing, and old tyre disposal. [VERIFY IF TRUE]" },
   { q: "Do you offer wheel alignment (tracking) in Wakefield, or is it only available alongside other services?", a: "We provide wheel alignment check assessments alongside tyre replacements if uneven wear indicates a tracking issue. This is an additional supporting service to ensure your new tyres don't wear out prematurely." }
 ];
 
@@ -217,7 +217,7 @@ export const metadata = {
     siteName: "One Stop Tyres Wakefield",
     locale: "en_GB",
     type: "website",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "One Stop Tyres Wakefield — Tyre Fitting, Mobile Service & Emergency Repair" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "One Stop Tyres Wakefield - Tyre Fitting, Mobile Service & Emergency Repair" }],
   },
 };
 
@@ -244,7 +244,7 @@ export default function Home() {
       <SchemaMarkup schema={faqSchema} />
 
       {/* ═══ SECTION 1 — HERO / ENTITY CONFIRMATION ═══ */}
-      <section className="relative min-h-[90vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-12 md:pt-20 pb-12 md:pb-16">
+      <section className="relative min-h-[90vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-28 md:pt-20 pb-12 md:pb-16">
         <div className="absolute inset-0 bg-[url('/images/2.jpeg')] bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/80 to-primary"></div>
         <div className="absolute top-1/4 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/20 rounded-full blur-[100px] md:blur-[150px] animate-blob mix-blend-screen pointer-events-none"></div>
@@ -267,7 +267,7 @@ export default function Home() {
           </h1>
 
           <p className="text-text-light text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            One Stop Tyres Wakefield is a Wakefield-based tyre fitting service covering the city and the wider West Yorkshire region. We provide same-day tyre fitting at our Doncaster Road workshop, mobile tyre fitting at your home, work, or roadside, and emergency tyre repair for breakdowns and urgent call-outs. Whether you need a puncture repaired, tyres replaced, or wheels balanced, our local team handles every job with honest pricing and professional care. Call us directly or book online — we'll confirm the right service for your situation immediately.
+            Same-day tyre fitting at our Doncaster Road workshop. Mobile fitting at your home, work, or roadside. Emergency repair for breakdowns. Budget to premium tyres supplied and fitted across Wakefield and West Yorkshire.
           </p>
 
           {/* CTAs */}
@@ -322,7 +322,7 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Not sure which situation fits yours? These are the tyre problems Wakefield drivers face most — and the right path for each.
+              Not sure which situation fits yours? These are the tyre problems Wakefield drivers face most, and the right path for each.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -445,7 +445,7 @@ export default function Home() {
             <div className="glass-panel rounded-2xl p-6 md:p-8">
               <h3 className="font-bold text-white text-xl mb-4">Find Your Tyres by Registration or Size</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-4">
-                Tell us your vehicle registration and we look up the correct tyre specifications — size, load index, and speed rating — instantly. Alternatively, if you know your tyre size (printed on the sidewall, e.g. 205/55 R16 91V), call or book with that and we'll match it directly.
+                Tell us your vehicle registration and we look up the correct tyre specifications (size, load index, and speed rating) instantly. Alternatively, if you know your tyre size (printed on the sidewall, e.g. 205/55 R16 91V), call or book with that and we'll match it directly.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
                 Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty. We make sure it's 100% correct before any tyre goes on your car.
@@ -467,7 +467,7 @@ export default function Home() {
 
             {/* Tyre Tiers */}
             <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-6">Budget, Mid-Range & Premium — What's the Difference?</h3>
+              <h3 className="font-bold text-white text-xl mb-6">Budget, Mid-Range & Premium - What's the Difference?</h3>
               <div className="space-y-5">
                 <div className="flex gap-4">
                   <div className="w-2 rounded-full bg-green-500 shrink-0 mt-1.5"></div>
@@ -520,9 +520,9 @@ export default function Home() {
       <section className="py-10 md:py-20 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Same-Day, Mobile or Emergency — Which Do You Need?</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Same-Day, Mobile or Emergency - Which Do You Need?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Once you know what tyres you need, the next decision is how you'd like them fitted. We offer three routes — each designed for a different level of urgency and location.
+              Once you know what tyres you need, the next decision is how you'd like them fitted. We offer three routes, each designed for a different level of urgency and location.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -576,7 +576,7 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Repair, Replace, Balance or Align — Understanding the Difference</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Repair, Replace, Balance or Align - Understanding the Difference</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               Some tyre issues overlap. This section clarifies the most common diagnostic questions so you can understand what's happening with your tyres before you call.
             </p>
@@ -588,7 +588,7 @@ export default function Home() {
                 A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band and the penetrating object is small enough.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres generally cannot be safely repaired — a full replacement is required.
+                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres generally cannot be safely repaired. A full replacement is required.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
                 We assess every puncture. We never repair a tyre that isn't safe to repair.
@@ -640,7 +640,7 @@ export default function Home() {
       {/* ═══ SECTION 9 — PROOF / TRUST SYSTEM ═══ */}
       <section className="py-10 md:py-20 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          {/* Layer 1 — Operational Proof */}
+          {/* Layer 1 - Operational Proof */}
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Why Wakefield Drivers Choose Us</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
@@ -652,7 +652,7 @@ export default function Home() {
               { title: "Local Workshop", desc: "Based at Cinema House, 160 Doncaster Rd, WF1 5HL. Real physical presence with multiple bays and high-end lifts." },
               { title: "Same-Day Availability", desc: "By keeping high stock levels locally, we get most standard tyres securely fitted the exact same day you call." },
               { title: "Upfront Pricing", desc: "The price we quote is the price you pay. Tyres, fitting, valves, and disposal are fully included in our quotes." },
-              { title: "Mobile Fleet Coverage", desc: "We don't just act local — we have fully equipped vans actively stationed and patrolling across West Yorkshire." },
+              { title: "Mobile Fleet Coverage", desc: "We don't just act local. We have fully equipped vans actively stationed and patrolling across West Yorkshire." },
               { title: "BS AU 159 Repairs", desc: "Every puncture is assessed according to strict British Standards. We'd rather tell you it's unrepairable than compromise safety." },
               { title: "Experienced Fitters", desc: "Years of local service and thousands of successful fittings. See what your neighbours say below." },
             ].map((p) => (
@@ -664,7 +664,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Layer 2 — Testimonials */}
+          {/* Layer 2 - Testimonials */}
           <div className="mb-16">
             <div className="mb-10 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-5 py-2.5 rounded-full text-sm mb-6 shadow-lg backdrop-blur-md">
@@ -696,7 +696,7 @@ export default function Home() {
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Cinema House, 160 Doncaster Road, Belle Vue, Wakefield WF1 5HL</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Multiple fitting bays with professional lifts and balancing tech</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Large tyre stock — budget, mid-range, and premium</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Large tyre stock: budget, mid-range, and premium</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Mon–Sat 9am–6pm, Sunday 9am–5pm</li>
               </ul>
               <Link href="/contact" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
@@ -823,7 +823,7 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Tyre Services Near You</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              These are some of our most popular service areas — each with a dedicated page detailing coverage.
+              These are some of our most popular service areas, each with a dedicated page detailing coverage.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -883,7 +883,7 @@ export default function Home() {
       {/* ═══ SECTION 14 — FINAL CTA / CONTACT CLOSURE ═══ */}
       <CTABlock
         heading="Ready to Get Moving?"
-        subtext="Got your answer? Let's get you sorted. Whether it's a routine tyre fitting at our Wakefield workshop, a mobile appointment at your home, or an emergency call-out on the M1 — we're here. Same-day availability. Honest pricing. One call gets it sorted."
+        subtext="Got your answer? Let's get you sorted. Whether it's a routine tyre fitting at our Wakefield workshop, a mobile appointment at your home, or an emergency call-out on the M1. We're here. Same-day availability. Honest pricing. One call gets it sorted."
       />
     </div>
   );
