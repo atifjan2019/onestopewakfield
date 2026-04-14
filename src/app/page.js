@@ -235,7 +235,7 @@ function TrustIcon({ type }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HOMEPAGE
+   HOMEPAGE — Semantic Visual Hierarchy
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   return (
@@ -260,10 +260,10 @@ export default function Home() {
             Emergency Callouts Available
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-2xl animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-2xl animate-fade-in-up max-w-5xl mx-auto" style={{ animationDelay: "0.1s" }}>
             Tyre Fitting, Mobile Service{" "}
             <br className="hidden md:block" />
-            <span className="text-gradient-accent">& Emergency Repair in Wakefield</span>
+            <span className="text-gradient-accent">&amp; Emergency Repair in Wakefield</span>
           </h1>
 
           <p className="text-text-light text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
@@ -298,16 +298,18 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* ═══ SECTION 2 — QUICK INTENT ROUTER ═══ */}
-      <section className="py-10 md:py-20 relative z-20 bg-surface-dark border-t border-border/50">
+      <div className="section-bridge">If you already know what you need, start here.</div>
+      <section className="py-10 md:py-16 relative z-20 bg-surface-dark">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">What Do You Need?</h2>
-            <p className="text-text-muted text-base md:text-xl font-medium max-w-2xl mx-auto">
-              If you already know what you need, start here. Choose your situation and we'll point you to the right service.
+          <div className="mb-8 md:mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">What Do You Need?</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
+              Choose your situation and we'll point you to the right service.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {intentCards.map((c) => (
               <ServiceCard key={c.href} icon={c.icon} title={c.headline} description={c.desc} href={c.href} />
             ))}
@@ -315,27 +317,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — PROBLEM CLUSTER ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-accent/5 backdrop-blur-3xl"></div>
+
+      {/* ═══ SECTION 3 — PROBLEM CLUSTER (Editorial Panels) ═══ */}
+      <div className="section-bridge">Not sure? Let's diagnose your situation.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Not sure which situation fits yours? These are the tyre problems Wakefield drivers face most, and the right path for each.
+          <div className="mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
+              These are the tyre problems Wakefield drivers face most, and the right path for each.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {problems.map((p) => (
-              <div key={p.title} className="glass-panel rounded-2xl p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[40px] group-hover:bg-accent/10 transition-colors"></div>
-                <h3 className="font-bold text-white text-xl mb-3">{p.title}</h3>
-                <div className="space-y-3 text-sm leading-relaxed">
+              <div key={p.title} className="problem-panel">
+                <h3 className="font-bold text-white text-lg mb-3">{p.title}</h3>
+                <div className="space-y-2 text-sm leading-relaxed">
                   <p className="text-text-light"><span className="text-accent font-semibold">Situation:</span> {p.situation}</p>
                   <p className="text-text-muted"><span className="text-amber-400 font-semibold">Risk:</span> {p.risk}</p>
                   <p className="text-text-light"><span className="text-green-400 font-semibold">Right path:</span> {p.path}</p>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-3">
+                <div className="mt-3 flex flex-wrap gap-3">
                   {p.links.map((l) => (
                     <Link key={l.href} href={l.href} className="inline-flex items-center gap-1 text-accent text-sm font-bold hover:underline underline-offset-4">
                       {l.label} →
@@ -348,17 +350,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — CORE SERVICE SYSTEM ═══ */}
-      <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
+
+      {/* ═══ SECTION 4 — CORE SERVICE TAXONOMY ═══ */}
+      <section className="py-12 md:py-20 bg-deep">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 md:mb-12">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Our Tyre Services</h2>
-            <p className="text-text-muted text-base md:text-xl font-medium max-w-3xl">
-              Each of these situations maps to one of our core services. Here's the full list of what we provide across Wakefield and West Yorkshire. Each service has a dedicated page with full details, pricing guidance, and booking.
+          <div className="mb-8 md:mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Our Tyre Services</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
+              Each of these situations maps to one of our core services. Here's the full list of what we provide across Wakefield and West Yorkshire.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
             {services.map((s) => (
               <Link key={s.slug} href={`/${s.slug}`} className="glass-panel glass-panel-hover rounded-xl p-5 flex items-center justify-between group">
                 <div>
@@ -372,8 +375,8 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Supporting services mention */}
-          <div className="glass-panel rounded-2xl p-6 md:p-8 border border-white/5 bg-white/[0.02]">
+          {/* Supporting services */}
+          <div className="rounded-xl p-6 md:p-8 border border-white/5 bg-white/[0.02]">
             <h3 className="font-bold text-white text-lg mb-4">Additional Supporting Services</h3>
             <p className="text-text-muted text-sm mb-6 max-w-3xl">
               We also support wheel alignment checks, locking wheel nut removal, and TPMS valve servicing as part of broader tyre work. These are not standalone bookable services but are available alongside fitting, replacement, or repair.
@@ -400,24 +403,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — PROCESS CLUSTER ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">How It Works</h2>
+
+      {/* ═══ SECTION 5 — PROCESS (Vertical Timeline) ═══ */}
+      <div className="section-bridge">Here's exactly how it works, step by step.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
+        <div className="mx-auto max-w-3xl px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">How It Works</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              You've seen what we offer. Here's exactly how it works from the moment you contact us.
+              From first call to driving away — six clear steps.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="relative">
             {processSteps.map((s) => (
-              <div key={s.step} className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
-                <div className="absolute top-4 right-4 text-5xl font-black text-white/5 group-hover:text-accent/10 transition-colors">{s.step}</div>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center text-accent border border-accent/20 mb-5 group-hover:scale-110 transition-transform">
-                  <span className="font-black text-sm">{s.step}</span>
+              <div key={s.step} className="timeline-step">
+                <div className="timeline-line"></div>
+                <div className="timeline-number">{s.step}</div>
+                <div className="pt-1">
+                  <h3 className="font-bold text-white text-lg mb-1">{s.title}</h3>
+                  <p className="text-text-muted text-sm leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="font-bold text-white text-lg mb-2">{s.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -430,268 +435,299 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — TYRE CHOICE / DECISION SUPPORT ═══ */}
-      <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
+
+      {/* ═══ SECTION 6 — TYRE CHOICE / DECISION SUPPORT (Editorial Split) ═══ */}
+      <div className="section-bridge">Before we fit, let's get the right tyres.</div>
+      <section className="py-12 md:py-20 bg-charcoal">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Choosing the Right Tyres for Your Vehicle</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Before we fit your tyres, we make sure you're getting the right ones. Here's how to choose the right tier and type for your vehicle, your driving, and your budget.
+          <div className="mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Choosing the Right Tyres for Your Vehicle</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
+              We make sure you're getting the right ones — the right size, the right tier, and the right type for your driving.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            {/* Find Your Tyres */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Find Your Tyres by Registration or Size</h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-4">
-                Tell us your vehicle registration and we look up the correct tyre specifications (size, load index, and speed rating) instantly. Alternatively, if you know your tyre size (printed on the sidewall, e.g. 205/55 R16 91V), call or book with that and we'll match it directly.
-              </p>
-              <p className="text-text-muted text-sm leading-relaxed">
-                Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty. We make sure it's 100% correct before any tyre goes on your car.
-              </p>
-            </div>
 
-            {/* Understanding Specs */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Understanding Load Index, Speed Rating & Tyre Labels</h3>
-              <div className="space-y-4">
-                <p className="text-text-muted text-sm leading-relaxed">
-                  <span className="text-white font-semibold">Load Index & Speed Rating:</span> It's vital we match or exceed your vehicle manufacturer's original specifications. This is especially critical for vans and heavily loaded vehicles where an insufficient load index is dangerous and illegal.
+          {/* Editorial Split: Left = primary guidance, Right = supporting info */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Left column — primary guidance (3/5 width) */}
+            <div className="lg:col-span-3 space-y-8">
+              {/* Find Your Tyres */}
+              <div className="border-l-4 border-accent pl-6">
+                <h3 className="font-bold text-white text-xl mb-3">Find Your Tyres by Registration or Size</h3>
+                <p className="text-text-muted text-sm leading-relaxed mb-3">
+                  Tell us your vehicle registration and we look up the correct tyre specifications (size, load index, and speed rating) instantly. Alternatively, call or book with your tyre size (e.g. 205/55 R16 91V) and we'll match it directly.
                 </p>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  <span className="text-white font-semibold">EU Tyre Labels:</span> Every tyre we sell is rated on <span className="text-white font-semibold">wet grip</span> (A–E for braking safety), <span className="text-white font-semibold">rolling resistance</span> (A–E, affects fuel economy/range), and <span className="text-white font-semibold">external noise</span> (dB). We explain these so you know what you are buying.
+                  Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty. We make sure it's 100% correct before any tyre goes on your car.
                 </p>
+              </div>
+
+              {/* Tyre Tiers as comparison strip */}
+              <div>
+                <h3 className="font-bold text-white text-xl mb-5">Budget, Mid-Range &amp; Premium — What's the Difference?</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 rounded-xl overflow-hidden border border-white/5">
+                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-green-400">
+                    <span className="text-white font-semibold block mb-2">Budget</span>
+                    <p className="text-text-muted text-sm">Reliable, meets all legal requirements. Ideal for lower-mileage drivers and city driving. Best value per mile.</p>
+                  </div>
+                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-amber-400 sm:border-l sm:border-white/5">
+                    <span className="text-white font-semibold block mb-2">Mid-Range</span>
+                    <p className="text-text-muted text-sm">Balanced performance and value. Good wet grip, reasonable wear life. Suitable for most everyday drivers.</p>
+                  </div>
+                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-accent sm:border-l sm:border-white/5">
+                    <span className="text-white font-semibold block mb-2">Premium</span>
+                    <p className="text-text-muted text-sm">Top-tier wet grip, shortest braking distances, lowest road noise, and longest wear. Perfect for high-mileage drivers.</p>
+                  </div>
+                </div>
+                <Link href="/tyre-replacement-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-4 hover:underline underline-offset-4">
+                  View Tyre Replacement Service →
+                </Link>
               </div>
             </div>
 
-            {/* Tyre Tiers */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-6">Budget, Mid-Range & Premium - What's the Difference?</h3>
-              <div className="space-y-5">
-                <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-green-500 shrink-0 mt-1.5"></div>
-                  <div>
-                    <span className="text-white font-semibold block">Budget Tyres</span>
-                    <p className="text-text-muted text-sm mt-1">Reliable, meets all legal requirements. Ideal for lower-mileage drivers and city driving. Best value per mile.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-amber-400 shrink-0 mt-1.5"></div>
-                  <div>
-                    <span className="text-white font-semibold block">Mid-Range Tyres</span>
-                    <p className="text-text-muted text-sm mt-1">Balanced performance and value. Good wet grip, reasonable wear life. Suitable for most everyday drivers.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-2 rounded-full bg-accent shrink-0 mt-1.5"></div>
-                  <div>
-                    <span className="text-white font-semibold block">Premium Tyres</span>
-                    <p className="text-text-muted text-sm mt-1">Top-tier wet grip, shortest braking distances, lowest road noise, and longest wear. Perfect for high-mileage drivers.</p>
-                  </div>
+            {/* Right column — supporting info (2/5 width) */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Specs */}
+              <div className="rounded-xl p-5 bg-white/[0.02] border border-white/5">
+                <h3 className="font-bold text-white text-lg mb-3">Load Index, Speed Rating &amp; Tyre Labels</h3>
+                <div className="space-y-3">
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    <span className="text-white font-semibold">Load Index &amp; Speed Rating:</span> It's vital we match or exceed your vehicle manufacturer's original specifications. This is especially critical for vans and heavily loaded vehicles.
+                  </p>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    <span className="text-white font-semibold">EU Tyre Labels:</span> Every tyre is rated on <span className="text-white">wet grip</span> (A–E), <span className="text-white">rolling resistance</span> (A–E), and <span className="text-white">external noise</span> (dB). We explain these so you know what you're buying.
+                  </p>
                 </div>
               </div>
-              <Link href="/tyre-replacement-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-6 hover:underline underline-offset-4">
-                View Tyre Replacement Service →
-              </Link>
-            </div>
 
-            {/* Vehicle-Specific Fitment */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Tyres for Cars, Vans, 4x4s & Electric Vehicles</h3>
-              <div className="space-y-4">
-                <p className="text-text-muted text-sm leading-relaxed">
-                  We supply and fit standard <span className="text-white">car tyres</span>, reinforced <span className="text-white">van tyres</span> (with proper commercial load indexes), and rugged <span className="text-white">4x4 tyres</span>. 
-                </p>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  We can also fit specific <span className="text-white">EV tyres</span> designed for the increased weight and instant torque of electric vehicles, offering lower rolling resistance to maximise battery range. 
-                </p>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  If your vehicle requires <span className="text-white">run-flat tyres</span>, we supply and safely fit them. We also offer seasonal options including <span className="text-white">summer, winter, and all-season tyres</span>.
-                </p>
+              {/* Vehicle types */}
+              <div className="rounded-xl p-5 bg-white/[0.02] border border-white/5">
+                <h3 className="font-bold text-white text-lg mb-3">Cars, Vans, 4x4s &amp; EVs</h3>
+                <div className="space-y-3">
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    We supply and fit standard <span className="text-white">car tyres</span>, reinforced <span className="text-white">van tyres</span>, rugged <span className="text-white">4x4 tyres</span>, and specific <span className="text-white">EV tyres</span> designed for electric vehicles.
+                  </p>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    We also fit <span className="text-white">run-flat tyres</span> and offer seasonal options including <span className="text-white">summer, winter, and all-season tyres</span>.
+                  </p>
+                </div>
               </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 7 — SAME-DAY VS MOBILE VS EMERGENCY ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Same-Day, Mobile or Emergency - Which Do You Need?</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Once you know what tyres you need, the next decision is how you'd like them fitted. We offer three routes, each designed for a different level of urgency and location.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Same-Day */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full blur-[30px] group-hover:bg-green-500/20 transition-colors"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500 mb-4"></div>
-              <h3 className="font-bold text-white text-xl mb-4">Same-Day Workshop Fitting</h3>
-              <p className="text-text-muted text-sm mb-4">Come to our Wakefield workshop today for a quick turnaround while you wait.</p>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Quick replacement without waiting for delivery</li>
-                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Our Doncaster Road workshop</li>
-              </ul>
-              <Link href="/tyre-fitting-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
-                Workshop Fitting →
-              </Link>
-            </div>
-            {/* Mobile */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-[30px] group-hover:bg-blue-500/20 transition-colors"></div>
-              <div className="w-3 h-3 rounded-full bg-blue-500 mb-4"></div>
-              <h3 className="font-bold text-white text-xl mb-4">Mobile Tyre Fitting</h3>
-              <p className="text-text-muted text-sm mb-4">We come to your home, workplace, or chosen location. Scheduled or on-demand.</p>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Convenience, or if your car isn't driveable</li>
-                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Anywhere across West Yorkshire</li>
-              </ul>
-              <Link href="/mobile-tyre-fitting-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
-                Mobile Fitting →
-              </Link>
-            </div>
-            {/* Emergency */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 border border-accent/20">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full blur-[30px] group-hover:bg-accent/20 transition-colors"></div>
-              <div className="w-3 h-3 rounded-full bg-accent mb-4 animate-pulse"></div>
-              <h3 className="font-bold text-white text-xl mb-4">Emergency Tyre Repair</h3>
-              <p className="text-text-muted text-sm mb-4">Urgent dispatch for breakdowns, blowouts, and stranded vehicles requiring immediate priority attendance.</p>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li className="flex gap-2"><span className="text-white font-semibold">Best for:</span> Roadside emergencies, sudden flat tyres</li>
-                <li className="flex gap-2"><span className="text-white font-semibold">Location:</span> Roadside, motorways, car parks</li>
-              </ul>
-              <Link href="/emergency-tyre-repair-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-5 hover:underline underline-offset-4">
-                Get Emergency Help →
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 8 — REPAIR / REPLACEMENT / BALANCING / ALIGNMENT ═══ */}
-      <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Repair, Replace, Balance or Align - Understanding the Difference</h2>
+
+      {/* ═══ SECTION 7 — SERVICE MODE COMPARISON (Attribute Table) ═══ */}
+      <div className="section-bridge">Three routes to getting your tyres fitted.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
+        <div className="mx-auto max-w-5xl px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Same-Day, Mobile or Emergency — Which Do You Need?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Some tyre issues overlap. This section clarifies the most common diagnostic questions so you can understand what's happening with your tyres before you call.
+              Each route is designed for a different level of urgency and location.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Puncture Repair vs Tyre Replacement</h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band and the penetrating object is small enough.
+
+          {/* Desktop: Comparison Table */}
+          <div className="hidden md:block comparison-table">
+            {/* Header */}
+            <div className="comparison-header">
+              <div className="comparison-header-cell" style={{ borderTopColor: '#22c55e' }}>
+                <div className="w-3 h-3 rounded-full bg-green-500 mx-auto mb-2"></div>
+                Same-Day Workshop
+              </div>
+              <div className="comparison-header-cell" style={{ borderTopColor: '#3080ff' }}>
+                <div className="w-3 h-3 rounded-full bg-blue-500 mx-auto mb-2"></div>
+                Mobile Fitting
+              </div>
+              <div className="comparison-header-cell" style={{ borderTopColor: '#E31E24' }}>
+                <div className="w-3 h-3 rounded-full bg-accent mx-auto mb-2 animate-pulse"></div>
+                Emergency Repair
+              </div>
+            </div>
+            {/* Best for */}
+            <div className="comparison-row">
+              <div className="comparison-cell"><span className="comparison-label">Best for</span>Quick replacement without waiting</div>
+              <div className="comparison-cell"><span className="comparison-label">Best for</span>Convenience, or car isn't driveable</div>
+              <div className="comparison-cell"><span className="comparison-label">Best for</span>Roadside emergencies, sudden flats</div>
+            </div>
+            {/* Where */}
+            <div className="comparison-row">
+              <div className="comparison-cell"><span className="comparison-label">Where</span>Our Doncaster Road workshop</div>
+              <div className="comparison-cell"><span className="comparison-label">Where</span>Anywhere across West Yorkshire</div>
+              <div className="comparison-cell"><span className="comparison-label">Where</span>Roadside, motorways, car parks</div>
+            </div>
+            {/* Urgency */}
+            <div className="comparison-row">
+              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-green-400 font-semibold">Planned</span></div>
+              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-amber-400 font-semibold">Flexible</span></div>
+              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-accent font-semibold">Immediate</span></div>
+            </div>
+            {/* Typical user */}
+            <div className="comparison-row">
+              <div className="comparison-cell"><span className="comparison-label">Typical user</span>Drivers who can bring the car in</div>
+              <div className="comparison-cell"><span className="comparison-label">Typical user</span>Busy schedules, immobile vehicles</div>
+              <div className="comparison-cell"><span className="comparison-label">Typical user</span>Stranded drivers, blowouts</div>
+            </div>
+            {/* CTAs */}
+            <div className="comparison-row">
+              <div className="comparison-cell pt-4 pb-5"><Link href="/tyre-fitting-wakefield" className="text-accent font-bold text-sm hover:underline underline-offset-4">Workshop Fitting →</Link></div>
+              <div className="comparison-cell pt-4 pb-5"><Link href="/mobile-tyre-fitting-wakefield" className="text-accent font-bold text-sm hover:underline underline-offset-4">Mobile Fitting →</Link></div>
+              <div className="comparison-cell pt-4 pb-5"><Link href="/emergency-tyre-repair-wakefield" className="text-accent font-bold text-sm hover:underline underline-offset-4">Get Emergency Help →</Link></div>
+            </div>
+          </div>
+
+          {/* Mobile: Stacked Cards */}
+          <div className="md:hidden space-y-4">
+            {[
+              { color: "green-500", title: "Same-Day Workshop", best: "Quick replacement", where: "Doncaster Road workshop", urgency: "Planned", urgencyColor: "text-green-400", href: "/tyre-fitting-wakefield", cta: "Workshop Fitting →" },
+              { color: "blue-500", title: "Mobile Fitting", best: "Convenience, or car isn't driveable", where: "Anywhere across West Yorkshire", urgency: "Flexible", urgencyColor: "text-amber-400", href: "/mobile-tyre-fitting-wakefield", cta: "Mobile Fitting →" },
+              { color: "accent", title: "Emergency Repair", best: "Roadside emergencies, sudden flats", where: "Roadside, motorways, car parks", urgency: "Immediate", urgencyColor: "text-accent", href: "/emergency-tyre-repair-wakefield", cta: "Get Emergency Help →", pulse: true },
+            ].map((card) => (
+              <div key={card.title} className={`rounded-xl p-5 bg-white/[0.02] border border-white/5 ${card.pulse ? 'border-accent/20' : ''}`}>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className={`w-3 h-3 rounded-full bg-${card.color} ${card.pulse ? 'animate-pulse' : ''}`}></div>
+                  <h3 className="font-bold text-white text-lg">{card.title}</h3>
+                </div>
+                <div className="space-y-2 text-sm text-text-muted">
+                  <p><span className="text-white font-semibold">Best for:</span> {card.best}</p>
+                  <p><span className="text-white font-semibold">Where:</span> {card.where}</p>
+                  <p><span className="text-white font-semibold">Urgency:</span> <span className={`${card.urgencyColor} font-semibold`}>{card.urgency}</span></p>
+                </div>
+                <Link href={card.href} className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-4 hover:underline underline-offset-4">{card.cta}</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══ SECTION 8 — DIAGNOSTIC CLARIFICATION (Matrix) ═══ */}
+      <section className="py-12 md:py-20 bg-burgundy-tint">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Understanding the Differences</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Repair, Replace, Balance or Align?</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
+              Some tyre issues overlap. This clarifies the most common diagnostic questions.
+            </p>
+          </div>
+          <div className="diagnostic-grid">
+            {/* Puncture Repair vs Replacement */}
+            <div className="diagnostic-cell">
+              <h3 className="font-bold text-white text-lg mb-3">Puncture Repair vs Tyre Replacement</h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band.
               </p>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres generally cannot be safely repaired. A full replacement is required.
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres cannot be safely repaired — replacement is required.
               </p>
-              <p className="text-text-muted text-sm leading-relaxed">
-                We assess every puncture. We never repair a tyre that isn't safe to repair.
-              </p>
-              <div className="mt-4 flex gap-4">
+              <p className="text-text-muted text-sm leading-relaxed mb-3">We assess every puncture. We never repair a tyre that isn't safe to repair.</p>
+              <div className="flex gap-4">
                 <Link href="/puncture-repair-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Puncture Repair →</Link>
                 <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Tyre Replacement →</Link>
               </div>
             </div>
             
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Wheel Balancing vs Wheel Alignment</h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-white font-semibold">Wheel balancing</span> corrects weight distribution in the tyre-wheel assembly. Symptoms include steering vibration, especially at speed.
+            {/* Balancing vs Alignment */}
+            <div className="diagnostic-cell">
+              <h3 className="font-bold text-white text-lg mb-3">Wheel Balancing vs Wheel Alignment</h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                <span className="text-white font-semibold">Wheel balancing</span> corrects weight distribution. Symptoms: steering vibration at speed.
               </p>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-white font-semibold">Wheel alignment (tracking)</span> adjusts the angles at which wheels point. Symptoms include the car pulling to one side and uneven tyre wear.
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                <span className="text-white font-semibold">Wheel alignment (tracking)</span> adjusts wheel angles. Symptoms: car pulling to one side, uneven tyre wear.
               </p>
-              <p className="text-text-muted text-sm leading-relaxed">
-                After hitting a pothole, start with wheel balancing. If pulling persists, alignment may be needed (available alongside fitting).
-              </p>
-              <Link href="/wheel-balancing-wakefield" className="inline-flex items-center gap-2 text-accent text-sm font-bold mt-4 hover:underline underline-offset-4">Wheel Balancing →</Link>
+              <p className="text-text-muted text-sm leading-relaxed mb-3">After a pothole, start with balancing. If pulling persists, alignment may be needed.</p>
+              <Link href="/wheel-balancing-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Wheel Balancing →</Link>
             </div>
             
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">Legal Tread Depth & Safety</h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                The UK legal minimum is <span className="text-white font-semibold">1.6mm</span> across the central three-quarters of the tread width, around the entire circumference.
+            {/* Legal Tread Depth */}
+            <div className="diagnostic-cell">
+              <h3 className="font-bold text-white text-lg mb-3">Legal Tread Depth &amp; Safety</h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                The UK legal minimum is <span className="text-white font-semibold">1.6mm</span> across the central three-quarters of the tread width.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                Driving below this limit is illegal: up to <span className="text-amber-400 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances on a wet road can be drastically worse holding less grip.
+                Below this: up to <span className="text-amber-400 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances are drastically worse.
               </p>
               <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Book a Replacement →</Link>
             </div>
             
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-white text-xl mb-4">TPMS & Locking Wheel Nuts</h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">
-                <span className="text-white font-semibold">Locking wheel nuts:</span> If your key is missing or damaged, we provide a specialist removal service safely unlocking the wheel so tyre work can proceed.
+            {/* TPMS & Locking Nuts */}
+            <div className="diagnostic-cell">
+              <h3 className="font-bold text-white text-lg mb-3">TPMS &amp; Locking Wheel Nuts</h3>
+              <p className="text-text-muted text-sm leading-relaxed mb-2">
+                <span className="text-white font-semibold">Locking wheel nuts:</span> If your key is missing or damaged, we provide specialist removal —  safely unlocking the wheel so tyre work can proceed.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
-                <span className="text-white font-semibold">TPMS:</span> Tyre Pressure Monitoring System sensors and valves can be serviced when fitting new tyres. A faulty valve can trigger false dashboard warnings or miss a real puncture.
+                <span className="text-white font-semibold">TPMS:</span> Sensors and valves can be serviced when fitting new tyres. A faulty valve can trigger false warnings or miss a real puncture.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 9 — PROOF / TRUST SYSTEM ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
+
+      {/* ═══ SECTION 9 — PROOF & TRUST SYSTEM (Strip + Testimonials) ═══ */}
+      <div className="section-bridge">Don't take our word for it.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-deep">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          {/* Layer 1 - Operational Proof */}
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Why Wakefield Drivers Choose Us</h2>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Why Wakefield Drivers Choose Us</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Understanding services is one thing. Trusting who does the work is another. Here's what we stand behind, and the evidence that backs it.
+              Here's what we stand behind, and the evidence that backs it.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+          {/* Proof Strip — horizontal evidence bar */}
+          <div className="proof-strip mb-16">
             {[
-              { title: "Local Workshop", desc: "Based at Cinema House, 160 Doncaster Rd, WF1 5HL. Real physical presence with multiple bays and high-end lifts." },
-              { title: "Same-Day Availability", desc: "By keeping high stock levels locally, we get most standard tyres securely fitted the exact same day you call." },
-              { title: "Upfront Pricing", desc: "The price we quote is the price you pay. Tyres, fitting, valves, and disposal are fully included in our quotes." },
-              { title: "Mobile Fleet Coverage", desc: "We don't just act local. We have fully equipped vans actively stationed and patrolling across West Yorkshire." },
-              { title: "BS AU 159 Repairs", desc: "Every puncture is assessed according to strict British Standards. We'd rather tell you it's unrepairable than compromise safety." },
-              { title: "Experienced Fitters", desc: "Years of local service and thousands of successful fittings. See what your neighbours say below." },
+              { title: "Local Workshop", desc: "Cinema House, 160 Doncaster Rd, WF1 5HL" },
+              { title: "Same-Day Fitting", desc: "High stock levels, same-day availability" },
+              { title: "Upfront Pricing", desc: "Tyres, fitting, valves, disposal included" },
+              { title: "Mobile Fleet", desc: "Equipped vans across West Yorkshire" },
+              { title: "BS AU 159", desc: "British Standard puncture assessments" },
+              { title: "Experienced Team", desc: "Thousands of successful fittings" },
             ].map((p) => (
-              <div key={p.title} className="glass-panel rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-[30px] group-hover:bg-accent/10 transition-colors"></div>
-                <h3 className="font-bold text-white text-lg mb-2">{p.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">{p.desc}</p>
+              <div key={p.title} className="proof-strip-item">
+                <h3 className="font-bold text-white text-sm mb-1">{p.title}</h3>
+                <p className="text-text-muted text-xs leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Layer 2 - Testimonials */}
-          <div className="mb-16">
-            <div className="mb-10 flex flex-col items-center text-center">
-              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-5 py-2.5 rounded-full text-sm mb-6 shadow-lg backdrop-blur-md">
+          {/* Testimonials */}
+          <div>
+            <div className="mb-8 flex flex-col items-center text-center">
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-5 py-2.5 rounded-full text-sm mb-5 shadow-lg backdrop-blur-md">
                 <svg className="w-5 h-5 text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 What Our Customers Say
               </div>
-              <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight">Driver Approved.</h3>
+              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight">Driver Approved.</h3>
             </div>
             <TestimonialSlider testimonials={testimonials} />
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 10 — WORKSHOP + CAPABILITY ═══ */}
-      <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
+
+      {/* ═══ SECTION 10 — WORKSHOP & MOBILE CAPABILITY ═══ */}
+      <section className="py-12 md:py-20 bg-deep">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Our Workshop & Mobile Capability</h2>
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Our Workshop &amp; Mobile Capability</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               Trust is built on what you can see. Here's our Wakefield workshop and the mobile fleet that covers the wider region.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-            {/* Workshop */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
+
+          {/* Workshop + Mobile split with left accent border */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div className="coverage-tier-primary rounded-r-xl p-6 md:p-8 bg-white/[0.02]">
               <h3 className="font-bold text-white text-xl mb-4">Wakefield Workshop</h3>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Cinema House, 160 Doncaster Road, Belle Vue, Wakefield WF1 5HL</li>
@@ -703,8 +739,7 @@ export default function Home() {
                 Get Directions →
               </Link>
             </div>
-            {/* Mobile */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
+            <div className="coverage-tier-secondary rounded-r-xl p-6 md:p-8 bg-white/[0.02]">
               <h3 className="font-bold text-white text-xl mb-4">Mobile Fleet</h3>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Fully equipped dedicated mobile fitting vans</li>
@@ -717,96 +752,73 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {/* Workshop gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+
+          {/* Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
               <img src="/images/gallery/shop-1.jpg" alt="One Stop Tyres Wakefield workshop exterior on Doncaster Road" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
               <img src="/images/gallery/shop-2.jpg" alt="Inside the fully equipped tyre fitting workshop with lifts and bays" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="rounded-2xl overflow-hidden glass-panel border border-accent/20 group aspect-video">
+            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
               <img src="/images/gallery/shop-3.jpg" alt="Multiple tyre fitting bays at One Stop Tyres Wakefield" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 11 — LOCAL COVERAGE SUMMARY ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
+
+      {/* ═══ SECTION 11 — LOCAL COVERAGE (Tiered Clusters) ═══ */}
+      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Covering Wakefield & West Yorkshire</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl mx-auto">
-              Our workshop is in Wakefield. Our reach extends across West Yorkshire. Here's how our coverage breaks down by location and situation.
+          <div className="mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Covering Wakefield &amp; West Yorkshire</h2>
+            <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
+              Our workshop is in Wakefield. Our reach extends across West Yorkshire.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            {/* Core */}
-            <div className="glass-panel rounded-2xl p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-1 border border-accent/20">
-              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Wakefield Core
-              </h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-4">
-                Wakefield city centre and all WF1–WF6 postcodes. Landmarks including Pinderfields Hospital, Trinity Walk, The Ridings, Wakefield 41, Calder Park, and Snow Hill.
-              </p>
-              <p className="text-text-light text-sm italic">
-                "Our workshop on Doncaster Road is at the heart of the Wakefield tyre network."
-              </p>
-            </div>
 
-            {/* Nearby */}
-            <div className="glass-panel rounded-2xl p-6 lg:p-8">
-              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Nearby Areas
-              </h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-4">
-                Ossett, Horbury, Outwood, Stanley, Sandal, and Normanton.
-              </p>
-              <p className="text-text-light text-sm italic">
-                "These areas are within our fastest mobile response zone, often reaching you under 30 minutes."
-              </p>
-            </div>
-
-            {/* Towns */}
-            <div className="glass-panel rounded-2xl p-6 lg:p-8">
-              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Wider Commercial Towns
-              </h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-4">
-                Leeds, Dewsbury, Castleford, Pontefract, and Batley.
-              </p>
-              <p className="text-text-light text-sm italic">
-                "Our mobile fleet serves these nearby major towns regularly without delay."
-              </p>
-            </div>
-
-            {/* Routes */}
-            <div className="glass-panel rounded-2xl p-6 lg:p-8">
-              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Major Routes
-              </h3>
-              <p className="text-text-muted text-sm leading-relaxed mb-4">
-                M1 (J39, J40, J41), M62 (J29, J30, J31), A61, A638, A642, and A650.
-              </p>
-              <p className="text-text-light text-sm italic">
-                "Broken down near a key junction? Call us straight away for emergency attendance."
-              </p>
-            </div>
-
-            {/* Situational */}
-            <div className="glass-panel rounded-2xl p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-1">
-              <h3 className="font-bold text-white text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent"></span> Any Situation
-              </h3>
-              <p className="text-text-muted text-sm leading-relaxed">
-                We fit your tyres at your home driveway, the office parking lot, a retail centre, business parks, or the difficult roadside. Wherever you are when a tyre problem strikes, we can safely reach you.
-              </p>
-            </div>
-
+          {/* Tier 1 — Wakefield Core (full width, prominent) */}
+          <div className="coverage-tier-primary mb-6 py-5 px-6 md:px-8 rounded-r-xl bg-white/[0.02]">
+            <h3 className="font-bold text-white text-lg mb-2">Wakefield Core</h3>
+            <p className="text-text-muted text-sm leading-relaxed mb-2">
+              Wakefield city centre and all WF1–WF6 postcodes. Pinderfields Hospital, Trinity Walk, The Ridings, Wakefield 41, Calder Park, and Snow Hill.
+            </p>
+            <p className="text-text-light text-sm italic">"Our workshop on Doncaster Road is at the heart of the Wakefield tyre network."</p>
           </div>
-          <div className="mt-10 text-center">
+
+          {/* Tier 2 — Nearby + Towns (2 columns) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-white/[0.02]">
+              <h3 className="font-bold text-white text-base mb-2">Nearby Areas</h3>
+              <p className="text-text-muted text-sm mb-2">Ossett, Horbury, Outwood, Stanley, Sandal, and Normanton.</p>
+              <p className="text-text-light text-xs italic">"Within our fastest mobile response zone — often under 30 minutes."</p>
+            </div>
+            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-white/[0.02]">
+              <h3 className="font-bold text-white text-base mb-2">Wider Towns</h3>
+              <p className="text-text-muted text-sm mb-2">Leeds, Dewsbury, Castleford, Pontefract, and Batley.</p>
+              <p className="text-text-light text-xs italic">"Our mobile fleet serves these nearby towns regularly without delay."</p>
+            </div>
+          </div>
+
+          {/* Tier 3 — Routes (badge strip) */}
+          <div className="py-5 px-6 md:px-8 rounded-xl bg-white/[0.02] border border-white/5 mb-6">
+            <h3 className="font-bold text-white text-base mb-3">Major Routes We Cover</h3>
+            <div className="flex flex-wrap gap-2 mb-2">
+              {["M1 (J39–J41)", "M62 (J29–J31)", "A61", "A638", "A642", "A650"].map((route) => (
+                <span key={route} className="route-badge">{route}</span>
+              ))}
+            </div>
+            <p className="text-text-light text-xs italic mt-2">"Broken down near a key junction? Call us straight away for emergency attendance."</p>
+          </div>
+
+          {/* Situational one-liner */}
+          <p className="text-text-muted text-sm px-6">
+            Whether you're at your home driveway, office car park, retail centre, business park, or stranded roadside — wherever a tyre problem strikes, we can safely reach you.
+          </p>
+
+          <div className="mt-8 px-6">
             <Link href="/areas" className="inline-flex items-center gap-2 text-white font-bold hover:text-accent transition-colors group">
               View Our Full Coverage List
               <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -817,35 +829,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 12 — FEATURED AREA PAGES ═══ */}
-      <section className="py-10 md:py-20 bg-surface-dark border-t border-border/50">
+
+      {/* ═══ SECTION 12 — AREA ROUTING (Pill Chips) ═══ */}
+      <section className="py-10 md:py-14 bg-charcoal">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Tyre Services Near You</h2>
-            <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              These are some of our most popular service areas, each with a dedicated page detailing coverage.
+          <div className="mb-6 md:mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">Tyre Services Near You</h2>
+            <p className="text-text-muted text-sm md:text-base font-medium max-w-xl mx-auto">
+              Each area has a dedicated page with coverage details.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {/* Wakefield HQ */}
-            <Link href="/contact" className="glass-panel group relative overflow-hidden rounded-2xl p-6 border-accent/30 bg-accent/10 hover:bg-accent/20 transition-colors col-span-2 sm:col-span-3 lg:col-span-1">
-              <div className="relative z-10 flex flex-row lg:flex-col justify-between items-center lg:items-start h-full">
-                <span className="block font-black text-white text-xl group-hover:text-accent transition-colors">Wakefield</span>
-                <span className="text-accent text-xs font-bold uppercase tracking-widest mt-0 lg:mt-2 block">HQ</span>
-              </div>
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <Link href="/contact" className="area-chip area-chip-hq">
+              Wakefield <span className="text-xs ml-1.5 opacity-70">HQ</span>
             </Link>
-            {/* Featured areas */}
             {featuredAreas.map((a) => (
-              <Link key={a.slug} href={`/areas/${a.slug}`} className="glass-panel group relative overflow-hidden rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <span className="relative z-10 block font-bold text-text-light group-hover:text-white transition-colors">{a.name}</span>
+              <Link key={a.slug} href={`/areas/${a.slug}`} className="area-chip">
+                {a.name}
               </Link>
             ))}
           </div>
-          <div className="mt-10 text-center">
-            <Link href="/areas" className="inline-flex items-center gap-2 glass-panel glass-panel-hover text-white font-bold px-6 py-3 rounded-xl text-sm transition-all duration-300">
+          <div className="text-center">
+            <Link href="/areas" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-accent/5 text-white font-bold px-6 py-3 rounded-full text-sm transition-all duration-300">
               View All 150+ Service Areas
-              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </Link>
@@ -853,25 +860,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 13 — FAQ CLUSTER ═══ */}
-      <section className="py-10 md:py-20 relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">Frequently Asked Questions</h2>
+
+      {/* ═══ SECTION 13 — FAQ (Single Column Full-Width Accordion) ═══ */}
+      <div className="section-bridge">Still have questions? We answer the ones we hear most.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
+        <div className="mx-auto max-w-4xl px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Still have questions? Whether comparing services or trying to understand what your tyres need, these are the questions Wakefield drivers ask us most.
+              Whether comparing services or trying to understand what your tyres need — these are the questions Wakefield drivers ask us most.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div>
             {faqs.map((f, i) => (
-              <details key={i} className="glass-panel rounded-2xl overflow-hidden group">
-                <summary className="cursor-pointer p-5 md:p-6 font-bold text-white text-sm md:text-base flex items-start justify-between gap-4 hover:text-accent transition-colors list-none [&::-webkit-details-marker]:hidden">
-                  <span className="pr-2">{f.q}</span>
-                  <svg className="w-5 h-5 text-accent shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <details key={i} className="faq-item group">
+                <summary>
+                  <span className="pr-2 flex-1">{f.q}</span>
+                  <svg className="w-5 h-5 text-accent shrink-0 transform group-open:rotate-180 transition-transform duration-300 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="px-5 md:px-6 pb-5 md:pb-6 text-text-muted text-sm leading-relaxed border-t border-border/50 pt-4">
+                <div className="faq-answer">
                   {f.a}
                 </div>
               </details>
@@ -879,6 +888,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* ═══ SECTION 14 — FINAL CTA / CONTACT CLOSURE ═══ */}
       <CTABlock

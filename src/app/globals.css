@@ -8,6 +8,8 @@
   --color-accent-light: #ff4d53;
   --color-surface: #0a0a0a;
   --color-surface-dark: #050505;
+  --color-charcoal: #0e0e0e;
+  --color-deep: #080808;
   --color-text: #ffffff;
   --color-text-muted: #a1a1aa;
   --color-text-light: #d4d4d8;
@@ -97,4 +99,308 @@ body {
 ::selection {
   background-color: rgba(227, 30, 36, 0.3);
   color: #fff;
+}
+
+/* ═══════════════════════════════════════════════
+   SEMANTIC SECTION VISUAL SYSTEM
+   ═══════════════════════════════════════════════ */
+
+/* Background rhythm variations */
+.bg-burgundy-tint {
+  background-color: rgba(227, 30, 36, 0.025);
+}
+
+/* Section transition bridge */
+.section-bridge {
+  text-align: center;
+  padding: 2.5rem 1rem 0;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+.section-bridge::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #E31E24, transparent);
+  margin: 0 auto 1rem;
+  border-radius: 1px;
+}
+
+/* ─── TIMELINE (Process Section) ─── */
+.timeline-step {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+.timeline-step:last-child .timeline-line {
+  display: none;
+}
+.timeline-line {
+  position: absolute;
+  left: 1.75rem;
+  top: 3.75rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(227,30,36,0.3), rgba(227,30,36,0.05));
+}
+.timeline-number {
+  width: 3.5rem;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  border-radius: 50%;
+  border: 2px solid rgba(227,30,36,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.875rem;
+  color: #E31E24;
+  background: rgba(227,30,36,0.08);
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── COMPARISON TABLE (Service Mode Section) ─── */
+.comparison-table {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.comparison-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.comparison-header-cell {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #fff;
+  border-top: 3px solid transparent;
+}
+.comparison-header-cell:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.comparison-row:last-child {
+  border-bottom: none;
+}
+.comparison-cell {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #a1a1aa;
+  text-align: center;
+  line-height: 1.5;
+}
+.comparison-cell:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+.comparison-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Mobile comparison: stack into cards */
+@media (max-width: 48rem) {
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1fr;
+  }
+  .comparison-header-cell:not(:last-child),
+  .comparison-cell:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .comparison-label {
+    display: block;
+  }
+}
+
+/* ─── DIAGNOSTIC MATRIX (Repair/Replace Section) ─── */
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media (min-width: 64rem) {
+  .diagnostic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.diagnostic-cell {
+  background: #080808;
+  padding: 2rem;
+}
+.diagnostic-cell:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ─── PROOF STRIP (Trust Section) ─── */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media (min-width: 48rem) {
+  .proof-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 64rem) {
+  .proof-strip {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.proof-strip-item {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: #050505;
+  transition: background 0.2s;
+}
+.proof-strip-item:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ─── AREA PILLS (Area Routing Section) ─── */
+.area-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #d4d4d8;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.area-chip:hover {
+  border-color: rgba(227,30,36,0.4);
+  background: rgba(227,30,36,0.08);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.area-chip-hq {
+  border-color: rgba(227,30,36,0.4);
+  background: rgba(227,30,36,0.1);
+  color: #E31E24;
+  font-weight: 800;
+}
+.area-chip-hq:hover {
+  background: rgba(227,30,36,0.2);
+}
+
+/* ─── FAQ ACCORDION (Objection Handling Section) ─── */
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s;
+}
+.faq-item:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.faq-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+.faq-item[open] {
+  background: rgba(227,30,36,0.03);
+  border-bottom-color: rgba(227,30,36,0.15);
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  line-height: 1.5;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item .faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+@media (min-width: 48rem) {
+  .faq-item summary {
+    padding: 1.5rem 2rem;
+    font-size: 1.0625rem;
+  }
+  .faq-item .faq-answer {
+    padding: 0 2rem 1.5rem;
+  }
+}
+
+/* ─── COVERAGE TIERS (Local Section) ─── */
+.coverage-tier-primary {
+  border-left: 3px solid #E31E24;
+  padding-left: 1.5rem;
+}
+.coverage-tier-secondary {
+  border-left: 3px solid rgba(227,30,36,0.3);
+  padding-left: 1.5rem;
+}
+.route-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: 0.375rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #d4d4d8;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+/* ─── EDITORIAL PROBLEM PANELS (Problem Section) ─── */
+.problem-panel {
+  border-left: 4px solid #E31E24;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 0 0.75rem 0.75rem 0;
+  transition: all 0.3s;
+}
+.problem-panel:hover {
+  background: rgba(255,255,255,0.04);
+  border-left-color: #ff4d53;
+}
+@media (min-width: 48rem) {
+  .problem-panel {
+    padding: 2rem 2rem 2rem 2.5rem;
+  }
 }
