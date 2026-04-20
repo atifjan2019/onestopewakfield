@@ -59,7 +59,7 @@ export default function TestimonialSlider({ testimonials }) {
             className={`transition-all duration-300 rounded-full ${
               i === current
                 ? 'w-6 h-2 bg-accent'
-                : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                : 'w-2 h-2 bg-black/15 hover:bg-black/30'
             }`}
             aria-label={`Go to review ${i + 1}`}
           />

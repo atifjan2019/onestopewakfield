@@ -62,18 +62,18 @@ export default function BookPage() {
 
   if (status === 'success') {
     return (
-      <div className="bg-primary min-h-screen pt-32 pb-16 px-4 flex items-center justify-center">
-        <div className="max-w-md w-full glass-panel p-10 rounded-3xl text-center border-accent/20">
-          <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(227,30,36,0.3)]">
-            <svg className="w-10 h-10 text-accent" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+      <div className="bg-white min-h-screen pt-32 pb-16 px-4 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white p-10 rounded-3xl text-center border border-black/5 shadow-lg">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h1 className="text-3xl font-black text-white mb-4">Slot Confirmed.</h1>
+          <h1 className="text-3xl font-black text-text mb-4">Slot Confirmed.</h1>
           <p className="text-text-muted mb-8 leading-relaxed">
-            Your appointment is locked in for <strong className="text-white">{selectedDate.toLocaleDateString()}</strong> at <strong className="text-white">{selectedTime}</strong>. Our team will contact you shortly if we require any extra details.
+            Your appointment is locked in for <strong className="text-text">{selectedDate.toLocaleDateString()}</strong> at <strong className="text-text">{selectedTime}</strong>. Our team will contact you shortly if we require any extra details.
           </p>
-          <Link href="/" className="inline-block px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors">
+          <Link href="/" className="inline-block px-8 py-4 bg-surface hover:bg-accent/5 text-text font-bold rounded-xl transition-colors border border-black/8">
             Return Home
           </Link>
         </div>
@@ -82,29 +82,29 @@ export default function BookPage() {
   }
 
   return (
-    <div className="bg-primary min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-16 lg:py-24 px-4 md:px-6 overflow-hidden flex flex-col items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/20 blur-[150px] rounded-full pointer-events-none"></div>
+      <section className="relative py-12 md:py-16 lg:py-24 px-4 md:px-6 overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/8 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="mx-auto max-w-7xl relative z-10 text-center w-full">
           <nav className="mb-6 flex justify-center">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li className="text-white/30">/</li>
+              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li className="text-black/20">/</li>
               <li className="text-accent">Book Online</li>
             </ol>
           </nav>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.3em] mb-6 md:mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-text leading-[1.3em] mb-6 md:mb-8 tracking-tight">
             Book Your <span className="text-gradient-accent">Tyre Fitting.</span>
           </h1>
           <p className="text-text-muted mt-6 font-medium text-lg md:text-xl max-w-2xl mx-auto">
-            Select a time that works for you, and we'll handle the rest. Mobile dispatch is available.
+            Select a time that works for you, and we&apos;ll handle the rest. Mobile dispatch is available.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-8 md:py-16 relative z-10 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 relative z-10 bg-surface border-t border-black/5">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Calendar side */}
@@ -119,15 +119,15 @@ export default function BookPage() {
 
             {/* Form side */}
             {selectedDate && selectedTime ? (
-                <div className="glass-panel p-8 md:p-10 rounded-3xl border border-white/5 relative overflow-hidden animate-fade-in-up">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] pointer-events-none"></div>
+                <div className="bg-white p-8 md:p-10 rounded-3xl border border-black/5 shadow-sm relative overflow-hidden animate-fade-in-up">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent/3 rounded-full blur-[80px] pointer-events-none"></div>
                     
-                    <h2 className="text-2xl font-bold text-white mb-6 relative z-10">Your Details</h2>
+                    <h2 className="text-2xl font-bold text-text mb-6 relative z-10">Your Details</h2>
                     
                     <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                     {errorMsg && (
-                        <div className="p-4 bg-red-900/40 border border-accent/50 rounded-2xl text-red-200 text-sm font-bold flex gap-3 shadow-lg">
-                        <svg className="w-5 h-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                        <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm font-bold flex gap-3">
+                        <svg className="w-5 h-5 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                         <span>{errorMsg}</span>
                         </div>
                     )}
@@ -136,11 +136,11 @@ export default function BookPage() {
                         <label className="block text-[11px] font-black tracking-widest text-text-muted uppercase pl-1">Required Service</label>
                         <div className="relative group">
                         <select 
-                            className="w-full bg-dark-900/60 border border-white/5 rounded-2xl px-5 py-4 text-white hover:border-accent/40 focus:outline-none focus:border-accent focus:bg-dark-900/80 transition-all appearance-none font-bold shadow-inner"
+                            className="w-full bg-surface border border-black/8 rounded-2xl px-5 py-4 text-text hover:border-accent/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all appearance-none font-bold"
                             value={formData.service}
                             onChange={e => setFormData({...formData, service: e.target.value})}
                         >
-                            {servicesList.map(s => <option key={s} value={s} className="bg-primary text-white">{s}</option>)}
+                            {servicesList.map(s => <option key={s} value={s} className="bg-white text-text">{s}</option>)}
                         </select>
                         <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none text-text-muted group-hover:text-accent transition-colors">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
@@ -153,7 +153,7 @@ export default function BookPage() {
                         <label className="block text-[11px] font-black tracking-widest text-text-muted uppercase pl-1">Full Name</label>
                         <input 
                             type="text" required
-                            className="w-full bg-dark-900/60 border border-white/5 rounded-2xl px-5 py-4 text-white hover:border-accent/40 focus:outline-none focus:border-accent focus:bg-dark-900/80 transition-all font-bold placeholder:text-white/20 placeholder:font-medium shadow-inner"
+                            className="w-full bg-surface border border-black/8 rounded-2xl px-5 py-4 text-text hover:border-accent/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all font-bold placeholder:text-black/20"
                             placeholder="John Doe"
                             value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
                         />
@@ -162,7 +162,7 @@ export default function BookPage() {
                         <label className="block text-[11px] font-black tracking-widest text-text-muted uppercase pl-1">Phone Number</label>
                         <input 
                             type="tel" required
-                            className="w-full bg-dark-900/60 border border-white/5 rounded-2xl px-5 py-4 text-white hover:border-accent/40 focus:outline-none focus:border-accent focus:bg-dark-900/80 transition-all font-bold placeholder:text-white/20 placeholder:font-medium shadow-inner"
+                            className="w-full bg-surface border border-black/8 rounded-2xl px-5 py-4 text-text hover:border-accent/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all font-bold placeholder:text-black/20"
                             placeholder="07000 000000"
                             value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
                         />
@@ -170,10 +170,10 @@ export default function BookPage() {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="block text-[11px] font-black tracking-widest text-text-muted uppercase pl-1">Vehicle Reg <span className="text-white/30 font-medium normal-case">(Optional)</span></label>
+                        <label className="block text-[11px] font-black tracking-widest text-text-muted uppercase pl-1">Vehicle Reg <span className="text-black/30 font-medium normal-case">(Optional)</span></label>
                         <input 
                         type="text" 
-                        className="w-full bg-dark-900/60 border border-white/5 rounded-2xl px-5 py-4 text-white hover:border-accent/40 focus:outline-none focus:border-accent focus:bg-dark-900/80 transition-all uppercase font-bold placeholder:text-white/20 placeholder:font-medium placeholder:normal-case shadow-inner tracking-widest"
+                        className="w-full bg-surface border border-black/8 rounded-2xl px-5 py-4 text-text hover:border-accent/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all uppercase font-bold placeholder:text-black/20 placeholder:normal-case tracking-widest"
                         placeholder="e.g. AB12 CDE"
                         value={formData.car_reg} onChange={e => setFormData({...formData, car_reg: e.target.value})}
                         />
@@ -183,7 +183,7 @@ export default function BookPage() {
                         <button 
                         type="submit" 
                         disabled={status === 'submitting' || !selectedDate || !selectedTime}
-                        className="w-full py-4.5 bg-gradient-to-br from-accent to-accent-hover text-white font-black text-lg tracking-wide rounded-2xl shadow-[0_0_30px_rgba(227,30,36,0.3)] hover:shadow-[0_0_50px_rgba(227,30,36,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:scale-100 flex items-center justify-center gap-2 border border-white/10 hover:border-white/30"
+                        className="w-full py-4.5 bg-gradient-to-br from-accent to-accent-hover text-white font-black text-lg tracking-wide rounded-2xl shadow-[0_0_20px_rgba(227,30,36,0.2)] hover:shadow-[0_0_40px_rgba(227,30,36,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:scale-100 flex items-center justify-center gap-2"
                         >
                         {status === 'submitting' ? (
                             <span className="flex items-center gap-3">
@@ -201,13 +201,13 @@ export default function BookPage() {
                     </form>
                 </div>
             ) : (
-                <div className="glass-panel p-8 md:p-10 rounded-3xl border border-white/5 flex flex-col items-center justify-center h-[500px] text-center shadow-lg">
-                    <div className="w-20 h-20 bg-accent/10 border border-accent/20 rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(227,30,36,0.1)]">
-                        <svg className="w-10 h-10 text-accent/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="bg-white p-8 md:p-10 rounded-3xl border border-black/5 shadow-sm flex flex-col items-center justify-center h-[500px] text-center">
+                    <div className="w-20 h-20 bg-accent/5 border border-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <svg className="w-10 h-10 text-accent/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-black text-white mb-2">Select a Time Slot</h3>
+                    <h3 className="text-2xl font-black text-text mb-2">Select a Time Slot</h3>
                     <p className="text-text-muted text-sm px-4 max-w-sm font-medium">Please choose a date and an available professional time slot from the calendar to proceed.</p>
                 </div>
             )}
