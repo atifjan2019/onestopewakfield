@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md border-b border-black/5 shadow-lg" : "bg-transparent"
+        scrolled ? "bg-black/95 backdrop-blur-md border-b border-white/5 shadow-lg" : "bg-black"
       }`}
     >
 
@@ -37,13 +37,13 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          <Link href="/" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
+          <Link href="/" className="text-white/70 hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
             Home
           </Link>
 
           {/* Services dropdown */}
           <div className="relative group">
-            <button className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm flex items-center gap-1 py-2`}>
+            <button className="text-white/70 hover:text-white transition-colors font-medium text-sm flex items-center gap-1 py-2">
               Services
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -64,14 +64,14 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/areas" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
+          <Link href="/areas" className="text-white/70 hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
             Areas
           </Link>
 
-          <Link href="/about" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
+          <Link href="/about" className="text-white/70 hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
             About
           </Link>
-          <Link href="/contact" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
+          <Link href="/contact" className="text-white/70 hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
             Contact
           </Link>
 
@@ -95,7 +95,7 @@ export default function Header() {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-2 rounded-xl border transition-colors ${scrolled ? 'text-text bg-black/5 border-black/10 hover:bg-black/10' : 'text-white bg-white/10 border-white/20 hover:bg-white/20'}`}
+            className="p-2 rounded-xl border transition-colors text-white bg-white/10 border-white/20 hover:bg-white/20"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
