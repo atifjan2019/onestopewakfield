@@ -326,7 +326,7 @@ export default function Home() {
 
       {/* ═══ SECTION 2 — QUICK INTENT ROUTER WITH IMAGES ═══ */}
       <div className="section-bridge">If you already know what you need, start here.</div>
-      <section className="py-10 md:py-16 relative z-20 bg-surface-dark">
+      <section className="py-10 md:py-16 relative z-20 bg-surface">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">What Do You Need?</h2>
