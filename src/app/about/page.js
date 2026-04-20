@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-primary min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-20">
       <SchemaMarkup schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
@@ -21,34 +21,34 @@ export default function AboutPage() {
         }
       }} />
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
-        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[500px] flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
+        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none"></div>
         <div className="mx-auto max-w-7xl relative z-10 w-full text-center">
           <nav className="mb-8 flex justify-center">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li className="text-white/30">/</li>
+              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li className="text-black/20">/</li>
               <li className="text-accent">About Us</li>
             </ol>
           </nav>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.3em] mb-4 md:mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-text leading-[1.3em] mb-4 md:mb-6 tracking-tight">
               Driven by <span className="text-gradient-accent">Quality</span> & Speed.
             </h1>
             <p className="text-text-muted text-lg md:text-2xl font-medium leading-relaxed">
-              We're changing the way Wakefield gets its tyres. No garages, no waiting rooms—just fast, professional service directly to you.
+              We&apos;re changing the way Wakefield gets its tyres. No garages, no waiting rooms—just fast, professional service directly to you.
             </p>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-8 md:py-16 relative z-10 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 relative z-10 bg-surface border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
           
           <div className="space-y-12">
-            <div className="glass-panel rounded-3xl p-8 md:p-10 border-l-4 border-l-accent">
-              <h2 className="text-3xl font-black text-white mb-6">Who We Are</h2>
+            <div className="bg-white rounded-3xl p-8 md:p-10 border-l-4 border-l-accent border border-black/5 shadow-sm">
+              <h2 className="text-3xl font-black text-text mb-6">Who We Are</h2>
               <p className="text-text-muted text-lg leading-relaxed mb-6">
                 One Stop Tyres Wakefield is a locally owned and operated tyre service business based in the heart of Wakefield, West Yorkshire. We started with a simple idea: make getting new tyres fitted as easy and hassle-free as possible. 
               </p>
@@ -57,8 +57,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="glass-panel rounded-3xl p-8 md:p-10">
-              <h2 className="text-3xl font-black text-white mb-6">What We Do</h2>
+            <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm">
+              <h2 className="text-3xl font-black text-text mb-6">What We Do</h2>
               <p className="text-text-muted text-lg leading-relaxed">
                 We offer a full range of tyre services including tyre fitting, mobile tyre fitting, emergency tyre repair, puncture repair, wheel balancing, and tyre replacement. Based in Wakefield, we serve customers across the whole of West Yorkshire — from Leeds and Dewsbury to Castleford, Pontefract, Normanton, Ossett, Batley, and Horbury. 
               </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-black text-white mb-8">Why People Trust Us</h2>
+            <h2 className="text-3xl font-black text-text mb-8">Why People Trust Us</h2>
             <div className="space-y-6">
               {[
                 { title: "Years of Experience", desc: "Our team has been fitting tyres and servicing vehicles for years. We know what we're doing and we do it well." },
@@ -75,12 +75,12 @@ export default function AboutPage() {
                 { title: "Same-Day Reliability", desc: "Most of our services are available same-day. We understand that when you need tyres, you need them now." },
                 { title: "Mobile Convenience", desc: "Can't come to us? We'll come to you. Our mobile fitting service covers all of Wakefield and surrounding areas." },
               ].map((point, i) => (
-                <div key={point.title} className="glass-panel rounded-2xl p-6 flex items-start gap-4 group hover:bg-white/5 transition-colors">
+                <div key={point.title} className="bg-white rounded-2xl p-6 flex items-start gap-4 group hover:shadow-md transition-all duration-300 border border-black/5 hover:-translate-y-1">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 border border-accent/20 group-hover:scale-110 transition-transform">
                     <span className="text-accent font-black text-lg">{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-white text-lg mb-2">{point.title}</h3>
+                    <h3 className="font-bold text-text text-lg mb-2">{point.title}</h3>
                     <p className="text-text-muted leading-relaxed">{point.desc}</p>
                   </div>
                 </div>
