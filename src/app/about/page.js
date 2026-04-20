@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       <SchemaMarkup schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",

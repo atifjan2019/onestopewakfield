@@ -244,7 +244,7 @@ export default function Home() {
       <SchemaMarkup schema={faqSchema} />
 
       {/* ═══ SECTION 1 — HERO / ENTITY CONFIRMATION ═══ */}
-      <section className="relative min-h-[90vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-28 md:pt-20 pb-12 md:pb-16">
+      <section className="relative min-h-[90vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-36 md:pt-28 pb-12 md:pb-16">
         {/* Hero background image with overlay */}
         <div className="absolute inset-0 bg-[url('/images/2.jpeg')] bg-cover bg-center bg-no-repeat"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
@@ -325,7 +325,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 2 — QUICK INTENT ROUTER WITH IMAGES ═══ */}
-      <div className="section-bridge">If you already know what you need, start here.</div>
+
       <section className="py-10 md:py-16 relative z-20 bg-surface">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-8 md:mb-12 text-center">
@@ -382,7 +382,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 3 — PROBLEM CLUSTER (Editorial Panels) ═══ */}
-      <div className="section-bridge">Not sure? Let&apos;s diagnose your situation.</div>
+
       <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
         {/* Decorative floating shapes */}
         <div className="absolute top-20 right-10 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-float pointer-events-none"></div>
@@ -498,7 +498,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 5 — PROCESS (Vertical Timeline) ═══ */}
-      <div className="section-bridge">Here&apos;s exactly how it works, step by step.</div>
+
       <section className="py-12 md:py-20 relative overflow-hidden bg-surface">
         {/* Decorative elements */}
         <div className="absolute -right-20 top-1/3 w-40 h-40 border-4 border-accent/10 rounded-full animate-rotate-slow pointer-events-none"></div>
@@ -534,7 +534,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 6 — TYRE CHOICE / DECISION SUPPORT ═══ */}
-      <div className="section-bridge">Before we fit, let&apos;s get the right tyres.</div>
+
       <section className="py-12 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 md:mb-14">
@@ -623,7 +623,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 7 — SERVICE MODE COMPARISON ═══ */}
-      <div className="section-bridge">Three routes to getting your tyres fitted.</div>
+
       <section className="py-12 md:py-20 relative overflow-hidden bg-surface">
         <div className="mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">
@@ -765,7 +765,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 9 — PROOF & TRUST SYSTEM ═══ */}
-      <div className="section-bridge">Don&apos;t take our word for it.</div>
+
       <section className="py-12 md:py-20 relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-12">
@@ -954,7 +954,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 13 — FAQ ═══ */}
-      <div className="section-bridge">Still have questions? We answer the ones we hear most.</div>
+
       <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
         <div className="mx-auto max-w-4xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">

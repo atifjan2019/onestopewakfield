@@ -18,7 +18,7 @@ export default function AreasPage() {
   };
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       <SchemaMarkup schema={schema} />
 
       {/* Hero */}

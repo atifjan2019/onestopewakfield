@@ -82,7 +82,7 @@ export default async function ServicePage({ params }) {
   const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       <SchemaMarkup schema={serviceSchema} />
       <SchemaMarkup schema={faqSchema} />
 

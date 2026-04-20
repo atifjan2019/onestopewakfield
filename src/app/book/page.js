@@ -82,7 +82,7 @@ export default function BookPage() {
   }
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 lg:py-24 px-4 md:px-6 overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/8 blur-[150px] rounded-full pointer-events-none"></div>

@@ -121,7 +121,7 @@ export default function SitemapPage() {
   const totalPages = mainPages.length + services.length + areas.length;
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       {/* Hero */}
       <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[420px] flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>

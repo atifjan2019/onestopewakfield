@@ -254,7 +254,7 @@ export default async function AreaPage({ params }) {
   };
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-28">
       <SchemaMarkup schema={areaSchema} />
       <SchemaMarkup schema={faqSchema} />
 
