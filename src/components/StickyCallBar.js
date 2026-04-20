@@ -21,8 +21,8 @@ export default function StickyCallBar() {
 
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden p-4 transition-all duration-300 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}`}>
-      <div className="glass-panel mx-auto max-w-md rounded-2xl shadow-[0_10px_40px_rgba(227,30,36,0.3)] border border-white/10 p-2 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shimmer_2s_infinite]"></div>
+      <div className="bg-white mx-auto max-w-md rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-black/5 p-2 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/[0.02] to-transparent animate-[shimmer_2s_infinite]"></div>
         <a
           href={PHONE_HREF}
           className="relative z-10 flex items-center justify-center gap-3 py-4 inset-0 bg-gradient-to-r from-accent to-accent-hover rounded-xl text-white font-black text-lg shadow-lg active:scale-95 transition-transform"
