@@ -308,13 +308,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { number: "5,000+", label: "Tyres Fitted", icon: "🔧" },
-              { number: "30min", label: "Avg Response Time", icon: "⚡" },
-              { number: "150+", label: "Areas Covered", icon: "📍" },
-              { number: "5★", label: "Customer Rating", icon: "⭐" },
+              { number: "5,000+", label: "Tyres Fitted", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-3.2a.83.83 0 010-1.42l5.1-3.2a.83.83 0 011.26.71v6.4a.83.83 0 01-1.26.71zM21.75 12a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0z" /></svg> },
+              { number: "30min", label: "Avg Response Time", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg> },
+              { number: "150+", label: "Areas Covered", icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg> },
+              { number: "5★", label: "Customer Rating", icon: <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg> },
             ].map((stat, i) => (
               <div key={stat.label} className="stat-card animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-accent mb-2">{stat.icon}</div>
                 <div className="text-3xl md:text-4xl font-black text-accent mb-1">{stat.number}</div>
                 <div className="text-text-muted text-sm font-medium">{stat.label}</div>
               </div>
@@ -440,13 +440,13 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Workshop Fitting", icon: "🏪" },
-                  { label: "Mobile Service", icon: "🚐" },
-                  { label: "Emergency Repair", icon: "🚨" },
-                  { label: "Free Balancing", icon: "⚖️" },
+                  { label: "Workshop Fitting", icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-3.2a.83.83 0 010-1.42l5.1-3.2a.83.83 0 011.26.71v6.4a.83.83 0 01-1.26.71zM21.75 12a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0z" /></svg> },
+                  { label: "Mobile Service", icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg> },
+                  { label: "Emergency Repair", icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg> },
+                  { label: "Free Balancing", icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" /></svg> },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2 bg-surface p-3 rounded-xl">
-                    <span className="text-xl">{item.icon}</span>
+                    <span className="text-accent">{item.icon}</span>
                     <span className="text-sm font-semibold text-text">{item.label}</span>
                   </div>
                 ))}
