@@ -6,24 +6,24 @@ export default function TestimonialCard({ text, name, rating }) {
     "from-accent/80 to-accent-hover",
     "from-red-500 to-accent",
     "from-rose-600 to-red-800",
-    "from-neutral-700 to-neutral-900",
-    "from-red-700 to-neutral-900",
+    "from-neutral-500 to-neutral-700",
+    "from-red-700 to-neutral-800",
   ];
   const bgGradient = colors[avatarIndex];
   const initial = name.charAt(0).toUpperCase();
 
   return (
-    <div className="glass-panel group rounded-2xl p-8 relative overflow-hidden transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-white/5 hover:border-white/10 flex flex-col h-full bg-gradient-to-b from-white/[0.02] to-transparent">
+    <div className="bg-white group rounded-2xl p-8 relative overflow-hidden transition-all duration-300 hover:shadow-xl border border-black/5 hover:border-accent/15 flex flex-col h-full">
       {/* Decorative Quote Mark */}
-      <div className="absolute top-4 right-6 text-[80px] font-serif text-white/[0.03] leading-none select-none pointer-events-none group-hover:text-accent/[0.05] transition-colors duration-500">
-        "
+      <div className="absolute top-4 right-6 text-[80px] font-serif text-black/[0.03] leading-none select-none pointer-events-none group-hover:text-accent/[0.06] transition-colors duration-500">
+        &ldquo;
       </div>
 
       <div className="flex items-center gap-1 mb-6">
         {Array.from({ length: 5 }, (_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${i < rating ? "text-accent drop-shadow-[0_0_8px_rgba(227,30,36,0.6)]" : "text-neutral-700"}`}
+            className={`w-5 h-5 ${i < rating ? "text-amber-500" : "text-gray-200"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -32,8 +32,8 @@ export default function TestimonialCard({ text, name, rating }) {
         ))}
       </div>
       
-      <p className="text-text-light text-[15px] leading-relaxed mb-8 flex-1 italic relative z-10">
-        "{text}"
+      <p className="text-text-muted text-[15px] leading-relaxed mb-8 flex-1 italic relative z-10">
+        &ldquo;{text}&rdquo;
       </p>
       
       <div className="flex items-center gap-4 mt-auto">
@@ -41,7 +41,7 @@ export default function TestimonialCard({ text, name, rating }) {
           {initial}
         </div>
         <div>
-          <p className="text-white font-bold text-sm tracking-wide">{name}</p>
+          <p className="text-text font-bold text-sm tracking-wide">{name}</p>
           <p className="text-accent text-xs font-semibold mt-0.5 flex items-center gap-1">
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>

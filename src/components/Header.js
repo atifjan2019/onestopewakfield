@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-primary/80 backdrop-blur-md border-b border-border shadow-2xl" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md border-b border-black/5 shadow-lg" : "bg-transparent"
       }`}
     >
 
@@ -31,30 +31,30 @@ export default function Header() {
           <img
             src="/logo.png"
             alt="One Stop Tyres Wakefield"
-            className="h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(227,30,36,0.4)]"
+            className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
           />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          <Link href="/" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
+          <Link href="/" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
             Home
           </Link>
 
           {/* Services dropdown */}
           <div className="relative group">
-            <button className="text-text-light hover:text-white transition-colors font-medium text-sm flex items-center gap-1 py-2">
+            <button className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm flex items-center gap-1 py-2`}>
               Services
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-              <div className="bg-black border border-white/10 rounded-2xl p-2 w-[280px] shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none"></div>
+              <div className="bg-white border border-black/8 rounded-2xl p-2 w-[280px] shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/3 to-transparent pointer-events-none"></div>
                 <div className="relative z-10 flex flex-col gap-1">
                   {services.map((s) => (
-                    <Link key={s.slug} href={`/${s.slug}`} className="block px-4 py-3 text-sm text-text-light hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group/link">
+                    <Link key={s.slug} href={`/${s.slug}`} className="block px-4 py-3 text-sm text-text-muted hover:text-accent hover:bg-accent/5 rounded-xl transition-all duration-200 group/link">
                       <div className="font-semibold">{s.name}</div>
                       <div className="text-xs text-text-muted mt-0.5 opacity-0 group-hover/link:opacity-100 transition-opacity">Expert service</div>
                     </Link>
@@ -64,20 +64,20 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/areas" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
+          <Link href="/areas" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
             Areas
           </Link>
 
-          <Link href="/about" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
+          <Link href="/about" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
             About
           </Link>
-          <Link href="/contact" className="text-text-light hover:text-white transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">
+          <Link href="/contact" className={`${scrolled ? 'text-text-muted hover:text-text' : 'text-white/80 hover:text-white'} transition-colors font-medium text-sm relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300`}>
             Contact
           </Link>
 
           <Link
             href="/book"
-            className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 font-bold text-white transition-all duration-300 bg-accent rounded-full hover:bg-accent-hover shadow-[0_0_20px_rgba(227,30,36,0.3)] hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] hover:-translate-y-0.5"
+            className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 font-bold text-white transition-all duration-300 bg-accent rounded-full hover:bg-accent-hover shadow-[0_0_20px_rgba(227,30,36,0.2)] hover:shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:-translate-y-0.5"
           >
             <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -88,14 +88,14 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <div className="flex items-center gap-4 lg:hidden">
-          <Link href="/book" className="bg-accent text-white font-bold p-2.5 rounded-xl shadow-[0_0_15px_rgba(227,30,36,0.4)]">
+          <Link href="/book" className="bg-accent text-white font-bold p-2.5 rounded-xl shadow-[0_0_15px_rgba(227,30,36,0.3)]">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
             </svg>
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-white p-2 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+            className={`p-2 rounded-xl border transition-colors ${scrolled ? 'text-text bg-black/5 border-black/10 hover:bg-black/10' : 'text-white bg-white/10 border-white/20 hover:bg-white/20'}`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -113,14 +113,14 @@ export default function Header() {
 
       {/* Mobile nav dropdown */}
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="bg-black border border-white/10 mt-2 p-4 mx-4 mb-4 rounded-2xl shadow-2xl">
+        <div className="bg-white border border-black/8 mt-2 p-4 mx-4 mb-4 rounded-2xl shadow-2xl">
           <nav className="flex flex-col gap-2">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="text-text py-3 px-4 rounded-xl hover:bg-accent/5 font-bold transition-colors">
               Home
             </Link>
 
             <div className="rounded-xl overflow-hidden">
-              <button onClick={() => setServicesOpen(!servicesOpen)} className="w-full text-white py-3 px-4 hover:bg-white/5 font-bold text-left flex items-center justify-between transition-colors">
+              <button onClick={() => setServicesOpen(!servicesOpen)} className="w-full text-text py-3 px-4 hover:bg-accent/5 font-bold text-left flex items-center justify-between transition-colors">
                 Services
                 <svg className={`w-5 h-5 transition-transform duration-300 ${servicesOpen ? "rotate-180 text-accent" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -137,14 +137,14 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/areas" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
+            <Link href="/areas" onClick={() => setMobileOpen(false)} className="text-text py-3 px-4 rounded-xl hover:bg-accent/5 font-bold transition-colors">
               Areas
             </Link>
 
-            <Link href="/about" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
+            <Link href="/about" onClick={() => setMobileOpen(false)} className="text-text py-3 px-4 rounded-xl hover:bg-accent/5 font-bold transition-colors">
               About
             </Link>
-            <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-white py-3 px-4 rounded-xl hover:bg-white/10 font-bold transition-colors">
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-text py-3 px-4 rounded-xl hover:bg-accent/5 font-bold transition-colors">
               Contact
             </Link>
           </nav>

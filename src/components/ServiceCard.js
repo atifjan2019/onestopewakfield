@@ -6,20 +6,20 @@ export default function ServiceCard({ icon, title, description, href }) {
   return (
     <Link
       href={href}
-      className="group glass-panel glass-panel-hover rounded-2xl p-8 relative overflow-hidden flex flex-col h-full"
+      className="group bg-white border border-black/5 hover:border-accent/20 rounded-2xl p-8 relative overflow-hidden flex flex-col h-full transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
     >
       <div className="absolute top-0 right-0 p-8 opacity-5 transform translate-x-1/4 -translate-y-1/4 group-hover:opacity-10 transition-opacity duration-500">
         <ServiceIcon name={icon} className="w-32 h-32 text-accent" />
       </div>
       
       <div className="mb-6 relative z-10">
-        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center border border-white/10 group-hover:border-accent/40 group-hover:shadow-[0_0_20px_rgba(227,30,36,0.2)] transition-all duration-300">
+        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center border border-accent/10 group-hover:border-accent/30 group-hover:shadow-[0_0_20px_rgba(227,30,36,0.1)] transition-all duration-300">
           <ServiceIcon name={icon} className="w-8 h-8 text-accent transform group-hover:scale-110 transition-transform duration-300" />
         </div>
       </div>
       
       <div className="relative z-10 flex flex-col flex-1">
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-text-muted transition-all duration-300">
+        <h3 className="text-xl font-bold text-text mb-3 group-hover:text-accent transition-colors duration-300">
           {title}
         </h3>
         <p className="text-text-muted text-sm leading-relaxed mb-6 flex-1">{description}</p>

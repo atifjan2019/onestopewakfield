@@ -24,12 +24,12 @@ const trustStrip = [
 
 /* ─── INTENT ROUTER CARDS ─── */
 const intentCards = [
-  { headline: "Need Tyres Fitted?", desc: "Same-day tyre fitting at our Wakefield workshop or at your location.", href: "/tyre-fitting-wakefield", icon: "wrench" },
-  { headline: "Need Mobile Fitting?", desc: "We come to your home, workplace, or roadside across Wakefield.", href: "/mobile-tyre-fitting-wakefield", icon: "van" },
-  { headline: "Emergency Tyre Issue?", desc: "Rapid local call-out for breakdowns and urgent tyre problems.", href: "/emergency-tyre-repair-wakefield", icon: "siren" },
-  { headline: "Got a Puncture?", desc: "Safe, honest puncture assessment and BS AU 159 repair.", href: "/puncture-repair-wakefield", icon: "bandage" },
-  { headline: "Vibration or Pull?", desc: "Precision wheel balancing to restore smooth, safe driving.", href: "/wheel-balancing-wakefield", icon: "scale" },
-  { headline: "Need New Tyres?", desc: "Budget to premium tyres, supplied and fitted across Wakefield.", href: "/tyre-replacement-wakefield", icon: "refresh" },
+  { headline: "Need Tyres Fitted?", desc: "Same-day tyre fitting at our Wakefield workshop or at your location.", href: "/tyre-fitting-wakefield", icon: "wrench", image: "/images/tyre-fitting-workshop.png" },
+  { headline: "Need Mobile Fitting?", desc: "We come to your home, workplace, or roadside across Wakefield.", href: "/mobile-tyre-fitting-wakefield", icon: "van", image: "/images/mobile-tyre-service.png" },
+  { headline: "Emergency Tyre Issue?", desc: "Rapid local call-out for breakdowns and urgent tyre problems.", href: "/emergency-tyre-repair-wakefield", icon: "siren", image: "/images/emergency-repair.png" },
+  { headline: "Got a Puncture?", desc: "Safe, honest puncture assessment and BS AU 159 repair.", href: "/puncture-repair-wakefield", icon: "bandage", image: "/images/tyre-closeup.png" },
+  { headline: "Vibration or Pull?", desc: "Precision wheel balancing to restore smooth, safe driving.", href: "/wheel-balancing-wakefield", icon: "scale", image: "/images/wheel-balancing.png" },
+  { headline: "Need New Tyres?", desc: "Budget to premium tyres, supplied and fitted across Wakefield.", href: "/tyre-replacement-wakefield", icon: "refresh", image: "/images/tyre-range.png" },
 ];
 
 /* ─── PROBLEM MODULES ─── */
@@ -235,24 +235,28 @@ function TrustIcon({ type }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HOMEPAGE — Semantic Visual Hierarchy
+   HOMEPAGE — White Theme with Animations & Images
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   return (
-    <div className="bg-primary min-h-screen">
+    <div className="bg-white min-h-screen">
       <SchemaMarkup schema={autoRepairSchema} />
       <SchemaMarkup schema={faqSchema} />
 
       {/* ═══ SECTION 1 — HERO / ENTITY CONFIRMATION ═══ */}
       <section className="relative min-h-[90vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-28 md:pt-20 pb-12 md:pb-16">
-        <div className="absolute inset-0 bg-[url('/images/2.jpeg')] bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/80 to-primary"></div>
-        <div className="absolute top-1/4 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/20 rounded-full blur-[100px] md:blur-[150px] animate-blob mix-blend-screen pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-red-900/40 rounded-full blur-[80px] md:blur-[120px] animate-blob mix-blend-screen pointer-events-none" style={{ animationDelay: "2s" }}></div>
+        {/* Hero background image with overlay */}
+        <div className="absolute inset-0 bg-[url('/images/2.jpeg')] bg-cover bg-center bg-no-repeat"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        
+        {/* Animated floating shapes */}
+        <div className="absolute top-1/4 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/15 rounded-full blur-[100px] md:blur-[150px] animate-blob pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-red-900/20 rounded-full blur-[80px] md:blur-[120px] animate-blob pointer-events-none" style={{ animationDelay: "2s" }}></div>
+        <div className="absolute top-1/3 right-1/3 w-[200px] h-[200px] bg-white/5 rounded-full blur-[60px] animate-float pointer-events-none"></div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full text-center">
           {/* Emergency badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-accent/30 text-accent font-bold text-sm mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm mb-8 animate-fade-in-up">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -266,7 +270,7 @@ export default function Home() {
             <span className="text-gradient-accent">&amp; Emergency Repair in Wakefield</span>
           </h1>
 
-          <p className="text-text-light text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-white/80 text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Same-day tyre fitting at our Doncaster Road workshop. Mobile fitting at your home, work, or roadside. Emergency repair for breakdowns. Budget to premium tyres supplied and fitted across Wakefield and West Yorkshire.
           </p>
 
@@ -278,10 +282,10 @@ export default function Home() {
               </svg>
               Call Now
             </a>
-            <Link href="/book" className="w-full sm:w-auto glass-panel glass-panel-hover text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base transition-all duration-300 text-center">
+            <Link href="/book" className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-sm md:text-base transition-all duration-300 text-center">
               Book Online
             </Link>
-            <Link href="/emergency-tyre-repair-wakefield" className="w-full sm:w-auto text-accent font-bold px-6 py-3 text-sm md:text-base transition-all duration-300 text-center hover:underline underline-offset-4">
+            <Link href="/emergency-tyre-repair-wakefield" className="w-full sm:w-auto text-white font-bold px-6 py-3 text-sm md:text-base transition-all duration-300 text-center hover:underline underline-offset-4">
               Emergency? Get Help Now →
             </Link>
           </div>
@@ -289,7 +293,7 @@ export default function Home() {
           {/* Trust Strip */}
           <div className="mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-4 md:gap-8 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
             {trustStrip.map((t) => (
-              <div key={t.label} className="flex items-center gap-2 text-text-muted text-sm">
+              <div key={t.label} className="flex items-center gap-2 text-white/70 text-sm">
                 <span className="text-accent"><TrustIcon type={t.icon} /></span>
                 <span>{t.label}</span>
               </div>
@@ -299,19 +303,78 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 2 — QUICK INTENT ROUTER ═══ */}
+      {/* ═══ STATS COUNTER STRIP ═══ */}
+      <section className="py-12 md:py-16 bg-white relative z-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { number: "5,000+", label: "Tyres Fitted", icon: "🔧" },
+              { number: "30min", label: "Avg Response Time", icon: "⚡" },
+              { number: "150+", label: "Areas Covered", icon: "📍" },
+              { number: "5★", label: "Customer Rating", icon: "⭐" },
+            ].map((stat, i) => (
+              <div key={stat.label} className="stat-card animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-3xl md:text-4xl font-black text-accent mb-1">{stat.number}</div>
+                <div className="text-text-muted text-sm font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══ SECTION 2 — QUICK INTENT ROUTER WITH IMAGES ═══ */}
       <div className="section-bridge">If you already know what you need, start here.</div>
       <section className="py-10 md:py-16 relative z-20 bg-surface-dark">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-8 md:mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">What Do You Need?</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">What Do You Need?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Choose your situation and we'll point you to the right service.
+              Choose your situation and we&apos;ll point you to the right service.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {intentCards.map((c) => (
-              <ServiceCard key={c.href} icon={c.icon} title={c.headline} description={c.desc} href={c.href} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {intentCards.map((c, i) => (
+              <Link key={c.href} href={c.href} className="group relative overflow-hidden rounded-2xl bg-white border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img src={c.image} alt={c.headline} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors duration-300">{c.headline}</h3>
+                  <p className="text-text-muted text-sm leading-relaxed mb-4">{c.desc}</p>
+                  <div className="inline-flex items-center gap-2 text-accent font-bold text-sm">
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══ IMAGE SHOWCASE STRIP ═══ */}
+      <section className="py-8 md:py-12 bg-white overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: "/images/tyre-fitting-workshop.png", alt: "Professional tyre fitting workshop" },
+              { src: "/images/mobile-tyre-service.png", alt: "Mobile tyre fitting service" },
+              { src: "/images/wheel-balancing.png", alt: "Precision wheel balancing" },
+              { src: "/images/emergency-repair.png", alt: "Emergency tyre repair" },
+            ].map((img, i) => (
+              <div key={img.src} className="image-card animate-fade-in-up" style={{ animationDelay: `${i * 0.15}s` }}>
+                <div className="aspect-square overflow-hidden">
+                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover" />
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -319,27 +382,31 @@ export default function Home() {
 
 
       {/* ═══ SECTION 3 — PROBLEM CLUSTER (Editorial Panels) ═══ */}
-      <div className="section-bridge">Not sure? Let's diagnose your situation.</div>
+      <div className="section-bridge">Not sure? Let&apos;s diagnose your situation.</div>
       <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
+        {/* Decorative floating shapes */}
+        <div className="absolute top-20 right-10 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-float pointer-events-none"></div>
+        <div className="absolute bottom-20 left-10 w-40 h-40 bg-accent/5 rounded-full blur-xl animate-float pointer-events-none" style={{ animationDelay: "3s" }}></div>
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">Common Tyre Situations We Solve Every Day</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
               These are the tyre problems Wakefield drivers face most, and the right path for each.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-            {problems.map((p) => (
-              <div key={p.title} className="problem-panel">
-                <h3 className="font-bold text-white text-lg mb-3">{p.title}</h3>
+            {problems.map((p, i) => (
+              <div key={p.title} className="problem-panel animate-fade-in-up" style={{ animationDelay: `${i * 0.08}s` }}>
+                <h3 className="font-bold text-text text-lg mb-3">{p.title}</h3>
                 <div className="space-y-2 text-sm leading-relaxed">
                   <p className="text-text-light"><span className="text-accent font-semibold">Situation:</span> {p.situation}</p>
-                  <p className="text-text-muted"><span className="text-amber-400 font-semibold">Risk:</span> {p.risk}</p>
-                  <p className="text-text-light"><span className="text-green-400 font-semibold">Right path:</span> {p.path}</p>
+                  <p className="text-text-muted"><span className="text-amber-600 font-semibold">Risk:</span> {p.risk}</p>
+                  <p className="text-text-light"><span className="text-green-600 font-semibold">Right path:</span> {p.path}</p>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {p.links.map((l) => (
-                    <Link key={l.href} href={l.href} className="inline-flex items-center gap-1 text-accent text-sm font-bold hover:underline underline-offset-4">
+                    <Link key={l.href} href={l.href} className="inline-flex items-center gap-1 text-accent text-sm font-bold hover:underline underline-offset-4 transition-all duration-300 hover:gap-2">
                       {l.label} →
                     </Link>
                   ))}
@@ -351,21 +418,47 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 4 — CORE SERVICE TAXONOMY ═══ */}
-      <section className="py-12 md:py-20 bg-deep">
+      {/* ═══ SECTION 4 — CORE SERVICE TAXONOMY WITH IMAGES ═══ */}
+      <section className="py-12 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-8 md:mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Our Tyre Services</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">Our Tyre Services</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
-              Each of these situations maps to one of our core services. Here's the full list of what we provide across Wakefield and West Yorkshire.
+              Each of these situations maps to one of our core services. Here&apos;s the full list of what we provide across Wakefield and West Yorkshire.
             </p>
           </div>
 
+          {/* Featured service with large image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <div className="image-card animate-slide-in-left">
+              <img src="/images/tyre-fitting-workshop.png" alt="Our professional tyre fitting workshop in Wakefield" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
+            </div>
+            <div className="flex flex-col justify-center animate-slide-in-right">
+              <h3 className="text-2xl font-bold text-text mb-4">Professional Workshop & Mobile Fleet</h3>
+              <p className="text-text-muted text-base leading-relaxed mb-6">
+                From our fully-equipped Doncaster Road workshop to our mobile fleet covering all of West Yorkshire, we bring expert tyre fitting wherever you need it. Same-day availability, no hidden fees, and every job backed by professional equipment and experienced technicians.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: "Workshop Fitting", icon: "🏪" },
+                  { label: "Mobile Service", icon: "🚐" },
+                  { label: "Emergency Repair", icon: "🚨" },
+                  { label: "Free Balancing", icon: "⚖️" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-2 bg-surface p-3 rounded-xl">
+                    <span className="text-xl">{item.icon}</span>
+                    <span className="text-sm font-semibold text-text">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
-            {services.map((s) => (
-              <Link key={s.slug} href={`/${s.slug}`} className="glass-panel glass-panel-hover rounded-xl p-5 flex items-center justify-between group">
+            {services.map((s, i) => (
+              <Link key={s.slug} href={`/${s.slug}`} className="bg-white border border-black/5 rounded-xl p-5 flex items-center justify-between group hover:border-accent/20 hover:shadow-lg transition-all duration-400 hover:-translate-y-1 animate-fade-in-up" style={{ animationDelay: `${i * 0.08}s` }}>
                 <div>
-                  <h3 className="font-bold text-white text-lg group-hover:text-accent transition-colors">{s.name}</h3>
+                  <h3 className="font-bold text-text text-lg group-hover:text-accent transition-colors">{s.name}</h3>
                   <p className="text-text-muted text-sm mt-1">{s.shortDesc}</p>
                 </div>
                 <svg className="w-5 h-5 text-accent transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -376,26 +469,26 @@ export default function Home() {
           </div>
 
           {/* Supporting services */}
-          <div className="rounded-xl p-6 md:p-8 border border-white/5 bg-white/[0.02]">
-            <h3 className="font-bold text-white text-lg mb-4">Additional Supporting Services</h3>
+          <div className="rounded-xl p-6 md:p-8 border border-black/5 bg-surface">
+            <h3 className="font-bold text-text text-lg mb-4">Additional Supporting Services</h3>
             <p className="text-text-muted text-sm mb-6 max-w-3xl">
               We also support wheel alignment checks, locking wheel nut removal, and TPMS valve servicing as part of broader tyre work. These are not standalone bookable services but are available alongside fitting, replacement, or repair.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-text-muted">
-              <div>
-                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Wheel Alignment</span>
+              <div className="bg-white rounded-lg p-4 border border-black/5 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <span className="text-text font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Wheel Alignment</span>
                 <p className="mt-1 pl-3.5">Tracking adjustment for pulling, drift, or uneven wear after pothole impacts.</p>
               </div>
-              <div>
-                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Tyres by Registration</span>
+              <div className="bg-white rounded-lg p-4 border border-black/5 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <span className="text-text font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Tyres by Registration</span>
                 <p className="mt-1 pl-3.5">Tell us your reg and we find the correct tyre specification instantly.</p>
               </div>
-              <div>
-                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Locking Wheel Nut Removal</span>
+              <div className="bg-white rounded-lg p-4 border border-black/5 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <span className="text-text font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Locking Wheel Nut Removal</span>
                 <p className="mt-1 pl-3.5">Lost your key? We remove locking nuts safely without wheel damage.</p>
               </div>
-              <div>
-                <span className="text-white font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> TPMS Valve Service</span>
+              <div className="bg-white rounded-lg p-4 border border-black/5 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <span className="text-text font-semibold flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> TPMS Valve Service</span>
                 <p className="mt-1 pl-3.5">Valve replacement and sensor checks to keep your pressure monitoring accurate.</p>
               </div>
             </div>
@@ -405,29 +498,33 @@ export default function Home() {
 
 
       {/* ═══ SECTION 5 — PROCESS (Vertical Timeline) ═══ */}
-      <div className="section-bridge">Here's exactly how it works, step by step.</div>
-      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
-        <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="section-bridge">Here&apos;s exactly how it works, step by step.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-surface">
+        {/* Decorative elements */}
+        <div className="absolute -right-20 top-1/3 w-40 h-40 border-4 border-accent/10 rounded-full animate-rotate-slow pointer-events-none"></div>
+        <div className="absolute -left-10 bottom-1/4 w-24 h-24 border-4 border-accent/10 rounded-full animate-rotate-slow pointer-events-none" style={{ animationDirection: "reverse" }}></div>
+
+        <div className="mx-auto max-w-3xl px-4 md:px-6 relative z-10">
           <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">How It Works</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4 tracking-tight">How It Works</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               From first call to driving away — six clear steps.
             </p>
           </div>
           <div className="relative">
-            {processSteps.map((s) => (
-              <div key={s.step} className="timeline-step">
+            {processSteps.map((s, i) => (
+              <div key={s.step} className="timeline-step animate-fade-in-up" style={{ animationDelay: `${i * 0.12}s` }}>
                 <div className="timeline-line"></div>
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-1">
-                  <h3 className="font-bold text-white text-lg mb-1">{s.title}</h3>
+                  <h3 className="font-bold text-text text-lg mb-1">{s.title}</h3>
                   <p className="text-text-muted text-sm leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/book" className="inline-flex items-center gap-3 bg-gradient-to-r from-accent to-accent-hover text-white font-bold px-8 py-4 rounded-2xl text-base transition-all duration-300 hover:shadow-[0_0_40px_rgba(227,30,36,0.5)] hover:-translate-y-1">
+            <Link href="/book" className="inline-flex items-center gap-3 bg-gradient-to-r from-accent to-accent-hover text-white font-bold px-8 py-4 rounded-2xl text-base transition-all duration-300 hover:shadow-[0_0_40px_rgba(227,30,36,0.3)] hover:-translate-y-1">
               Book Your Service
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
@@ -436,81 +533,88 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 6 — TYRE CHOICE / DECISION SUPPORT (Editorial Split) ═══ */}
-      <div className="section-bridge">Before we fit, let's get the right tyres.</div>
-      <section className="py-12 md:py-20 bg-charcoal">
+      {/* ═══ SECTION 6 — TYRE CHOICE / DECISION SUPPORT ═══ */}
+      <div className="section-bridge">Before we fit, let&apos;s get the right tyres.</div>
+      <section className="py-12 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 md:mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Choosing the Right Tyres for Your Vehicle</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4 tracking-tight">Choosing the Right Tyres for Your Vehicle</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
-              We make sure you're getting the right ones — the right size, the right tier, and the right type for your driving.
+              We make sure you&apos;re getting the right ones — the right size, the right tier, and the right type for your driving.
             </p>
           </div>
 
-          {/* Editorial Split: Left = primary guidance, Right = supporting info */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Left column — primary guidance (3/5 width) */}
+            {/* Left column */}
             <div className="lg:col-span-3 space-y-8">
-              {/* Find Your Tyres */}
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="font-bold text-white text-xl mb-3">Find Your Tyres by Registration or Size</h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-3">
-                  Tell us your vehicle registration and we look up the correct tyre specifications (size, load index, and speed rating) instantly. Alternatively, call or book with your tyre size (e.g. 205/55 R16 91V) and we'll match it directly.
-                </p>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty. We make sure it's 100% correct before any tyre goes on your car.
-                </p>
+              {/* Image + Find Your Tyres */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div className="image-card animate-scale-in">
+                  <img src="/images/tyre-range.png" alt="Range of budget to premium tyres" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
+                </div>
+                <div className="border-l-4 border-accent pl-6">
+                  <h3 className="font-bold text-text text-xl mb-3">Find Your Tyres by Registration or Size</h3>
+                  <p className="text-text-muted text-sm leading-relaxed mb-3">
+                    Tell us your vehicle registration and we look up the correct tyre specifications (size, load index, and speed rating) instantly.
+                  </p>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    Getting the correct fitment matters for your safety, vehicle legality, and manufacturer warranty.
+                  </p>
+                </div>
               </div>
 
-              {/* Tyre Tiers as comparison strip */}
+              {/* Tyre Tiers */}
               <div>
-                <h3 className="font-bold text-white text-xl mb-5">Budget, Mid-Range &amp; Premium — What's the Difference?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 rounded-xl overflow-hidden border border-white/5">
-                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-green-400">
-                    <span className="text-white font-semibold block mb-2">Budget</span>
+                <h3 className="font-bold text-text text-xl mb-5">Budget, Mid-Range &amp; Premium — What&apos;s the Difference?</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 rounded-xl overflow-hidden border border-black/5 shadow-sm">
+                  <div className="p-5 bg-white border-t-4 border-t-green-500 hover:bg-green-50 transition-colors duration-300">
+                    <span className="text-text font-semibold block mb-2">Budget</span>
                     <p className="text-text-muted text-sm">Reliable, meets all legal requirements. Ideal for lower-mileage drivers and city driving. Best value per mile.</p>
                   </div>
-                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-amber-400 sm:border-l sm:border-white/5">
-                    <span className="text-white font-semibold block mb-2">Mid-Range</span>
+                  <div className="p-5 bg-white border-t-4 border-t-amber-500 sm:border-l sm:border-black/5 hover:bg-amber-50 transition-colors duration-300">
+                    <span className="text-text font-semibold block mb-2">Mid-Range</span>
                     <p className="text-text-muted text-sm">Balanced performance and value. Good wet grip, reasonable wear life. Suitable for most everyday drivers.</p>
                   </div>
-                  <div className="p-5 bg-white/[0.02] border-t-4 border-t-accent sm:border-l sm:border-white/5">
-                    <span className="text-white font-semibold block mb-2">Premium</span>
+                  <div className="p-5 bg-white border-t-4 border-t-accent sm:border-l sm:border-black/5 hover:bg-red-50 transition-colors duration-300">
+                    <span className="text-text font-semibold block mb-2">Premium</span>
                     <p className="text-text-muted text-sm">Top-tier wet grip, shortest braking distances, lowest road noise, and longest wear. Perfect for high-mileage drivers.</p>
                   </div>
                 </div>
-                <Link href="/tyre-replacement-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-4 hover:underline underline-offset-4">
+                <Link href="/tyre-replacement-wakefield" className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-4 hover:underline underline-offset-4 hover:gap-3 transition-all duration-300">
                   View Tyre Replacement Service →
                 </Link>
               </div>
             </div>
 
-            {/* Right column — supporting info (2/5 width) */}
+            {/* Right column */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Specs */}
-              <div className="rounded-xl p-5 bg-white/[0.02] border border-white/5">
-                <h3 className="font-bold text-white text-lg mb-3">Load Index, Speed Rating &amp; Tyre Labels</h3>
+              <div className="rounded-xl p-5 bg-surface border border-black/5 hover:shadow-md transition-all duration-300">
+                <h3 className="font-bold text-text text-lg mb-3">Load Index, Speed Rating &amp; Tyre Labels</h3>
                 <div className="space-y-3">
                   <p className="text-text-muted text-sm leading-relaxed">
-                    <span className="text-white font-semibold">Load Index &amp; Speed Rating:</span> It's vital we match or exceed your vehicle manufacturer's original specifications. This is especially critical for vans and heavily loaded vehicles.
+                    <span className="text-text font-semibold">Load Index &amp; Speed Rating:</span> It&apos;s vital we match or exceed your vehicle manufacturer&apos;s original specifications. This is especially critical for vans and heavily loaded vehicles.
                   </p>
                   <p className="text-text-muted text-sm leading-relaxed">
-                    <span className="text-white font-semibold">EU Tyre Labels:</span> Every tyre is rated on <span className="text-white">wet grip</span> (A–E), <span className="text-white">rolling resistance</span> (A–E), and <span className="text-white">external noise</span> (dB). We explain these so you know what you're buying.
+                    <span className="text-text font-semibold">EU Tyre Labels:</span> Every tyre is rated on <span className="text-text">wet grip</span> (A–E), <span className="text-text">rolling resistance</span> (A–E), and <span className="text-text">external noise</span> (dB). We explain these so you know what you&apos;re buying.
                   </p>
                 </div>
               </div>
 
-              {/* Vehicle types */}
-              <div className="rounded-xl p-5 bg-white/[0.02] border border-white/5">
-                <h3 className="font-bold text-white text-lg mb-3">Cars, Vans, 4x4s &amp; EVs</h3>
+              <div className="rounded-xl p-5 bg-surface border border-black/5 hover:shadow-md transition-all duration-300">
+                <h3 className="font-bold text-text text-lg mb-3">Cars, Vans, 4x4s &amp; EVs</h3>
                 <div className="space-y-3">
                   <p className="text-text-muted text-sm leading-relaxed">
-                    We supply and fit standard <span className="text-white">car tyres</span>, reinforced <span className="text-white">van tyres</span>, rugged <span className="text-white">4x4 tyres</span>, and specific <span className="text-white">EV tyres</span> designed for electric vehicles.
+                    We supply and fit standard <span className="text-text font-medium">car tyres</span>, reinforced <span className="text-text font-medium">van tyres</span>, rugged <span className="text-text font-medium">4x4 tyres</span>, and specific <span className="text-text font-medium">EV tyres</span> designed for electric vehicles.
                   </p>
                   <p className="text-text-muted text-sm leading-relaxed">
-                    We also fit <span className="text-white">run-flat tyres</span> and offer seasonal options including <span className="text-white">summer, winter, and all-season tyres</span>.
+                    We also fit <span className="text-text font-medium">run-flat tyres</span> and offer seasonal options including <span className="text-text font-medium">summer, winter, and all-season tyres</span>.
                   </p>
                 </div>
+              </div>
+
+              {/* Extra image */}
+              <div className="image-card animate-scale-in" style={{ animationDelay: "0.3s" }}>
+                <img src="/images/tyre-closeup.png" alt="Close-up of professional tyre fitting" loading="lazy" className="w-full h-48 object-cover" />
               </div>
             </div>
           </div>
@@ -518,20 +622,19 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 7 — SERVICE MODE COMPARISON (Attribute Table) ═══ */}
+      {/* ═══ SECTION 7 — SERVICE MODE COMPARISON ═══ */}
       <div className="section-bridge">Three routes to getting your tyres fitted.</div>
-      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
+      <section className="py-12 md:py-20 relative overflow-hidden bg-surface">
         <div className="mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Same-Day, Mobile or Emergency — Which Do You Need?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4 tracking-tight">Same-Day, Mobile or Emergency — Which Do You Need?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               Each route is designed for a different level of urgency and location.
             </p>
           </div>
 
           {/* Desktop: Comparison Table */}
-          <div className="hidden md:block comparison-table">
-            {/* Header */}
+          <div className="hidden md:block comparison-table animate-fade-in-up">
             <div className="comparison-header">
               <div className="comparison-header-cell" style={{ borderTopColor: '#22c55e' }}>
                 <div className="w-3 h-3 rounded-full bg-green-500 mx-auto mb-2"></div>
@@ -546,31 +649,26 @@ export default function Home() {
                 Emergency Repair
               </div>
             </div>
-            {/* Best for */}
             <div className="comparison-row">
               <div className="comparison-cell"><span className="comparison-label">Best for</span>Quick replacement without waiting</div>
-              <div className="comparison-cell"><span className="comparison-label">Best for</span>Convenience, or car isn't driveable</div>
+              <div className="comparison-cell"><span className="comparison-label">Best for</span>Convenience, or car isn&apos;t driveable</div>
               <div className="comparison-cell"><span className="comparison-label">Best for</span>Roadside emergencies, sudden flats</div>
             </div>
-            {/* Where */}
             <div className="comparison-row">
               <div className="comparison-cell"><span className="comparison-label">Where</span>Our Doncaster Road workshop</div>
               <div className="comparison-cell"><span className="comparison-label">Where</span>Anywhere across West Yorkshire</div>
               <div className="comparison-cell"><span className="comparison-label">Where</span>Roadside, motorways, car parks</div>
             </div>
-            {/* Urgency */}
             <div className="comparison-row">
-              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-green-400 font-semibold">Planned</span></div>
-              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-amber-400 font-semibold">Flexible</span></div>
+              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-green-600 font-semibold">Planned</span></div>
+              <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-amber-600 font-semibold">Flexible</span></div>
               <div className="comparison-cell"><span className="comparison-label">Urgency</span><span className="text-accent font-semibold">Immediate</span></div>
             </div>
-            {/* Typical user */}
             <div className="comparison-row">
               <div className="comparison-cell"><span className="comparison-label">Typical user</span>Drivers who can bring the car in</div>
               <div className="comparison-cell"><span className="comparison-label">Typical user</span>Busy schedules, immobile vehicles</div>
               <div className="comparison-cell"><span className="comparison-label">Typical user</span>Stranded drivers, blowouts</div>
             </div>
-            {/* CTAs */}
             <div className="comparison-row">
               <div className="comparison-cell pt-4 pb-5"><Link href="/tyre-fitting-wakefield" className="text-accent font-bold text-sm hover:underline underline-offset-4">Workshop Fitting →</Link></div>
               <div className="comparison-cell pt-4 pb-5"><Link href="/mobile-tyre-fitting-wakefield" className="text-accent font-bold text-sm hover:underline underline-offset-4">Mobile Fitting →</Link></div>
@@ -581,19 +679,19 @@ export default function Home() {
           {/* Mobile: Stacked Cards */}
           <div className="md:hidden space-y-4">
             {[
-              { color: "green-500", title: "Same-Day Workshop", best: "Quick replacement", where: "Doncaster Road workshop", urgency: "Planned", urgencyColor: "text-green-400", href: "/tyre-fitting-wakefield", cta: "Workshop Fitting →" },
-              { color: "blue-500", title: "Mobile Fitting", best: "Convenience, or car isn't driveable", where: "Anywhere across West Yorkshire", urgency: "Flexible", urgencyColor: "text-amber-400", href: "/mobile-tyre-fitting-wakefield", cta: "Mobile Fitting →" },
+              { color: "green-500", title: "Same-Day Workshop", best: "Quick replacement", where: "Doncaster Road workshop", urgency: "Planned", urgencyColor: "text-green-600", href: "/tyre-fitting-wakefield", cta: "Workshop Fitting →" },
+              { color: "blue-500", title: "Mobile Fitting", best: "Convenience, or car isn't driveable", where: "Anywhere across West Yorkshire", urgency: "Flexible", urgencyColor: "text-amber-600", href: "/mobile-tyre-fitting-wakefield", cta: "Mobile Fitting →" },
               { color: "accent", title: "Emergency Repair", best: "Roadside emergencies, sudden flats", where: "Roadside, motorways, car parks", urgency: "Immediate", urgencyColor: "text-accent", href: "/emergency-tyre-repair-wakefield", cta: "Get Emergency Help →", pulse: true },
             ].map((card) => (
-              <div key={card.title} className={`rounded-xl p-5 bg-white/[0.02] border border-white/5 ${card.pulse ? 'border-accent/20' : ''}`}>
+              <div key={card.title} className={`rounded-xl p-5 bg-white border border-black/5 shadow-sm ${card.pulse ? 'border-accent/20' : ''} hover:shadow-md transition-all duration-300`}>
                 <div className="flex items-center gap-2 mb-3">
                   <div className={`w-3 h-3 rounded-full bg-${card.color} ${card.pulse ? 'animate-pulse' : ''}`}></div>
-                  <h3 className="font-bold text-white text-lg">{card.title}</h3>
+                  <h3 className="font-bold text-text text-lg">{card.title}</h3>
                 </div>
                 <div className="space-y-2 text-sm text-text-muted">
-                  <p><span className="text-white font-semibold">Best for:</span> {card.best}</p>
-                  <p><span className="text-white font-semibold">Where:</span> {card.where}</p>
-                  <p><span className="text-white font-semibold">Urgency:</span> <span className={`${card.urgencyColor} font-semibold`}>{card.urgency}</span></p>
+                  <p><span className="text-text font-semibold">Best for:</span> {card.best}</p>
+                  <p><span className="text-text font-semibold">Where:</span> {card.where}</p>
+                  <p><span className="text-text font-semibold">Urgency:</span> <span className={`${card.urgencyColor} font-semibold`}>{card.urgency}</span></p>
                 </div>
                 <Link href={card.href} className="inline-flex items-center gap-2 text-accent font-bold text-sm mt-4 hover:underline underline-offset-4">{card.cta}</Link>
               </div>
@@ -603,66 +701,62 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 8 — DIAGNOSTIC CLARIFICATION (Matrix) ═══ */}
+      {/* ═══ SECTION 8 — DIAGNOSTIC CLARIFICATION ═══ */}
       <section className="py-12 md:py-20 bg-burgundy-tint">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">
             <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Understanding the Differences</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Repair, Replace, Balance or Align?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4 tracking-tight">Repair, Replace, Balance or Align?</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               Some tyre issues overlap. This clarifies the most common diagnostic questions.
             </p>
           </div>
           <div className="diagnostic-grid">
-            {/* Puncture Repair vs Replacement */}
             <div className="diagnostic-cell">
-              <h3 className="font-bold text-white text-lg mb-3">Puncture Repair vs Tyre Replacement</h3>
+              <h3 className="font-bold text-text text-lg mb-3">Puncture Repair vs Tyre Replacement</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                A puncture can be safely repaired to <span className="text-white font-semibold">BS AU 159 standard</span> if the damage is within the central tread band.
+                A puncture can be safely repaired to <span className="text-text font-semibold">BS AU 159 standard</span> if the damage is within the central tread band.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                <span className="text-amber-400 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres cannot be safely repaired — replacement is required.
+                <span className="text-amber-600 font-semibold">Sidewall damage</span>, shoulder punctures, and damage to run-flat tyres cannot be safely repaired — replacement is required.
               </p>
-              <p className="text-text-muted text-sm leading-relaxed mb-3">We assess every puncture. We never repair a tyre that isn't safe to repair.</p>
+              <p className="text-text-muted text-sm leading-relaxed mb-3">We assess every puncture. We never repair a tyre that isn&apos;t safe to repair.</p>
               <div className="flex gap-4">
                 <Link href="/puncture-repair-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Puncture Repair →</Link>
                 <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Tyre Replacement →</Link>
               </div>
             </div>
             
-            {/* Balancing vs Alignment */}
             <div className="diagnostic-cell">
-              <h3 className="font-bold text-white text-lg mb-3">Wheel Balancing vs Wheel Alignment</h3>
+              <h3 className="font-bold text-text text-lg mb-3">Wheel Balancing vs Wheel Alignment</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                <span className="text-white font-semibold">Wheel balancing</span> corrects weight distribution. Symptoms: steering vibration at speed.
+                <span className="text-text font-semibold">Wheel balancing</span> corrects weight distribution. Symptoms: steering vibration at speed.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                <span className="text-white font-semibold">Wheel alignment (tracking)</span> adjusts wheel angles. Symptoms: car pulling to one side, uneven tyre wear.
+                <span className="text-text font-semibold">Wheel alignment (tracking)</span> adjusts wheel angles. Symptoms: car pulling to one side, uneven tyre wear.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">After a pothole, start with balancing. If pulling persists, alignment may be needed.</p>
               <Link href="/wheel-balancing-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Wheel Balancing →</Link>
             </div>
             
-            {/* Legal Tread Depth */}
             <div className="diagnostic-cell">
-              <h3 className="font-bold text-white text-lg mb-3">Legal Tread Depth &amp; Safety</h3>
+              <h3 className="font-bold text-text text-lg mb-3">Legal Tread Depth &amp; Safety</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                The UK legal minimum is <span className="text-white font-semibold">1.6mm</span> across the central three-quarters of the tread width.
+                The UK legal minimum is <span className="text-text font-semibold">1.6mm</span> across the central three-quarters of the tread width.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-3">
-                Below this: up to <span className="text-amber-400 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances are drastically worse.
+                Below this: up to <span className="text-amber-600 font-semibold">£2,500 fine and 3 penalty points per tyre</span>. Braking distances are drastically worse.
               </p>
               <Link href="/tyre-replacement-wakefield" className="text-accent text-sm font-bold hover:underline underline-offset-4">Book a Replacement →</Link>
             </div>
             
-            {/* TPMS & Locking Nuts */}
             <div className="diagnostic-cell">
-              <h3 className="font-bold text-white text-lg mb-3">TPMS &amp; Locking Wheel Nuts</h3>
+              <h3 className="font-bold text-text text-lg mb-3">TPMS &amp; Locking Wheel Nuts</h3>
               <p className="text-text-muted text-sm leading-relaxed mb-2">
-                <span className="text-white font-semibold">Locking wheel nuts:</span> If your key is missing or damaged, we provide specialist removal —  safely unlocking the wheel so tyre work can proceed.
+                <span className="text-text font-semibold">Locking wheel nuts:</span> If your key is missing or damaged, we provide specialist removal —  safely unlocking the wheel so tyre work can proceed.
               </p>
               <p className="text-text-muted text-sm leading-relaxed">
-                <span className="text-white font-semibold">TPMS:</span> Sensors and valves can be serviced when fitting new tyres. A faulty valve can trigger false warnings or miss a real puncture.
+                <span className="text-text font-semibold">TPMS:</span> Sensors and valves can be serviced when fitting new tyres. A faulty valve can trigger false warnings or miss a real puncture.
               </p>
             </div>
           </div>
@@ -670,18 +764,18 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 9 — PROOF & TRUST SYSTEM (Strip + Testimonials) ═══ */}
-      <div className="section-bridge">Don't take our word for it.</div>
-      <section className="py-12 md:py-20 relative overflow-hidden bg-deep">
+      {/* ═══ SECTION 9 — PROOF & TRUST SYSTEM ═══ */}
+      <div className="section-bridge">Don&apos;t take our word for it.</div>
+      <section className="py-12 md:py-20 relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Why Wakefield Drivers Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">Why Wakefield Drivers Choose Us</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Here's what we stand behind, and the evidence that backs it.
+              Here&apos;s what we stand behind, and the evidence that backs it.
             </p>
           </div>
 
-          {/* Proof Strip — horizontal evidence bar */}
+          {/* Proof Strip */}
           <div className="proof-strip mb-16">
             {[
               { title: "Local Workshop", desc: "Cinema House, 160 Doncaster Rd, WF1 5HL" },
@@ -692,7 +786,7 @@ export default function Home() {
               { title: "Experienced Team", desc: "Thousands of successful fittings" },
             ].map((p) => (
               <div key={p.title} className="proof-strip-item">
-                <h3 className="font-bold text-white text-sm mb-1">{p.title}</h3>
+                <h3 className="font-bold text-text text-sm mb-1">{p.title}</h3>
                 <p className="text-text-muted text-xs leading-relaxed">{p.desc}</p>
               </div>
             ))}
@@ -701,13 +795,13 @@ export default function Home() {
           {/* Testimonials */}
           <div>
             <div className="mb-8 flex flex-col items-center text-center">
-              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-bold px-5 py-2.5 rounded-full text-sm mb-5 shadow-lg backdrop-blur-md">
-                <svg className="w-5 h-5 text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]" fill="currentColor" viewBox="0 0 20 20">
+              <div className="inline-flex items-center gap-2 bg-accent/5 border border-accent/10 text-text font-bold px-5 py-2.5 rounded-full text-sm mb-5 shadow-sm">
+                <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 What Our Customers Say
               </div>
-              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight">Driver Approved.</h3>
+              <h3 className="text-3xl md:text-4xl font-black text-text tracking-tight">Driver Approved.</h3>
             </div>
             <TestimonialSlider testimonials={testimonials} />
           </div>
@@ -715,20 +809,19 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 10 — WORKSHOP & MOBILE CAPABILITY ═══ */}
-      <section className="py-12 md:py-20 bg-deep">
+      {/* ═══ SECTION 10 — WORKSHOP & MOBILE CAPABILITY WITH IMAGES ═══ */}
+      <section className="py-12 md:py-20 bg-surface">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Our Workshop &amp; Mobile Capability</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">Our Workshop &amp; Mobile Capability</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Trust is built on what you can see. Here's our Wakefield workshop and the mobile fleet that covers the wider region.
+              Trust is built on what you can see. Here&apos;s our Wakefield workshop and the mobile fleet that covers the wider region.
             </p>
           </div>
 
-          {/* Workshop + Mobile split with left accent border */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <div className="coverage-tier-primary rounded-r-xl p-6 md:p-8 bg-white/[0.02]">
-              <h3 className="font-bold text-white text-xl mb-4">Wakefield Workshop</h3>
+            <div className="coverage-tier-primary rounded-r-xl p-6 md:p-8 bg-white border border-black/5 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="font-bold text-text text-xl mb-4">Wakefield Workshop</h3>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Cinema House, 160 Doncaster Road, Belle Vue, Wakefield WF1 5HL</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Multiple fitting bays with professional lifts and balancing tech</li>
@@ -739,8 +832,8 @@ export default function Home() {
                 Get Directions →
               </Link>
             </div>
-            <div className="coverage-tier-secondary rounded-r-xl p-6 md:p-8 bg-white/[0.02]">
-              <h3 className="font-bold text-white text-xl mb-4">Mobile Fleet</h3>
+            <div className="coverage-tier-secondary rounded-r-xl p-6 md:p-8 bg-white border border-black/5 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="font-bold text-text text-xl mb-4">Mobile Fleet</h3>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Fully equipped dedicated mobile fitting vans</li>
                 <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></span> Covering Wakefield and the wider West Yorkshire region</li>
@@ -755,71 +848,70 @@ export default function Home() {
 
           {/* Gallery */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
-              <img src="/images/gallery/shop-1.jpg" alt="One Stop Tyres Wakefield workshop exterior on Doncaster Road" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="image-card group aspect-video">
+              <img src="/images/tyre-fitting-workshop.png" alt="One Stop Tyres Wakefield workshop" loading="lazy" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
-              <img src="/images/gallery/shop-2.jpg" alt="Inside the fully equipped tyre fitting workshop with lifts and bays" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="image-card group aspect-video">
+              <img src="/images/mobile-tyre-service.png" alt="Mobile tyre fitting service van" loading="lazy" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-xl overflow-hidden border border-white/5 group aspect-video">
-              <img src="/images/gallery/shop-3.jpg" alt="Multiple tyre fitting bays at One Stop Tyres Wakefield" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="image-card group aspect-video">
+              <img src="/images/wheel-balancing.png" alt="Professional wheel balancing equipment" loading="lazy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
       </section>
 
 
-      {/* ═══ SECTION 11 — LOCAL COVERAGE (Tiered Clusters) ═══ */}
-      <section className="py-12 md:py-20 relative overflow-hidden bg-primary">
+      {/* ═══ SECTION 11 — LOCAL COVERAGE ═══ */}
+      <section className="py-12 md:py-20 relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Covering Wakefield &amp; West Yorkshire</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4 tracking-tight">Covering Wakefield &amp; West Yorkshire</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-3xl">
               Our workshop is in Wakefield. Our reach extends across West Yorkshire.
             </p>
           </div>
 
-          {/* Tier 1 — Wakefield Core (full width, prominent) */}
-          <div className="coverage-tier-primary mb-6 py-5 px-6 md:px-8 rounded-r-xl bg-white/[0.02]">
-            <h3 className="font-bold text-white text-lg mb-2">Wakefield Core</h3>
+          {/* Tier 1 */}
+          <div className="coverage-tier-primary mb-6 py-5 px-6 md:px-8 rounded-r-xl bg-accent/5 border border-accent/10">
+            <h3 className="font-bold text-text text-lg mb-2">Wakefield Core</h3>
             <p className="text-text-muted text-sm leading-relaxed mb-2">
               Wakefield city centre and all WF1–WF6 postcodes. Pinderfields Hospital, Trinity Walk, The Ridings, Wakefield 41, Calder Park, and Snow Hill.
             </p>
-            <p className="text-text-light text-sm italic">"Our workshop on Doncaster Road is at the heart of the Wakefield tyre network."</p>
+            <p className="text-text-light text-sm italic">&quot;Our workshop on Doncaster Road is at the heart of the Wakefield tyre network.&quot;</p>
           </div>
 
-          {/* Tier 2 — Nearby + Towns (2 columns) */}
+          {/* Tier 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-white/[0.02]">
-              <h3 className="font-bold text-white text-base mb-2">Nearby Areas</h3>
+            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-surface border border-black/5">
+              <h3 className="font-bold text-text text-base mb-2">Nearby Areas</h3>
               <p className="text-text-muted text-sm mb-2">Ossett, Horbury, Outwood, Stanley, Sandal, and Normanton.</p>
-              <p className="text-text-light text-xs italic">"Within our fastest mobile response zone — often under 30 minutes."</p>
+              <p className="text-text-light text-xs italic">&quot;Within our fastest mobile response zone — often under 30 minutes.&quot;</p>
             </div>
-            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-white/[0.02]">
-              <h3 className="font-bold text-white text-base mb-2">Wider Towns</h3>
+            <div className="coverage-tier-secondary py-5 px-6 rounded-r-xl bg-surface border border-black/5">
+              <h3 className="font-bold text-text text-base mb-2">Wider Towns</h3>
               <p className="text-text-muted text-sm mb-2">Leeds, Dewsbury, Castleford, Pontefract, and Batley.</p>
-              <p className="text-text-light text-xs italic">"Our mobile fleet serves these nearby towns regularly without delay."</p>
+              <p className="text-text-light text-xs italic">&quot;Our mobile fleet serves these nearby towns regularly without delay.&quot;</p>
             </div>
           </div>
 
-          {/* Tier 3 — Routes (badge strip) */}
-          <div className="py-5 px-6 md:px-8 rounded-xl bg-white/[0.02] border border-white/5 mb-6">
-            <h3 className="font-bold text-white text-base mb-3">Major Routes We Cover</h3>
+          {/* Tier 3 — Routes */}
+          <div className="py-5 px-6 md:px-8 rounded-xl bg-surface border border-black/5 mb-6">
+            <h3 className="font-bold text-text text-base mb-3">Major Routes We Cover</h3>
             <div className="flex flex-wrap gap-2 mb-2">
               {["M1 (J39–J41)", "M62 (J29–J31)", "A61", "A638", "A642", "A650"].map((route) => (
                 <span key={route} className="route-badge">{route}</span>
               ))}
             </div>
-            <p className="text-text-light text-xs italic mt-2">"Broken down near a key junction? Call us straight away for emergency attendance."</p>
+            <p className="text-text-light text-xs italic mt-2">&quot;Broken down near a key junction? Call us straight away for emergency attendance.&quot;</p>
           </div>
 
-          {/* Situational one-liner */}
           <p className="text-text-muted text-sm px-6">
-            Whether you're at your home driveway, office car park, retail centre, business park, or stranded roadside — wherever a tyre problem strikes, we can safely reach you.
+            Whether you&apos;re at your home driveway, office car park, retail centre, business park, or stranded roadside — wherever a tyre problem strikes, we can safely reach you.
           </p>
 
           <div className="mt-8 px-6">
-            <Link href="/areas" className="inline-flex items-center gap-2 text-white font-bold hover:text-accent transition-colors group">
+            <Link href="/areas" className="inline-flex items-center gap-2 text-text font-bold hover:text-accent transition-colors group">
               View Our Full Coverage List
               <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -830,11 +922,11 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 12 — AREA ROUTING (Pill Chips) ═══ */}
-      <section className="py-10 md:py-14 bg-charcoal">
+      {/* ═══ SECTION 12 — AREA ROUTING ═══ */}
+      <section className="py-10 md:py-14 bg-surface">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-6 md:mb-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">Tyre Services Near You</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-3 tracking-tight">Tyre Services Near You</h2>
             <p className="text-text-muted text-sm md:text-base font-medium max-w-xl mx-auto">
               Each area has a dedicated page with coverage details.
             </p>
@@ -850,7 +942,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/areas" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-accent/5 text-white font-bold px-6 py-3 rounded-full text-sm transition-all duration-300">
+            <Link href="/areas" className="inline-flex items-center gap-2 bg-white border border-black/10 hover:border-accent/30 hover:bg-accent/5 text-text font-bold px-6 py-3 rounded-full text-sm transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
               View All 150+ Service Areas
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -861,12 +953,12 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 13 — FAQ (Single Column Full-Width Accordion) ═══ */}
+      {/* ═══ SECTION 13 — FAQ ═══ */}
       <div className="section-bridge">Still have questions? We answer the ones we hear most.</div>
       <section className="py-12 md:py-20 relative overflow-hidden bg-burgundy-tint">
         <div className="mx-auto max-w-4xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-text-muted text-base md:text-lg font-medium max-w-2xl mx-auto">
               Whether comparing services or trying to understand what your tyres need — these are the questions Wakefield drivers ask us most.
             </p>
@@ -890,7 +982,7 @@ export default function Home() {
       </section>
 
 
-      {/* ═══ SECTION 14 — FINAL CTA / CONTACT CLOSURE ═══ */}
+      {/* ═══ SECTION 14 — FINAL CTA ═══ */}
       <CTABlock
         heading="Ready to Get Moving?"
         subtext="Got your answer? Let's get you sorted. Whether it's a routine tyre fitting at our Wakefield workshop, a mobile appointment at your home, or an emergency call-out on the M1. We're here. Same-day availability. Honest pricing. One call gets it sorted."

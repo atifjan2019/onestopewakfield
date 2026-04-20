@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function CTABlock({ heading, subtext }) {
   return (
-    <section className="relative py-8 md:py-16 px-6 overflow-hidden bg-primary my-12 rounded-3xl border border-white/5 max-w-7xl mx-auto shadow-2xl">
+    <section className="relative py-8 md:py-16 px-6 overflow-hidden bg-[#1a1a1a] my-12 rounded-3xl border border-white/5 max-w-7xl mx-auto shadow-2xl">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtbDItMiAyaDJsMi0ydi1oLTJ2MmgtNHYtMmgtdjJoLTRzIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-50 mix-blend-overlay"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-accent/20 blur-[150px] rounded-full pointer-events-none animate-blob"></div>
@@ -14,7 +14,7 @@ export default function CTABlock({ heading, subtext }) {
           {heading}
         </h2>
         {subtext && (
-          <p className="text-text-muted mb-10 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-white/60 mb-10 text-lg md:text-xl font-medium max-w-2xl mx-auto">
             {subtext}
           </p>
         )}
@@ -34,7 +34,7 @@ export default function CTABlock({ heading, subtext }) {
           </a>
           <Link
             href="/contact"
-            className="w-full sm:w-auto glass-panel glass-panel-hover text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-sm md:text-base transition-all duration-300 text-center flex items-center justify-center"
+            className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl text-sm md:text-base transition-all duration-300 text-center flex items-center justify-center"
           >
             Get a Free Quote
           </Link>
