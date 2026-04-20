@@ -121,24 +121,24 @@ export default function SitemapPage() {
   const totalPages = mainPages.length + services.length + areas.length;
 
   return (
-    <div className="bg-primary min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[420px] flex flex-col items-center justify-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[420px] flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="mx-auto max-w-7xl relative z-10 w-full text-center">
           <nav className="mb-8 flex justify-center">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-accent transition-colors">
                   Home
                 </Link>
               </li>
-              <li className="text-white/30">/</li>
+              <li className="text-black/20">/</li>
               <li className="text-accent">Sitemap</li>
             </ol>
           </nav>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.3em] mb-4 md:mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-text leading-[1.3em] mb-4 md:mb-6 tracking-tight">
               Site <span className="text-gradient-accent">Map.</span>
             </h1>
             <p className="text-text-muted text-lg md:text-2xl font-medium leading-relaxed">
@@ -148,27 +148,27 @@ export default function SitemapPage() {
           </div>
 
           {/* Stats pill */}
-          <div className="mt-8 inline-flex items-center gap-3 glass-panel rounded-full px-6 py-3">
+          <div className="mt-8 inline-flex items-center gap-3 bg-white border border-black/5 shadow-sm rounded-full px-6 py-3">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse-slow"></div>
             <span className="text-text-muted text-sm font-bold">
-              <span className="text-white">{totalPages}</span> pages indexed
+              <span className="text-text">{totalPages}</span> pages indexed
             </span>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-8 md:py-16 relative z-10 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 relative z-10 bg-surface border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Pages */}
-            <div className="glass-panel rounded-3xl p-8 md:p-10 border-t-4 border-t-accent">
+            <div className="bg-white rounded-3xl p-8 md:p-10 border-t-4 border-t-accent border border-black/5 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center border border-accent/20 text-accent">
                   <SectionIcon type="main" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-black text-white">Main Pages</h2>
+                  <h2 className="text-xl font-black text-text">Main Pages</h2>
                   <p className="text-text-muted text-xs font-bold">
                     {mainPages.length} pages
                   </p>
@@ -179,10 +179,10 @@ export default function SitemapPage() {
                   <Link
                     key={page.href}
                     href={page.href}
-                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all duration-300"
+                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-surface transition-all duration-300"
                   >
                     <div className="flex-1 min-w-0">
-                      <span className="text-white font-bold group-hover:text-accent transition-colors block">
+                      <span className="text-text font-bold group-hover:text-accent transition-colors block">
                         {page.name}
                       </span>
                       <span className="text-text-muted text-sm block mt-0.5 truncate">
@@ -196,13 +196,13 @@ export default function SitemapPage() {
             </div>
 
             {/* Services */}
-            <div className="glass-panel rounded-3xl p-8 md:p-10 border-t-4 border-t-white/20">
+            <div className="bg-white rounded-3xl p-8 md:p-10 border-t-4 border-t-black/10 border border-black/5 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 text-text-muted">
+                <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-black/8 text-text-muted">
                   <SectionIcon type="services" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-black text-white">
+                  <h2 className="text-xl font-black text-text">
                     Our Services
                   </h2>
                   <p className="text-text-muted text-xs font-bold">
@@ -215,10 +215,10 @@ export default function SitemapPage() {
                   <Link
                     key={service.slug}
                     href={`/${service.slug}`}
-                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all duration-300"
+                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-surface transition-all duration-300"
                   >
                     <div className="flex-1 min-w-0">
-                      <span className="text-white font-bold group-hover:text-accent transition-colors block">
+                      <span className="text-text font-bold group-hover:text-accent transition-colors block">
                         {service.name}
                       </span>
                       <span className="text-text-muted text-sm block mt-0.5 truncate">
@@ -232,13 +232,13 @@ export default function SitemapPage() {
             </div>
 
             {/* Areas */}
-            <div className="glass-panel rounded-3xl p-8 md:p-10 border-t-4 border-t-white/20">
+            <div className="bg-white rounded-3xl p-8 md:p-10 border-t-4 border-t-black/10 border border-black/5 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 text-text-muted">
+                <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-black/8 text-text-muted">
                   <SectionIcon type="areas" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-black text-white">
+                  <h2 className="text-xl font-black text-text">
                     Areas We Serve
                   </h2>
                   <p className="text-text-muted text-xs font-bold">
@@ -251,10 +251,10 @@ export default function SitemapPage() {
                   <Link
                     key={area.slug}
                     href={`/areas/${area.slug}`}
-                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-all duration-300"
+                    className="group flex items-center justify-between p-4 rounded-2xl hover:bg-surface transition-all duration-300"
                   >
                     <div className="flex-1 min-w-0">
-                      <span className="text-white font-bold group-hover:text-accent transition-colors block">
+                      <span className="text-text font-bold group-hover:text-accent transition-colors block">
                         {area.name}
                       </span>
                       <span className="text-text-muted text-sm block mt-0.5 truncate">
@@ -270,7 +270,7 @@ export default function SitemapPage() {
 
           {/* XML Sitemap link */}
           <div className="mt-12 text-center">
-            <div className="glass-panel inline-flex items-center gap-4 rounded-2xl px-8 py-5">
+            <div className="bg-white border border-black/5 shadow-sm inline-flex items-center gap-4 rounded-2xl px-8 py-5">
               <svg
                 className="w-5 h-5 text-accent shrink-0"
                 fill="none"
@@ -285,7 +285,7 @@ export default function SitemapPage() {
                 />
               </svg>
               <div className="text-left">
-                <p className="text-white font-bold text-sm">
+                <p className="text-text font-bold text-sm">
                   Looking for the XML sitemap?
                 </p>
                 <a
