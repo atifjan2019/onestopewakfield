@@ -254,26 +254,26 @@ export default async function AreaPage({ params }) {
   };
 
   return (
-    <div className="bg-primary min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-20">
       <SchemaMarkup schema={areaSchema} />
       <SchemaMarkup schema={faqSchema} />
 
       {/* ── Section 1: HERO ── */}
-      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[520px] flex flex-col items-center justify-center">
-        <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
+      <section className="relative py-8 md:py-16 px-4 md:px-6 overflow-hidden min-h-[520px] flex flex-col items-center justify-center bg-gradient-to-b from-surface to-white">
+        <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
         <div className="mx-auto max-w-7xl relative z-10 w-full text-center">
           <nav className="mb-8 flex justify-center">
             <ol className="flex items-center gap-2 text-sm font-bold text-text-muted">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li className="text-white/30">/</li>
-              <li><span className="text-white/60">Areas</span></li>
-              <li className="text-white/30">/</li>
+              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li className="text-black/20">/</li>
+              <li><span className="text-text-muted">Areas</span></li>
+              <li className="text-black/20">/</li>
               <li className="text-accent">{area.name}</li>
             </ol>
           </nav>
 
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-3 md:mb-4 tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-text leading-[1.1] mb-3 md:mb-4 tracking-tight">
               Tyre Fitting in {area.name}
             </h1>
             <h2 className="text-xl md:text-2xl font-bold text-accent mb-6 md:mb-8">
@@ -295,7 +295,7 @@ export default async function AreaPage({ params }) {
               </a>
               <Link
                 href="/book"
-                className="w-full sm:w-auto glass-panel glass-panel-hover text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-base transition-all duration-300 text-center"
+                className="w-full sm:w-auto bg-white border border-black/8 hover:border-accent/30 hover:shadow-md text-text font-bold px-6 py-3 md:px-8 md:py-4 rounded-2xl text-base transition-all duration-300 text-center"
               >
                 Book Online
               </Link>
@@ -309,10 +309,10 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 2: SERVICES ── */}
-      <section className="py-8 md:py-16 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 bg-surface border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-5xl font-black text-text mb-4 md:mb-6">
               Tyre Services in {area.name}
             </h2>
             <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
@@ -325,12 +325,12 @@ export default async function AreaPage({ params }) {
               <Link
                 key={svc.slug}
                 href={`/${svc.slug}`}
-                className="glass-panel group relative overflow-hidden rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 block"
+                className="bg-white border border-black/5 group relative overflow-hidden rounded-3xl p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 block"
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent mb-5 group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center text-accent mb-5 group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-300">
                   <ServiceIcon name={svc.icon} className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-accent transition-colors mb-2">{svc.title}</h3>
+                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">{svc.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-3">{svc.solves}</p>
                 <p className="text-text-muted/70 text-xs leading-relaxed italic">{svc.when}</p>
                 <span className="inline-block mt-4 text-accent text-xs font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
@@ -346,7 +346,7 @@ export default async function AreaPage({ params }) {
       <section className="py-8 md:py-16 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-5xl font-black text-text mb-4 md:mb-6">
               Common Tyre Problems in {area.name}
             </h2>
             <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
@@ -356,15 +356,15 @@ export default async function AreaPage({ params }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {tyreProblems.map((item) => (
-              <div key={item.problem} className="glass-panel rounded-3xl p-6 border border-white/5 flex flex-col">
-                <h3 className="text-base font-bold text-white mb-4">{item.problem}</h3>
+              <div key={item.problem} className="bg-white rounded-3xl p-6 border border-black/5 flex flex-col shadow-sm hover:shadow-md transition-all duration-300">
+                <h3 className="text-base font-bold text-text mb-4">{item.problem}</h3>
                 <div className="space-y-3 mb-5 flex-1">
                   <div className="flex gap-2 text-sm">
                     <span className="text-accent font-semibold shrink-0 w-16">Risk:</span>
                     <span className="text-text-muted">{item.risk}</span>
                   </div>
                   <div className="flex gap-2 text-sm">
-                    <span className="text-white/60 font-semibold shrink-0 w-16">Solution:</span>
+                    <span className="text-text-light font-semibold shrink-0 w-16">Solution:</span>
                     <span className="text-text-muted">{item.solution}</span>
                   </div>
                 </div>
@@ -381,10 +381,10 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 4: SAME-DAY vs MOBILE vs EMERGENCY ── */}
-      <section className="py-8 md:py-16 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 bg-surface border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-5xl font-black text-text mb-4 md:mb-6">
               Same-Day, Mobile &amp; Emergency
             </h2>
             <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
@@ -396,9 +396,9 @@ export default async function AreaPage({ params }) {
             {comparisons.map((col) => (
               <div
                 key={col.type}
-                className={`glass-panel rounded-3xl p-8 flex flex-col gap-4 ${col.highlight ? "border-accent/40 bg-accent/5 shadow-[0_0_30px_rgba(227,30,36,0.1)]" : ""}`}
+                className={`bg-white rounded-3xl p-8 flex flex-col gap-4 border shadow-sm ${col.highlight ? "border-accent/30 bg-accent/5 shadow-[0_0_30px_rgba(227,30,36,0.08)]" : "border-black/5"}`}
               >
-                <h3 className={`text-xl font-black mb-2 ${col.highlight ? "text-accent" : "text-white"}`}>{col.type}</h3>
+                <h3 className={`text-xl font-black mb-2 ${col.highlight ? "text-accent" : "text-text"}`}>{col.type}</h3>
                 {[
                   { label: "Best for", value: col.bestFor },
                   { label: "Where", value: col.where },
@@ -407,7 +407,7 @@ export default async function AreaPage({ params }) {
                   { label: "Limitation", value: col.limitation },
                 ].map((row) => (
                   <div key={row.label}>
-                    <span className="text-xs font-bold text-white/40 uppercase tracking-wider block mb-1">{row.label}</span>
+                    <span className="text-xs font-bold text-text-muted/60 uppercase tracking-wider block mb-1">{row.label}</span>
                     <span className="text-text-muted text-sm">{row.value}</span>
                   </div>
                 ))}
@@ -421,7 +421,7 @@ export default async function AreaPage({ params }) {
       <section className="py-8 md:py-16 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-5xl font-black text-text mb-4 md:mb-6">
               Repair, Replace or Balance?
             </h2>
             <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
@@ -431,15 +431,15 @@ export default async function AreaPage({ params }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {diagnostics.map((item) => (
-              <div key={item.title} className="glass-panel rounded-3xl p-8">
+              <div key={item.title} className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex items-start gap-5">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                     <ServiceIcon name={item.icon} className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-white mb-2">{item.title}</h3>
+                    <h3 className="text-lg font-black text-text mb-2">{item.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-3">{item.desc}</p>
-                    <p className="text-xs text-white/40 italic mb-4">When needed: {item.trigger}</p>
+                    <p className="text-xs text-text-muted/60 italic mb-4">When needed: {item.trigger}</p>
                     <Link href={`/${item.slug}`} className="text-accent text-xs font-bold uppercase tracking-wider hover:underline">
                       Learn more →
                     </Link>
@@ -452,12 +452,12 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 6: WHY CHOOSE US ── */}
-      <section className="py-8 md:py-16 bg-surface-dark border-t border-border/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]" />
+      <section className="py-8 md:py-16 bg-surface border-t border-black/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMikiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]" />
         <div className="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 md:mb-8">
+              <h2 className="text-3xl md:text-5xl font-black text-text mb-6 md:mb-8">
                 Why Drivers in {area.name} Choose Us.
               </h2>
               <div className="space-y-4">
@@ -482,13 +482,13 @@ export default async function AreaPage({ params }) {
             </div>
 
             <div className="w-full md:w-1/2">
-              <div className="glass-panel rounded-3xl p-8 border-accent/30 bg-accent/5 relative overflow-hidden shadow-[0_0_50px_rgba(227,30,36,0.1)]">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 blur-[40px] rounded-full" />
-                <h3 className="text-2xl font-black text-white mb-4 relative z-10">Local Fast Response</h3>
+              <div className="bg-white rounded-3xl p-8 border border-accent/20 bg-accent/3 relative overflow-hidden shadow-lg">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 blur-[40px] rounded-full" />
+                <h3 className="text-2xl font-black text-text mb-4 relative z-10">Local Fast Response</h3>
                 <p className="text-text-muted relative z-10 mb-8">
                   Because we have drivers dedicated to the {area.name} area, you will never wait hours for a simple tyre change or repair.
                 </p>
-                <a href={PHONE_HREF} className="w-full relative z-10 block text-center bg-white text-black font-black py-4 rounded-xl hover:bg-neutral-200 transition-colors shadow-lg shadow-white/10">
+                <a href={PHONE_HREF} className="w-full relative z-10 block text-center bg-accent text-white font-black py-4 rounded-xl hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20">
                   Dispatch a Van to {area.name}
                 </a>
               </div>
@@ -498,10 +498,10 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 7: LOCAL COVERAGE ── */}
-      <section className="py-8 md:py-16 border-t border-border/50">
+      <section className="py-8 md:py-16 border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-black text-text mb-4">
               Local Coverage in &amp; Around {area.name}
             </h2>
             <p className="text-text-muted max-w-xl mx-auto">
@@ -510,34 +510,34 @@ export default async function AreaPage({ params }) {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="glass-panel rounded-2xl p-6 mb-6 text-center">
-              <span className="text-xs font-bold text-white/40 uppercase tracking-wider block mb-2">Primary Area</span>
+            <div className="bg-white rounded-2xl p-6 mb-6 text-center border border-black/5 shadow-sm">
+              <span className="text-xs font-bold text-text-muted/60 uppercase tracking-wider block mb-2">Primary Area</span>
               <span className="text-2xl font-black text-accent">{area.name}</span>
               <div className="flex flex-wrap justify-center gap-6 mt-4 text-sm text-text-muted">
                 <span>Home visits</span>
-                <span className="text-white/20">|</span>
+                <span className="text-black/15">|</span>
                 <span>Workplace</span>
-                <span className="text-white/20">|</span>
+                <span className="text-black/15">|</span>
                 <span>Roadside</span>
               </div>
             </div>
 
             {nearbyAreaData.length > 0 && (
               <div>
-                <span className="text-xs font-bold text-white/40 uppercase tracking-wider block mb-3 text-center">Also Covering Nearby</span>
+                <span className="text-xs font-bold text-text-muted/60 uppercase tracking-wider block mb-3 text-center">Also Covering Nearby</span>
                 <div className="flex flex-wrap justify-center gap-3">
                   {nearbyAreaData.map((nearby) => (
                     <Link
                       key={nearby.slug}
                       href={`/areas/${nearby.slug}`}
-                      className="glass-panel text-text-muted hover:text-white font-bold px-5 py-2 rounded-xl transition-all duration-300 hover:border-accent/40 text-sm"
+                      className="bg-white border border-black/5 text-text-muted hover:text-accent font-bold px-5 py-2 rounded-xl transition-all duration-300 hover:border-accent/20 hover:shadow-md text-sm"
                     >
                       {nearby.name}
                     </Link>
                   ))}
                   <Link
                     href="/"
-                    className="glass-panel border-accent/40 bg-accent/10 text-white font-bold px-5 py-2 rounded-xl transition-all duration-300 hover:bg-accent hover:border-accent shadow-[0_0_15px_rgba(227,30,36,0.2)] text-sm"
+                    className="bg-accent/5 border border-accent/20 text-accent font-bold px-5 py-2 rounded-xl transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent text-sm"
                   >
                     Wakefield (HQ)
                   </Link>
@@ -549,11 +549,11 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 8: INTERNAL LINK HUB ── */}
-      <section className="py-8 md:py-16 bg-surface-dark border-t border-border/50">
+      <section className="py-8 md:py-16 bg-surface border-t border-black/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             <div>
-              <h3 className="text-sm font-bold text-white/40 uppercase tracking-wider mb-4">Our Services</h3>
+              <h3 className="text-sm font-bold text-text-muted/60 uppercase tracking-wider mb-4">Our Services</h3>
               <ul className="space-y-3">
                 {[
                   { name: "Tyre Fitting", slug: "tyre-fitting-wakefield" },
@@ -574,7 +574,7 @@ export default async function AreaPage({ params }) {
 
             {nearbyAreaData.length > 0 && (
               <div>
-                <h3 className="text-sm font-bold text-white/40 uppercase tracking-wider mb-4">Nearby Areas</h3>
+                <h3 className="text-sm font-bold text-text-muted/60 uppercase tracking-wider mb-4">Nearby Areas</h3>
                 <ul className="space-y-3">
                   {nearbyAreaData.map((nearby) => (
                     <li key={nearby.slug}>
@@ -596,10 +596,10 @@ export default async function AreaPage({ params }) {
       </section>
 
       {/* ── Section 9: FAQ ── */}
-      <section className="py-8 md:py-16 border-t border-border/50">
+      <section className="py-8 md:py-16 border-t border-black/5 bg-burgundy-tint">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-5xl font-black text-text mb-4 md:mb-6">
               Frequently Asked Questions
             </h2>
             <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
@@ -609,8 +609,8 @@ export default async function AreaPage({ params }) {
 
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="glass-panel rounded-2xl p-6">
-                <h3 className="text-base font-bold text-white mb-3">{faq.q}</h3>
+              <div key={faq.q} className="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-md transition-all duration-300">
+                <h3 className="text-base font-bold text-text mb-3">{faq.q}</h3>
                 <p className="text-text-muted text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
