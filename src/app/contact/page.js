@@ -18,7 +18,7 @@ export default function ContactPage() {
         "mainEntity": {
           "@type": "LocalBusiness",
           "name": "One Stop Tyres Wakefield",
-          "telephone": "+441924929966",
+          "telephone": "07790714784",
           "image": "https://www.onestoptyreswakefield.co.uk/logo.png",
           "address": {
             "@type": "PostalAddress",
@@ -29,7 +29,7 @@ export default function ContactPage() {
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+441924929966",
+            "telephone": "07790714784",
             "contactType": "customer service",
             "areaServed": "GB",
             "availableLanguage": "English"

@@ -90,7 +90,7 @@ const problems = [
 
 /* ─── PROCESS STEPS ─── */
 const processSteps = [
-  { step: "01", title: "Tell Us What You Need", desc: "Call 01924 929966 or book online. Tell us your situation, vehicle registration, or tyre size." },
+  { step: "01", title: "Tell Us What You Need", desc: "Call 07790714784 or book online. Tell us your situation, vehicle registration, or tyre size." },
   { step: "02", title: "We Find the Right Path", desc: "We route you to the right service: workshop fitting, mobile attendance, emergency call-out, or puncture assessment." },
   { step: "03", title: "Confirm Your Tyres", desc: "We identify the correct fitment by registration or size, confirm load index and speed rating, and present budget, mid-range, or premium options." },
   { step: "04", title: "Book or Dispatch", desc: "For planned fitting, choose a time that works. For mobile or emergency needs, we dispatch to your location." },
@@ -137,7 +137,7 @@ const autoRepairSchema = {
   "@type": "AutoRepair",
   name: "One Stop Tyres Wakefield",
   description: "Tyre fitting, mobile tyre fitting, emergency tyre repair, puncture repair, wheel balancing, and tyre replacement in Wakefield, West Yorkshire.",
-  telephone: "+441924929966",
+  telephone: "07790714784",
   url: "https://www.onestoptyreswakefield.co.uk",
   logo: "https://www.onestoptyreswakefield.co.uk/logo.png",
   image: "https://www.onestoptyreswakefield.co.uk/og-image.jpg",
@@ -206,13 +206,13 @@ const faqSchema = {
 /* ─── METADATA ─── */
 export const metadata = {
   title: "Tyre Fitting Wakefield | Mobile, Emergency & Same-Day | One Stop Tyres",
-  description: "Same-day tyre fitting, mobile fitting & emergency tyre repair in Wakefield. No hidden fees. Budget to premium tyres supplied & fitted. Call 01924 929966.",
+  description: "Same-day tyre fitting, mobile fitting & emergency tyre repair in Wakefield. No hidden fees. Budget to premium tyres supplied & fitted. Call 07790714784.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Tyre Fitting Wakefield | Mobile, Emergency & Same-Day | One Stop Tyres",
-    description: "Same-day tyre fitting, mobile fitting & emergency tyre repair in Wakefield. No hidden fees. Budget to premium tyres supplied & fitted. Call 01924 929966.",
+    description: "Same-day tyre fitting, mobile fitting & emergency tyre repair in Wakefield. No hidden fees. Budget to premium tyres supplied & fitted. Call 07790714784.",
     url: "https://www.onestoptyreswakefield.co.uk",
     siteName: "One Stop Tyres Wakefield",
     locale: "en_GB",

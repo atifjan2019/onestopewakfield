@@ -1,6 +1,6 @@
 
-export const PHONE_NUMBER = "01924 929966";
-export const PHONE_HREF = "tel:+441924929966";
+export const PHONE_NUMBER = "07790714784";
+export const PHONE_HREF = "tel:07790714784";
 export const BUSINESS_NAME = "One Stop Tyres Wakefield";
 
 export const services = [
